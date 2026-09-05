@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Size Solar System for an Off-Grid Cabin? (2026 Sizing Guide)</title>
+<meta name="description" content="Off-grid cabin solar sizing from 400 W weekend setups to 3,000 W homesteads: panel counts, battery bank Ah, inverter size, charge controller amps, and budget breakdowns.">
+<link rel="canonical" href="https://jpanasuk-netizen.github.io/solarsizer/off-grid-cabin-solar.html">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="What Size Solar System for an Off-Grid Cabin?">
+<meta property="og:description" content="Worked sizing examples from weekend cabin to full-time homestead — panel counts, battery banks, and where the money goes.">
+<meta property="og:url" content="https://jpanasuk-netizen.github.io/solarsizer/off-grid-cabin-solar.html">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is 400 watts of solar enough for a cabin?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For a weekend cabin running lights, device charging, a water pump, and internet — yes, with a 24 V 100 Ah LiFePO4 bank and 4+ sun hours. It will not run a microwave, induction cooking, or electric heat. Full-time living in the same cabin starts around 1,300–1,500 W of panels." }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does an off-grid solar system cost in 2026?",
+      "acceptedAnswer": { "@type": "Answer", "text": "DIY component pricing: a 500 W weekend system (panels, 24 V 100 Ah LiFePO4, 30 A MPPT, 1,000 W inverter) lands around $1,200–1,800. A 1,500 W full-time cabin system with a 400 Ah 24 V LiFePO4 bank runs $4,000–6,500. The battery is typically 30–40% of the budget, which is why sizing the bank honestly matters more than adding panels." }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I size my solar array for winter?",
+      "acceptedAnswer": { "@type": "Answer", "text": "If you live off-grid year-round, either size the array to worst-month sun hours (1.5–3 in most northern US winters — often double your summer array) or size to summer and add a generator or shore charging path for the dark months. Most full-time off-gridders do the second." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-head">
+  <a class="brand" href="index.html">SolarSizer</a>
+  <nav aria-label="Site">
+    <a href="index.html#calc">Calculator</a>
+    <a href="off-grid-cabin-solar.html">Cabin solar</a>
+    <a href="panels-to-charge-battery.html">Panels per battery</a>
+    <a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/" rel="noopener">Battery bank sizer ↗</a>
+  </nav>
+</header>
+
+<main>
+<h1>What size solar system for an off-grid cabin?</h1>
+<p class="sub">Worked sizing examples from weekend cabin to full-time homestead — panel counts, battery banks, and where the money goes.</p>
+
+<h2>The formula, once</h2>
+<p>Everything flows from one number: <strong>daily watt-hours</strong>. Array watts = daily watt-hours ÷ worst-month sun hours ÷ 0.75 (wiring, controller, battery round-trip, panel heat and dust). Bank watt-hours = daily Wh × days of autonomy ÷ max depth of discharge. LiFePO4's 80% usable depth is why it beats AGM's 50% on paper even before cycle life. Run your own numbers in the <a href="index.html#calc">solar size calculator</a>.</p>
+
+<h2>Example 1 — Weekend cabin</h2>
+<p>Loads: lights, device charging, water pump, internet ≈ 1,450 Wh/day. Array: 1,450 ÷ 4 sun hrs ÷ 0.75 ≈ <strong>500 W</strong> (2×250 W). Bank: one day autonomy ÷ 80% DoD → <strong>24 V 100 Ah LiFePO4</strong>. Inverter: no big motors → <strong>1,000 W pure sine</strong>. Controller: 500 ÷ 24 ÷ 0.85 ≈ 25 A → <strong>30 A MPPT</strong>. DIY parts: ~$1,200–1,800.</p>
+
+<h2>Example 2 — Full-time cabin (fridge, propane cooking)</h2>
+<p>Add an Energy Star fridge (1,200 Wh/day cycled), TV, fan, occasional washing machine ≈ <strong>3,800 Wh/day</strong>. Array: ≈ <strong>1,300–1,500 W</strong> (5×300 W). Bank: 2 days autonomy ÷ 80% DoD → <strong>400 Ah at 24 V LiFePO4</strong>. Inverter: fridge surge + microwave → <strong>2,000 W pure sine</strong>. Controller: ≈ 74 A → <strong>80 A MPPT</strong> (or 2×40 A). DIY parts: ~$4,000–6,500. Cooking and water heating stay on propane — electrifying them adds ~4 kWh/day and thousands in panels.</p>
+
+<h2>Example 3 — Small homestead (well pump, workshop, electric cooking)</h2>
+<p>≈ <strong>8,000 Wh/day</strong>. Array: ≈ <strong>3,000 W</strong> ground-mounted. Bank: 2 days autonomy at 80% DoD → <strong>48 V 400 Ah</strong> — 48 V halves DC amps and cable cost vs 24 V. Inverter: well pump startup over a 1,200 W base → <strong>4,000–5,000 W pure sine</strong>. Controller: ≈ 74 A at 48 V → <strong>80–100 A MPPT</strong> or a hybrid inverter/charger.</p>
+
+<h2>Common sizing mistakes</h2>
+<p><strong>Heat loads:</strong> space heat, water heat, and dryers on solar means a 10+ kW system — keep those on propane or wood. <strong>Oversized banks, undersized arrays:</strong> a bank that never fully recharges degrades faster; the array must replace daily use plus recharge overnight draw. <strong>Summer-sized arrays in winter:</strong> size to worst-month sun hours, or plan generator/shore charging — the <a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/" rel="noopener">battery bank sizer</a> and <a href="https://jpanasuk-netizen.github.io/generatorsizer/" rel="noopener">GeneratorSizer</a> · <a href="https://jpanasuk-netizen.github.io/weldingcalc/" rel="noopener">WeldingCalc</a> cover the storage and fuel-backup sides.</p>
+
+<p><a href="index.html">← Back to the solar size calculator</a></p>
+</main>
+
+<footer>SolarSizer · free sizing tools for off-grid solar and battery power · pages may contain affiliate links · <a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/" rel="noopener">sister site: Battery Bank Sizer</a></footer>
+
+</body>
+</html>

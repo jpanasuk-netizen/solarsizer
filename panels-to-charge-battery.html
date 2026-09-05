@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Many Solar Panels to Charge a Battery? 100Ah–400Ah Recharge Math (2026)</title>
+<meta name="description" content="How many solar panels you need to charge a 100 Ah, 200 Ah, or 400 Ah battery bank at 12/24/48 V — recharge math, sun hours, charge efficiency, and winter adjustments.">
+<link rel="canonical" href="https://jpanasuk-netizen.github.io/solarsizer/panels-to-charge-battery.html">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="How Many Solar Panels to Charge a Battery?">
+<meta property="og:description" content="Recharge math for 100–400 Ah battery banks at 12/24/48 V — sun hours, charge efficiency, and panel counts explained.">
+<meta property="og:url" content="https://jpanasuk-netizen.github.io/solarsizer/panels-to-charge-battery.html">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many solar panels does it take to charge a 100Ah 12V battery?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A 100 Ah 12 V battery stores 1,200 Wh. With 4.5 sun hours and 85% charge efficiency, you need roughly 315 W of panels — so a single 300–400 W panel (or 3×100 W) fully recharges it in one good day of sun." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to charge a 200Ah battery with a 200W solar panel?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A 200 Ah 12 V battery stores 2,400 Wh, requiring about 2,820 Wh of raw panel output after 85% efficiency. A 200 W panel produces roughly 765 Wh/day at 4.5 sun hours, so it would take about 3.5–4 days of good sun to fully recharge — most users pair at least 400–600 W of panels with a 200 Ah bank." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-head">
+  <a class="brand" href="index.html">SolarSizer</a>
+  <nav aria-label="Site">
+    <a href="index.html#calc">Calculator</a>
+    <a href="off-grid-cabin-solar.html">Cabin solar</a>
+    <a href="panels-to-charge-battery.html">Panels per battery</a>
+    <a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/" rel="noopener">Battery bank sizer ↗</a>
+  </nav>
+</header>
+
+<main>
+<h1>How many solar panels to charge a battery?</h1>
+<p class="sub">The recharge math for 100–400 Ah banks at 12/24/48 V — sun hours, charge efficiency, and panel counts explained.</p>
+
+<h2>The recharge math</h2>
+<p>Energy stored = Ah × voltage. A 100 Ah 12 V battery holds 1,200 Wh; 200 Ah at 12 V holds 2,400 Wh. To recharge in one day, your array must deliver that energy within the available sun hours, divided by ~85% charge efficiency (controller plus battery round-trip losses):</p>
+<p><strong>Required array watts = (Ah × V) ÷ sun hours ÷ 0.85</strong></p>
+
+<h2>Worked examples at 4.5 sun hours</h2>
+<div class="tbl-wrap">
+<table>
+<tr><th>Battery bank</th><th class="num">Stored Wh</th><th class="num">Array needed (one-day recharge)</th><th class="num">Typical panel count</th></tr>
+<tr><td>100 Ah @ 12 V</td><td class="num">1,200</td><td class="num">~315 W</td><td class="num">1×300 W or 3×100 W</td></tr>
+<tr><td>200 Ah @ 12 V</td><td class="num">2,400</td><td class="num">~630 W</td><td class="num">2×300 W</td></tr>
+<tr><td>200 Ah @ 24 V</td><td class="num">4,800</td><td class="num">~1,260 W</td><td class="num">4–5×300 W</td></tr>
+<tr><td>400 Ah @ 12 V</td><td class="num">4,800</td><td class="num">~1,260 W</td><td class="num">4–5×300 W</td></tr>
+<tr><td>400 Ah @ 48 V</td><td class="num">19,200</td><td class="num">~5,000 W</td><td class="num">16–17×300 W</td></tr>
+</table>
+</div>
+
+<h2>Seasonal adjustment</h2>
+<p>Winter changes everything. In northern US winters, sun hours fall to 2–2.5, roughly half the annual average — meaning a 200 Ah 12 V bank needs double the panels, or you accept 2 days instead of 1. Cold actually <em>improves</em> panel output slightly, but short days and cloud dominate. Verify your local worst-month figure with NREL's PVWatts or Global Solar Atlas before buying.</p>
+
+<h2>Charge rate limits</h2>
+<p>Don't over-panel either: most LiFePO4 banks accept up to 0.5C charge (a 100 Ah battery up to 50 A charging current), while many lead-acid banks should stay near 0.15–0.2C. Match your charge controller to the array: watts ÷ battery volts ÷ 0.85, rounded up to the next standard rating — the calculator's charge controller tab does this for you.</p>
+
+<p><a href="index.html">← Back to the solar size calculator</a></p>
+</main>
+
+<footer>SolarSizer · free sizing tools for off-grid solar and battery power · pages may contain affiliate links · <a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/" rel="noopener">sister site: Battery Bank Sizer</a> · <a href="https://jpanasuk-netizen.github.io/generatorsizer/" rel="noopener">GeneratorSizer</a> · <a href="https://jpanasuk-netizen.github.io/weldingcalc/" rel="noopener">WeldingCalc</a></footer>
+
+</body>
+</html>
