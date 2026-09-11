@@ -11,6 +11,13 @@
 <meta property="og:description" content="Enter your daily loads, get the exact solar system: panel count, battery bank size, inverter rating, and charge controller amps — sun-hours and winter derating included.">
 <meta property="og:url" content="https://solar-sizer.com/">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://solar-sizer.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Solar System Size Calculator — What Size Off-Grid Solar Do I Need?">
+<meta name="twitter:description" content="Enter your daily loads, get the exact solar system: panel count, battery bank size, inverter rating, and charge controller amps — sun-hours and winter derating included.">
+<meta name="twitter:image" content="https://solar-sizer.com/assets/og-image.png">
 <link rel="stylesheet" href="assets/styles.css">
 <script type="application/ld+json">
 {
@@ -69,7 +76,7 @@
 <h1>Off-grid solar size calculator</h1>
 <p class="sub">Add your daily loads. Get the panel count, battery bank Ah, inverter rating, and charge controller amps — worst-month sun hours and derating handled.</p>
 
-<div class="tabs" role="tablist" aria-label="Calculators">
+<div id="calc" class="tabs" role="tablist" aria-label="Calculators">
   <button role="tab" aria-selected="true" onclick="showTab('tab-sys', this)">System size</button>
   <button role="tab" aria-selected="false" onclick="showTab('tab-inv', this)">Inverter size</button>
   <button role="tab" aria-selected="false" onclick="showTab('tab-cc', this)">Charge controller</button>
@@ -194,6 +201,20 @@
 </section>
 
 <!-- ============ CONTENT ============ -->
+
+<h2 id="faq">Frequently asked questions</h2>
+<details open><summary>What size solar system do I need for an off-grid cabin?</summary>
+<p>Add the watt-hours of everything you run per day, divide by your location's worst-month sun hours, then add 25% for panel derating (heat, dust, wiring losses). A typical minimalist cabin using 3 kWh/day needs about 1,200–1,500 W of panels in most of the US, paired with a 400–600 Ah 12 V LiFePO4 bank (or the 24 V/48 V equivalent) to ride through cloudy days.</p>
+</details>
+<details open><summary>How many solar panels does it take to charge a 200Ah battery?</summary>
+<p>A 200 Ah 12 V battery stores 2,400 Wh. To recharge it in one day of sun you need roughly 400–600 W of panels: 2,400 Wh ÷ 4.5 average sun hours ÷ 0.85 charge efficiency ≈ 630 W, so a 2×300 W array covers it in a day and a 400 W array in about a day and a half of good sun.</p>
+</details>
+<details open><summary>MPPT or PWM charge controller — which do I need?</summary>
+<p>MPPT harvests 20–30% more power than PWM in cold or partly cloudy conditions and lets you use a higher-voltage array with thinner wire, but costs 2–3× more. For arrays above 200 W, or in winter-heavy climates, MPPT pays for itself. Size it: array watts ÷ battery voltage ÷ 0.85 efficiency, rounded up to the next standard rating (20 A, 30 A, 40 A, 60 A, 80 A).</p>
+</details>
+<details open><summary>What size inverter do I need for off-grid solar?</summary>
+<p>Total the continuous watts of everything that could run at once, then add the surge of the biggest motor or compressor load (3–4× its running draw). Buy 25% above the continuous total, pure sine wave only. A fridge (150 W running, 600 W surge) plus lights and electronics usually lands at a 1,000–1,500 W inverter; add a microwave or well pump and you're at 2,000–3,000 W.</p>
+</details>
 <h2>How off-grid solar sizing works</h2>
 <p>Everything flows from one number: <strong>daily watt-hours</strong>. Panels must replace that number every sun-hour day — array watts = daily Wh ÷ sun hours ÷ ~0.75 system efficiency (wiring, charge controller, battery round-trip, panel heat and dust). The battery bank must carry you through sunless days: bank Wh = daily Wh × days of autonomy ÷ max depth of discharge. LiFePO4's 80% usable depth is why it wins on-paper capacity math even before cycle life.</p>
 
