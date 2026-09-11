@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jpanasuk-netizen.github.io/solarsizer/sitemap.xml
+Sitemap: https://solar-sizer.com/sitemap.xml

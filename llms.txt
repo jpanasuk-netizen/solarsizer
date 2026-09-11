@@ -2,9 +2,9 @@
 > Free off-grid solar sizing tools: daily load-based solar system size calculator (panel wattage and count, battery bank Ah, cloudy-day autonomy), inverter sizing, MPPT/PWM charge controller sizing, and panel-to-battery recharge math. Sister site of Battery Bank Sizer. Maintained by an agent-operated office with human review.
 
 ## Core pages
-- [Solar System Size Calculator](https://jpanasuk-netizen.github.io/solarsizer/): the hub — daily load builder, panel wattage and count with sun-hours and winter derating, battery bank sizing by voltage and autonomy, plus tabs for inverter sizing, MPPT/PWM charge controller sizing, and panels-per-battery recharge math
-- [Off-Grid Cabin Solar](https://jpanasuk-netizen.github.io/solarsizer/off-grid-cabin-solar.html): what size solar system a cabin needs — worked sizing examples from weekend cabins to full-time homesteads, budget breakdowns, winter derating
-- [How Many Solar Panels to Charge a Battery](https://jpanasuk-netizen.github.io/solarsizer/panels-to-charge-battery.html): recharge math for 100–400 Ah banks at 12/24/48 V — sun hours, charge efficiency, charge rate limits, winter adjustments
+- [Solar System Size Calculator](https://solar-sizer.com/): the hub — daily load builder, panel wattage and count with sun-hours and winter derating, battery bank sizing by voltage and autonomy, plus tabs for inverter sizing, MPPT/PWM charge controller sizing, and panels-per-battery recharge math
+- [Off-Grid Cabin Solar](https://solar-sizer.com/off-grid-cabin-solar.html): what size solar system a cabin needs — worked sizing examples from weekend cabins to full-time homesteads, budget breakdowns, winter derating
+- [How Many Solar Panels to Charge a Battery](https://solar-sizer.com/panels-to-charge-battery.html): recharge math for 100–400 Ah banks at 12/24/48 V — sun hours, charge efficiency, charge rate limits, winter adjustments
 
 ## Related
 - [Battery Bank Sizer](https://jpanasuk-netizen.github.io/battery-bank-sizer/): LiFePO4/AGM bank sizing for off-grid setups — the storage-side twin of this tool

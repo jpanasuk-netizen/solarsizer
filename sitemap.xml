@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jpanasuk-netizen.github.io/solarsizer/</loc>
+    <loc>https://solar-sizer.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://jpanasuk-netizen.github.io/solarsizer/off-grid-cabin-solar.html</loc>
+    <loc>https://solar-sizer.com/off-grid-cabin-solar.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jpanasuk-netizen.github.io/solarsizer/panels-to-charge-battery.html</loc>
+    <loc>https://solar-sizer.com/panels-to-charge-battery.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
