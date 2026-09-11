@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Size Solar System Do I Need? Off-Grid & Grid-Tie Sizing (2026)</title>
+<meta name="description" content="What size solar system you need: array watts, battery bank kWh, and inverter sizing for off-grid vs grid-tie homes, with charge-controller pairing math and worked examples.">
+<link rel="canonical" href="https://solar-sizer.com/what-size-solar-system.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="What Size Solar System Do I Need?">
+<meta property="og:description" content="Whole-system sizing: array watts, battery kWh, inverter and charge-controller pairing for off-grid and grid-tie setups.">
+<meta property="og:url" content="https://solar-sizer.com/what-size-solar-system.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://solar-sizer.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What Size Solar System Do I Need?">
+<meta property="og:description" content="Whole-system sizing: array watts, battery kWh, inverter and charge-controller pairing for off-grid and grid-tie setups.">
+<meta name="twitter:image" content="https://solar-sizer.com/assets/og-image.png">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What size solar system do I need for a 2,000 sq ft house?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Square footage is a weak proxy — usage is what matters. A typical 2,000 sq ft home uses 25–35 kWh/day; at 4.5 sun hours and 80% efficiency that's a 7–10 kW array, roughly 18–25 panels at 400 W. Pull your actual kWh from 12 months of utility bills and divide by 30 for daily use." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I match an inverter to my solar array?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The inverter's continuous AC rating must cover your largest simultaneous load (everything that could run at once), and its max PV input voltage must never be exceeded by your coldest-day string voltage. Inverter watts equal to array watts is a common, safe starting point; oversizing the array up to ~130% of inverter rating (DC/AC ratio) is normal for grid-tie." }
+    },
+    {
+      "@type": "Question",
+      "name": "What size charge controller do I need?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Amps = array watts ÷ battery volts ÷ 0.85, then round up to the next standard size. A 1,200 W array on a 24 V bank needs 1,200 ÷ 24 ÷ 0.85 ≈ 59 A — a 60 A MPPT controller. Check the controller's max input voltage against your coldest-weather string voltage too." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-head">
+  <a class="brand" href="index.html">SolarSizer</a>
+  <nav aria-label="Site">
+    <a href="index.html#calc">Calculator</a>
+    <a href="how-many-solar-panels.html">Panel count</a>
+    <a href="what-size-solar-system.html">System size</a>
+    <a href="off-grid-cabin-solar.html">Cabin solar</a>
+    <a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/" rel="noopener">Battery bank sizer ↗</a>
+  </nav>
+</header>
+
+<main>
+<h1>What size solar system do I need?</h1>
+<p class="sub">Array watts, battery kWh, and inverter/charge-controller pairing — sized for off-grid reality or grid-tie economics.</p>
+
+<h2>The whole system, not just panels</h2>
+<p>A solar system is four numbers, and they're sized in this order:</p>
+<ol>
+  <li><strong>Daily energy need (Wh/day)</strong> — list each load: watts × hours per day. This drives everything else.</li>
+  <li><strong>Array size (W)</strong> = daily Wh ÷ worst-month sun hours ÷ 0.80 efficiency. See the <a href="how-many-solar-panels.html">panel-count math</a> for the breakdown.</li>
+  <li><strong>Battery bank (kWh)</strong> = daily Wh × autonomy days ÷ usable depth of discharge. Lithium: 80–90% usable; lead-acid: 50%. For 2 days autonomy on 5 kWh/day with lithium: 5 × 2 ÷ 0.85 ≈ 12 kWh.</li>
+  <li><strong>Inverter (W)</strong> — your largest <em>simultaneous</em> load, not your daily total. Well pump + fridge + microwave might spike 4 kW even in a tiny home.</li>
+</ol>
+<p class="note">Grid-tie skips the battery row entirely: array = annual kWh ÷ 365 ÷ sun hours ÷ 0.80, and the grid is your "battery."</p>
+
+<h2>Worked example: full-time off-grid cabin, 6 kWh/day, 4.0 winter sun hours</h2>
+<div class="tbl-wrap">
+<table>
+<tr><th>Component</th><th>Math</th><th class="num">Result</th></tr>
+<tr><td>Array</td><td>6,000 ÷ 4.0 ÷ 0.80</td><td class="num">~1,900 W (5×400 W)</td></tr>
+<tr><td>Battery bank</td><td>6,000 × 2 days ÷ 0.85 (LiFePO4)</td><td class="num">~14 kWh (48 V × 300 Ah class)</td></tr>
+<tr><td>Inverter</td><td>largest simultaneous load (well pump + fridge + tools)</td><td class="num">3,000–4,000 W</td></tr>
+<tr><td>Charge controller</td><td>1,900 ÷ 48 ÷ 0.85</td><td class="num">~47 A → 60 A MPPT</td></tr>
+</table>
+</div>
+<p>The same house grid-tied: 6,000 × 365 = 2,190 kWh/yr ÷ 4.8 avg sun hours ÷ 0.80 ≈ 1,560 W of array, no battery, no inverter beyond a grid-tie unit — about 4 panels. Off-grid costs more because it must survive December; grid-tie only needs to win the year.</p>
+
+<h2>Off-grid vs grid-tie: what changes</h2>
+<ul>
+  <li><strong>Sizing target:</strong> off-grid = worst month; grid-tie = annual average or bill offset.</li>
+  <li><strong>Battery:</strong> off-grid needs autonomy days (2 typical, 3 for cloudy climates); grid-tie hybrid adds a smaller bank for outages only.</li>
+  <li><strong>Inverter:</strong> off-grid units must handle surge (motor starts = 2–3× running watts); grid-tie just needs to match array output.</li>
+  <li><strong>Backup:</strong> off-grid systems should plan a generator input for long clouds — see <a href="https://generator-sizer.com/" rel="noopener">GeneratorSizer</a> for that half of the equation.</li>
+</ul>
+
+<h2>Inverter & charge-controller pairing</h2>
+<p>Three limits to check on every controller: max input voltage (your series string voltage <em>cold</em> — panel Voc rises ~0.3%/°C below 25°C), max input current, and max output amps to the bank. Output rule of thumb: <strong>controller A = array W ÷ bank V ÷ 0.85</strong>, rounded up. On the inverter side, keep array watts within the unit's max PV input, and size continuous AC rating to your biggest overlapping load stack — undersizing the inverter trips it every time the well pump starts, even with a full battery.</p>
+
+<h2>Common sizing mistakes</h2>
+<ul>
+  <li>Using annual-average sun hours for an off-grid build (December eats the difference).</li>
+  <li>Sizing the inverter to daily kWh instead of simultaneous watts.</li>
+  <li>Forgetting inverter idle draw — a 3,000 W unit can pull 20–40 W around the clock, nearly 1 kWh/day itself.</li>
+  <li>Buying panels before the battery bank is sized; the bank sets charge current limits the array must respect.</li>
+</ul>
+
+<p><a href="index.html">← Back to the solar size calculator</a></p>
+</main>
+
+<footer>SolarSizer · free sizing tools for off-grid solar and battery power · pages may contain affiliate links · <a href="https://generator-sizer.com/" rel="noopener">GeneratorSizer</a></footer>
+
+</body>
+</html>

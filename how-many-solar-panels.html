@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Many Solar Panels Do I Need? Wattage Math by Load & Sun Hours (2026)</title>
+<meta name="description" content="How many solar panels you need: daily watt-hours ÷ sun hours ÷ panel watts, with charge efficiency, battery coupling, and worked examples from fridge-only cabins to full homes.">
+<link rel="canonical" href="https://solar-sizer.com/how-many-solar-panels.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="How Many Solar Panels Do I Need?">
+<meta property="og:description" content="The panel-count math: daily watt-hours ÷ sun hours ÷ panel watts, with efficiency losses, battery coupling, and worked examples.">
+<meta property="og:url" content="https://solar-sizer.com/how-many-solar-panels.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://solar-sizer.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Many Solar Panels Do I Need?">
+<meta name="twitter:description" content="The panel-count math: daily watt-hours ÷ sun hours ÷ panel watts, with efficiency losses, battery coupling, and worked examples.">
+<meta name="twitter:image" content="https://solar-sizer.com/assets/og-image.png">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many solar panels do I need to run a refrigerator?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A modern fridge averages 1,000–1,500 Wh/day. At 4.5 sun hours and 80% system efficiency: 1,500 ÷ 4.5 ÷ 0.8 ≈ 420 W of panels — one 400 W panel or two 200 W panels. Add 2× if you also need to recharge a battery bank for overnight running." }
+    },
+    {
+      "@type": "Question",
+      "name": "How many solar panels does it take to power a house?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The average US home uses about 30 kWh/day. At 4.5 sun hours and 80% system efficiency: 30,000 ÷ 4.5 ÷ 0.8 ≈ 8,300 W — roughly 20–21 panels at 400 W each. High-usage homes (electric heat, EV charging) can need 30+ panels." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need more panels if I'm charging batteries instead of using power directly?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Battery charging adds round-trip losses of roughly 15–20% (charge controller plus battery efficiency), and the panels must cover both the day's loads and the energy the bank will deliver overnight. Budget about 1.2× the load-only panel wattage when everything cycles through a battery bank." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-head">
+  <a class="brand" href="index.html">SolarSizer</a>
+  <nav aria-label="Site">
+    <a href="index.html#calc">Calculator</a>
+    <a href="how-many-solar-panels.html">Panel count</a>
+    <a href="what-size-solar-system.html">System size</a>
+    <a href="panels-to-charge-battery.html">Panels per battery</a>
+    <a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/" rel="noopener">Battery bank sizer ↗</a>
+  </nav>
+</header>
+
+<main>
+<h1>How many solar panels do I need?</h1>
+<p class="sub">The panel-count math in one line, worked examples from a fridge to a full house, and why batteries change the answer.</p>
+
+<h2>The math</h2>
+<p>Every panel-count question reduces to the same division chain — the energy you use per day, spread across the sun hours you actually get, adjusted for real-world losses, divided by what one panel produces:</p>
+<p><strong>Number of panels = daily Wh need ÷ sun hours ÷ 0.80 (system efficiency) ÷ panel watts</strong></p>
+<p>The 0.80 factor covers charge-controller losses, wiring, panel soiling, and temperature derating — real arrays deliver about 75–85% of nameplate in daily energy terms. If you're feeding a battery bank that then powers your loads, use 0.75–0.80 instead of 0.85–0.90, since the energy takes two lossy hops (charge, then discharge).</p>
+
+<h2>Worked examples at 4.5 sun hours, 400 W panels</h2>
+<div class="tbl-wrap">
+<table>
+<tr><th>Load</th><th class="num">Daily Wh</th><th class="num">Array watts (÷4.5 ÷0.8)</th><th class="num">400 W panels</th></tr>
+<tr><td>Fridge + lights + phone</td><td class="num">2,000</td><td class="num">~560 W</td><td class="num">2</td></tr>
+<tr><td>Small cabin, weekend use</td><td class="num">4,000</td><td class="num">~1,120 W</td><td class="num">3</td></tr>
+<tr><td>Full-time tiny home</td><td class="num">8,000</td><td class="num">~2,230 W</td><td class="num">6</td></tr>
+<tr><td>Efficient whole home (no AC)</td><td class="num">15,000</td><td class="num">~4,200 W</td><td class="num">11</td></tr>
+<tr><td>Average US home</td><td class="num">30,000</td><td class="num">~8,300 W</td><td class="num">21</td></tr>
+</table>
+</div>
+<p class="note">Sun hours vary hugely: 2–2.5 in northern winters, 6+ in southwest summers. Size for your worst month — the calculator's sun-hours presets pull typical low figures by region, and PVWatts gives exact local numbers.</p>
+
+<h2>Battery coupling changes the count</h2>
+<p>If your panels charge a battery and the battery runs your night loads, the bank adds losses and the array has to refill what the night drains. Two adjustments:</p>
+<ul>
+  <li><strong>Round-trip efficiency:</strong> lithium banks deliver ~90–95% of what you charge in; lead-acid ~80–85%. Budget the panel wattage 1.2× over the load-only figure.</li>
+  <li><strong>Autonomy days:</strong> a bank sized for 2 days of autonomy still needs to be refilled daily in normal operation — panels sized for one day's load refill a 1-day bank, but a 2-day bank needs roughly the daily load plus whatever was drawn overnight, every day.</li>
+</ul>
+<p>Work the other direction with the <a href="panels-to-charge-battery.html">panels-per-battery recharge math</a>, or size the whole bank first with the <a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/" rel="noopener">battery bank sizer</a>, then size panels to refill it.</p>
+
+<h2>Grid-tie vs off-grid changes the goal</h2>
+<p>Grid-tie panels only need to offset your annual bill — they can overproduce at noon and export. Off-grid panels must cover the worst day of the year, because there's no grid to fall back on. That's why two homes with identical loads can need very different arrays: the off-grid one is sized for December, the grid-tie one for the year.</p>
+
+<h2>Sanity checks before you buy</h2>
+<ul>
+  <li><strong>Roof space:</strong> a 400 W panel is roughly 21 sq ft. Twenty-one panels ≈ 450 sq ft of usable roof.</li>
+  <li><strong>Inverter headroom:</strong> array watts should stay within your inverter's max PV input — see <a href="what-size-solar-system.html">whole-system sizing</a> for pairing.</li>
+  <li><strong>Reduce, then size:</strong> every 100 Wh/day you trim (LED swaps, an efficient fridge) removes roughly a quarter-panel of array. Efficiency is cheaper than panels.</li>
+</ul>
+
+<p><a href="index.html">← Back to the solar size calculator</a></p>
+</main>
+
+<footer>SolarSizer · free sizing tools for off-grid solar and battery power · pages may contain affiliate links · <a href="https://generator-sizer.com/" rel="noopener">GeneratorSizer</a></footer>
+
+</body>
+</html>
