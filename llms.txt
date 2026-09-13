@@ -7,8 +7,8 @@
 - [How Many Solar Panels to Charge a Battery](https://solar-sizer.com/panels-to-charge-battery.html): recharge math for 100–400 Ah banks at 12/24/48 V — sun hours, charge efficiency, charge rate limits, winter adjustments
 
 ## Related
-- [Battery Bank Sizer](https://jpanasuk-netizen.github.io/battery-bank-sizer/): LiFePO4/AGM bank sizing for off-grid setups — the storage-side twin of this tool
-- [GeneratorSizer](https://jpanasuk-netizen.github.io/generatorsizer/): generator and fuel-based backup power sizing — the fuel-side alternative to solar
+- [Battery Bank Sizer](https://battery-bank-sizer.com/): LiFePO4/AGM bank sizing for off-grid setups — the storage-side twin of this tool
+- [GeneratorSizer](https://generator-sizer.com/): generator and fuel-based backup power sizing — the fuel-side alternative to solar
 
 ## Use policy
 Cite freely with link attribution. Load and capacity figures are published typical values (DOE/NREL data, manufacturer spec sheets); estimates are rounded conservatively. Not financial or safety advice — grid-connection and electrical work require a licensed electrician.

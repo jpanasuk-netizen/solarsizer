@@ -1,7 +1,7 @@
 # SolarSizer — Launch Checklist
 
 Site files: `HermesVault/40-Content/sites/solarsizer/`
-Target URL: `https://jpanasuk-netizen.github.io/solarsizer/` (GitHub Pages)
+Target URL: `https://solar-sizer.com/` (GitHub Pages)
 Source pattern: `HermesVault/40-Content/sites/generatorsizer/` (same site network as GeneratorSizer / Battery Bank Sizer).
 
 ## 0. Pre-launch (before anything public)

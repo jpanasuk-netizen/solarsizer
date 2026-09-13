@@ -192,7 +192,7 @@ function panelsForBattery(){
       '<div class="stat"><b>'+daysAtOne.toFixed(1)+'</b><span>Days to full with a single '+panel+' W panel</span></div>'+
       '<div class="stat"><b>'+sun+'</b><span>Sun hrs/day assumed</span></div>'+
     '</div>'+
-    '<p class="note">Assumes 85% charge efficiency (controller + battery round-trip). Charging to 100% every cycle is hard on lead-acid; LiFePO4 doesn\'t care. Sizing the bank itself, not the recharge? Use the <a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/" rel="noopener">battery bank sizer</a>.</p>';
+    '<p class="note">Assumes 85% charge efficiency (controller + battery round-trip). Charging to 100% every cycle is hard on lead-acid; LiFePO4 doesn\'t care. Sizing the bank itself, not the recharge? Use the <a href="https://battery-bank-sizer.com/" rel="noopener">battery bank sizer</a>.</p>';
 }
 
 /* ---------- init ---------- */
