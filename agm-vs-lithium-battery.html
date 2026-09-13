@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AGM vs Lithium (LiFePO4) Battery for Off-Grid (2026): Cost, Cycles, Weight</title>
+<meta name="description" content="AGM vs LiFePO4 batteries compared: 50% vs 80–90% usable capacity, 500 vs 3,000+ cycles, 2× the weight. Real cost per usable kWh over system life and the break-even math.">
+<link rel="canonical" href="https://solar-sizer.com/agm-vs-lithium-battery.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="AGM vs Lithium Battery for Off-Grid Solar">
+<meta property="og:description" content="50% vs 80–90% usable capacity, 500 vs 3,000+ cycles — the real cost-per-usable-kWh comparison and when AGM still wins.">
+<meta property="og:url" content="https://solar-sizer.com/agm-vs-lithium-battery.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://solar-sizer.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AGM vs Lithium (LiFePO4) Battery (2026)">
+<meta name="twitter:description" content="Lithium costs ~2× upfront and delivers 3–5× the usable life. The break-even math.">
+<meta name="twitter:image" content="https://solar-sizer.com/assets/og-image.png">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is lithium worth it over AGM for off-grid solar?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For any system that cycles daily, yes. A 100 Ah AGM delivers ~50 Ah usable (50% depth of discharge) for 400–600 cycles; a 100 Ah LiFePO4 delivers ~80–90 Ah usable for 3,000–5,000 cycles. Cost per usable kWh over life lands around $0.30–0.50 for lithium versus $0.80–1.20 for AGM. AGM only wins for rarely-cycled backup systems, sub-freezing unheated installs without battery heaters, or budgets that must land under a hard ceiling today." }
+    },
+    {
+      "@type": "Question",
+      "name": "How much larger does my AGM battery bank need to be than a lithium one?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Roughly 60–80% larger in rated amp-hours for the same usable energy, because of the 50% vs 80–90% depth-of-discharge gap. A cabin needing 2.4 kWh usable overnight needs 2×200 Ah at 24 V in AGM, or a single 24 V 100–130 Ah LiFePO4 battery — half the weight, a third the volume." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do lithium batteries charge faster than AGM?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — and it matters more than the spec sheet suggests. AGM must absorb at low current for hours to reach full, often never quite getting there from solar; LiFePO4 accepts full charge current until nearly full, so the same solar array puts meaningfully more energy into the bank on short winter days. Lithium also holds voltage flat through discharge, so inverters run efficiently to the last percent." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-head">
+  <a class="brand" href="index.html">SolarSizer</a>
+  <nav aria-label="Site">
+    <a href="index.html#calc">Calculator</a>
+    <a href="off-grid-cabin-solar.html">Cabin solar</a>
+    <a href="panels-to-charge-battery.html">Panels per battery</a>
+    <a href="https://battery-bank-sizer.com/" rel="noopener">Battery bank sizer ↗</a>
+  </nav>
+</header>
+
+<main>
+<h1>AGM or lithium battery for my off-grid system?</h1>
+<p class="sub">Same amp-hour label, very different batteries. The usable-capacity and cycle-life math that settles which chemistry goes in your bank.</p>
+
+<div class="answer-box"><strong>Quick answer:</strong> For daily-cycling off-grid systems, <strong>LiFePO4 wins</strong>: 80–90% usable capacity vs AGM's 50%, 3,000–5,000 cycles vs 400–600, half the weight — and ~3–4× cheaper per usable kWh over the system's life despite ~2× the upfront price. AGM only wins for rarely-cycled backup banks, unheated sub-freezing installs, or a hard budget ceiling today.</div>
+
+<h2>Side by side</h2>
+<div class="tbl-wrap">
+<table>
+<tr><th></th><th>AGM (sealed lead-acid)</th><th>LiFePO4 (lithium iron phosphate)</th></tr>
+<tr><td>Upfront cost, 100 Ah @ 12 V</td><td class="num">~$200–280</td><td class="num">~$400–600</td></tr>
+<tr><td>Usable capacity (DoD)</td><td class="num">50% → 50 Ah</td><td class="num">80–90% → 80–90 Ah</td></tr>
+<tr><td>Cycle life (to 80% health)</td><td class="num">400–600 cycles</td><td class="num">3,000–5,000 cycles</td></tr>
+<tr><td>Cost per usable kWh over life</td><td class="num">~$0.80–1.20</td><td class="num">~$0.30–0.50</td></tr>
+<tr><td>Weight, 100 Ah @ 12 V</td><td class="num">~63 lb (30 kg)</td><td class="num">~26 lb (12 kg)</td></tr>
+<tr><td>Charge efficiency</td><td class="num">~80–85%</td><td class="num">~98%</td></tr>
+<tr><td>Charging below 32°F</td><td class="num">Allowed (derated)</td><td class="num">Blocked by BMS without a low-temp heater</td></tr>
+<tr><td>Peak current</td><td class="num">Handles motor surges well</td><td class="num">100 Ah models often limited to ~100 A BMS — check inverter surge</td></tr>
+</table>
+</div>
+
+<h2>The break-even math</h2>
+<p>A 24 V 400 Ah AGM bank (~$2,400) delivering 4.8 kWh usable lasts 400–600 cycles — 1.5–2 years of daily cycling. Over the same period one 24 V 400 Ah LiFePO4 bank (~$3,200–4,000) delivers 7.7 kWh usable and is still healthy at year 8–10. Replacing AGM twice before lithium reaches half-life is the part the price tag hides. If the system cycles only weekly (weekend cabin), the crossover stretches past a decade and AGM's lower upfront cost can genuinely win.</p>
+
+<h2>Where AGM still makes sense</h2>
+<p><strong>Unheated spaces below freezing:</strong> lithium BMS units block charging below 32°F unless the battery has a self-heating pad — a cold shed or seasonal cabin can kill a lithium bank's winter usefulness. <strong>Backup that rarely cycles:</strong> an outage bank that sits full gets its life from calendar age, not cycles, so AGM's cycle-life disadvantage barely applies. <strong>High surge loads on a budget:</strong> lead-acid shrugs off motor startup spikes that trip a small lithium BMS — though the fix is simply a bigger lithium model.</p>
+
+<h2>Sizing consequences</h2>
+<p>Same cabin, 2.4 kWh usable overnight: AGM needs 2×200 Ah at 24 V (~126 lb); LiFePO4 needs one 100–130 Ah battery (~30 lb) — and a slightly smaller array, since ~15–20% more of what the panels produce actually reaches the bank. Run both chemistries through the <a href="https://battery-bank-sizer.com/" rel="noopener">battery bank sizer</a> and the <a href="index.html#calc">solar size calculator</a> to see the array difference on your own load list.</p>
+
+<h2>FAQ</h2>
+<h3>Can I mix AGM and lithium in the same bank?</h3>
+<p>No. Different charge profiles (AGM absorbs at ~14.4 V, LiFePO4 at ~14.2 V with different current behavior) mean one chemistry always charges wrong. Replace whole banks at once, or keep them on separate controllers.</p>
+<h3>Do I need a special charge controller or inverter for lithium?</h3>
+<p>Any MPPT controller with an adjustable or LiFePO4 profile works — set absorption ~14.2–14.6 V and float low or off. The one real gotcha is surge: a well pump or big tool startup can exceed a 100 Ah lithium battery's BMS limit, so parallel batteries or a higher-BMS model is standard for pump systems.</p>
+
+<p><a href="index.html">← Back to the solar size calculator</a></p>
+</main>
+
+<footer>SolarSizer · <a href="index.html">solar size calculator</a> · <a href="off-grid-cabin-solar.html">cabin solar sizing</a> · <a href="panels-to-charge-battery.html">panels per battery</a> · free sizing tools for off-grid solar · pages may contain affiliate links</footer>
+
+</body>
+</html>
