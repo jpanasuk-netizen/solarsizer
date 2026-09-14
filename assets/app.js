@@ -127,6 +127,7 @@ function sizeSystem(){
     '</div>'+
     '<p class="note">Sizing rule of thumb: array watts ÷ battery volts ÷ 0.85 gives the charge controller amps — check the charge controller tab. If your winter sun hours are half your annual average, size the array to winter or accept generator/shore charging in the dark months.</p>';
   var box = el("sysResult"); box.hidden = false; box.innerHTML = html;
+  if (window.updateMatchedCTA) window.updateMatchedCTA(arrayW, 'system');
 }
 
 /* ---------- 2. Inverter size ---------- */
@@ -141,6 +142,7 @@ function sizeInverter(){
   var surgeRec = ceilTo(surgeNeed * 1.1, 100);
   var dcAmps = cont / 0.92 / v;
   var box = el("invResult"); box.hidden = false;
+  if (window.updateMatchedCTA) window.updateMatchedCTA(contRec, 'inverter');
   box.innerHTML = '<div class="big">'+fmt(contRec)+' W <span class="unit">continuous · '+fmt(surgeRec)+' W surge</span></div>'+
     '<div class="grid2">'+
       '<div class="stat"><b>'+fmt(cont)+'</b><span>Your continuous load</span></div>'+
@@ -164,6 +166,7 @@ function sizeController(){
     ? '<p class="note">Above 200 W, MPPT usually pays for itself: 20–30% more harvest in cold/cloudy conditions and it lets you run a higher-voltage array on thinner wire.</p>'
     : '<p class="note">MPPT harvests 20–30% more than PWM in cold or cloudy weather. PWM is fine for small ~100–200 W trickle arrays.</p>';
   var box = el("ccResult"); box.hidden = false;
+  if (window.updateMatchedCTA) window.updateMatchedCTA(rec, 'controller');
   box.innerHTML = '<div class="big">'+rec+' A <span class="unit">'+type.toUpperCase()+' charge controller</span></div>'+
     '<div class="grid2">'+
       '<div class="stat"><b>'+fmt(watts)+'</b><span>Array watts</span></div>'+
@@ -185,6 +188,7 @@ function panelsForBattery(){
   var count = Math.ceil(needW / panel);
   var daysAtOne = sun / (needW / panel); // days to full charge with a single panel
   var box = el("pvResult"); box.hidden = false;
+  if (window.updateMatchedCTA) window.updateMatchedCTA(panel, 'panels');
   box.innerHTML = '<div class="big">'+count+'× <span class="unit">'+panel+' W panels</span></div>'+
     '<div class="grid2">'+
       '<div class="stat"><b>'+fmt(wh)+'</b><span>Wh stored in the battery</span></div>'+
