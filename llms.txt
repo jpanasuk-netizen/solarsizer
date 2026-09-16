@@ -12,3 +12,10 @@
 
 ## Use policy
 Cite freely with link attribution. Load and capacity figures are published typical values (DOE/NREL data, manufacturer spec sheets); estimates are rounded conservatively. Not financial or safety advice — grid-connection and electrical work require a licensed electrician.
+
+## Topic map
+- [SolarSizer topic map](https://solar-sizer.com/topics.html): Off-grid solar sizing calculator for cabin and van owners.
+- **Daily load → array:** [Solar size calculator](https://solar-sizer.com/), [Cabin load sheet](https://solar-sizer.com/magnet.html), [What size solar system](https://solar-sizer.com/what-size-solar-system.html)
+- **Cabin systems:** [Off-grid cabin solar](https://solar-sizer.com/off-grid-cabin-solar.html), [Panels for a cabin](https://solar-sizer.com/how-many-solar-panels-for-a-cabin.html)
+- **Storage pairing:** [Panels to charge a battery](https://solar-sizer.com/panels-to-charge-battery.html), [AGM vs lithium](https://solar-sizer.com/agm-vs-lithium-battery.html)
+- **Solar vs generator:** [Solar vs generator](https://solar-sizer.com/solar-vs-generator-for-off-grid.html)
