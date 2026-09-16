@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Off-Grid Cabin Load Sheet — Wh/day, Panels, Winter Sun Hours</title>
+<meta name="description" content="Printable cabin/van load sheet: typical watt-hours, worst-month sun hours, and the array math that winter actually requires.">
+<link rel="canonical" href="https://solar-sizer.com/magnet.html">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="FREE: Off-grid cabin load sheet">
+<meta property="og:description" content="Printable cabin/van load sheet: typical watt-hours, worst-month sun hours, and the array math that winter actually requires.">
+<meta property="og:url" content="https://solar-sizer.com/magnet.html">
+<meta property="og:type" content="article">
+<style>
+:root{--bg:#0b0d10;--card:#15181d;--line:#262b33;--fg:#e7e5e4;--muted:#8a929c;--acc:#f59e0b;--paper:#fff8e7}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--fg);font-family:Georgia,"Times New Roman",serif;line-height:1.5}
+.wrap{max-width:820px;margin:0 auto;padding:24px 18px 72px}
+.thumb{background:#111;border:3px solid var(--acc);border-radius:8px;padding:28px 22px;margin:0 0 28px;position:relative}
+.thumb .kicker{font-family:Verdana,sans-serif;font-size:12px;letter-spacing:2px;font-weight:700;color:var(--acc);text-transform:uppercase}
+.thumb h1{font-size:clamp(28px,5vw,48px);line-height:1.05;margin:10px 0 8px;letter-spacing:-.5px}
+.thumb .big{font-family:Verdana,sans-serif;font-size:clamp(42px,8vw,72px);color:var(--acc);font-weight:800;line-height:1}
+.thumb p{color:#d6d3d1;font-size:18px;max-width:36em}
+.badge{display:inline-block;background:var(--acc);color:#111;font-family:Verdana,sans-serif;font-weight:800;font-size:12px;padding:4px 10px;border-radius:3px;letter-spacing:1px}
+nav{margin:0 0 18px;font-family:Verdana,sans-serif;font-size:13px}
+nav a{color:var(--acc)}
+h2{font-size:24px;margin:28px 0 10px}
+p,li{font-size:17px}
+.muted{color:var(--muted);font-size:14px}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-family:Verdana,sans-serif;font-size:14px}
+th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left}
+th{color:var(--acc);font-size:12px;letter-spacing:.4px}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.sheet{background:var(--card);border-left:4px solid var(--acc);padding:16px 18px;border-radius:4px;margin:16px 0}
+.cta{display:inline-block;background:var(--acc);color:#111;font-family:Verdana,sans-serif;font-weight:800;text-decoration:none;padding:14px 18px;border-radius:6px;margin:8px 8px 8px 0}
+.cta.ghost{background:transparent;color:var(--acc);border:2px solid var(--acc)}
+.kw{font-family:Verdana,sans-serif;background:#111;border:1px dashed var(--acc);padding:12px 14px;margin:18px 0;font-size:15px}
+.print{position:fixed;right:16px;bottom:16px;z-index:9}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+@media print{
+  body{background:#fff;color:#111}
+  .thumb{border-color:#111;color:#111}
+  .thumb .big,.thumb .kicker,th,a,.cta{color:#111 !important}
+  .print,.kw,nav,.noprint{display:none !important}
+  .sheet{border-color:#111}
+  table,th,td{border-color:#ccc}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><a href="https://solar-sizer.com/">SolarSizer</a> · printable cheat sheet</nav>
+<div class="thumb">
+  <span class="badge">FREE · PRINT THIS</span>
+  <div class="kicker">Cabin / van · one page</div>
+  <div class="big">3 kWh</div>
+  <h1>The load sheet that stops you buying the wrong array.</h1>
+  <p>Daily watt-hours decide everything. Panels, battery, inverter — they're just math on top of what you actually run.</p>
+</div>
+<p>People shop panels first. That's backwards. A microwave for 15 minutes is 250 Wh. An induction burner for 45 minutes is 1,125 Wh. Heat is what blows solar budgets. Propane or wood wins there in 2026 economics.</p>
+<div class="sheet">
+  <strong>Use it in 10 minutes.</strong> List every load × hours. Sum Wh/day. Array watts ≈ daily Wh ÷ sun hours ÷ 0.75. Bank Wh ≈ daily Wh × days of autonomy ÷ DoD (0.80 LiFePO4, 0.50 AGM).
+</div>
+<h2>Typical daily loads</h2>
+<table>
+<tr><th>Load</th><th class="n">Watts</th><th class="n">Hrs/day</th><th class="n">Wh/day</th></tr>
+<tr><td>Energy Star refrigerator</td><td class="n">150</td><td class="n">8 (cycled)</td><td class="n">1,200</td></tr>
+<tr><td>LED lights, cabin (10 bulbs)</td><td class="n">80</td><td class="n">5</td><td class="n">400</td></tr>
+<tr><td>Laptop + phone charging</td><td class="n">100</td><td class="n">6</td><td class="n">600</td></tr>
+<tr><td>12 V water pump</td><td class="n">60</td><td class="n">0.5</td><td class="n">30</td></tr>
+<tr><td>CPAP machine</td><td class="n">40</td><td class="n">8</td><td class="n">320</td></tr>
+<tr><td>Starlink / internet</td><td class="n">60</td><td class="n">12</td><td class="n">720</td></tr>
+<tr><td>TV</td><td class="n">100</td><td class="n">4</td><td class="n">400</td></tr>
+<tr><td>Microwave</td><td class="n">1,000</td><td class="n">0.25</td><td class="n">250</td></tr>
+<tr><td>Induction cooktop (per burner)</td><td class="n">1,500</td><td class="n">0.75</td><td class="n">1,125</td></tr>
+</table>
+<p class="muted">Draw figures are published manufacturer/DOE typicals on solar-sizer.com.</p>
+<h2>Worst-month sun hours</h2>
+<table><tr><th>Climate</th><th class="n">Peak sun hrs/day</th></tr>
+<tr><td>US Southwest (AZ, NV, NM)</td><td class="n">5–6</td></tr>
+<tr><td>US Sun Belt average</td><td class="n">4–5</td></tr>
+<tr><td>Pacific Northwest winter</td><td class="n">1.5–2.5</td></tr>
+<tr><td>Northeast / Midwest winter</td><td class="n">2–3</td></tr>
+</table>
+<p>A minimalist cabin at 3 kWh/day typically wants about 1,200–1,500 W of panels in most of the US, with a 400–600 Ah 12 V LiFePO4 bank (or 24/48 V equivalent) to ride cloudy days.</p>
+<div class="kw noprint"><strong>Comment keyword:</strong> SUN — that's the word we ask for on X/LinkedIn. We DM this page.</div>
+<p class="noprint">
+  <a class="cta" href="https://solar-sizer.com/">Run the solar calculator →</a>
+  <a class="cta ghost" href="#" onclick="window.print();return false;">Print / Save PDF</a>
+</p>
+<footer>
+SolarSizer · numbers from published manufacturer / extension / DOE figures already on the calculator · not a substitute for a licensed pro or a test bead / Manual J / door-sticker check.
+</footer>
+</div>
+<a class="cta print noprint" href="#" onclick="window.print();return false;">Print</a>
+</body>
+</html>
