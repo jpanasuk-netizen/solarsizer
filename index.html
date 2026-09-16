@@ -30,6 +30,7 @@
   "operatingSystem": "Web",
   "url": "https://solar-sizer.com/",
   "description": "Free off-grid solar sizing calculator: daily load builder, solar panel wattage and count with seasonal sun-hours, battery bank Ah (LiFePO4 vs AGM), inverter sizing, and MPPT charge controller amps.",
+  "dateModified": "2026-09-16",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
@@ -61,6 +62,16 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Solar System Size Calculator",
+  "url": "https://solar-sizer.com/",
+  "dateModified": "2026-09-16",
+  "description": "Free off-grid solar sizing calculator: daily loads to panel watts, battery Ah, inverter size, and charge-controller amps."
+}
+</script>
 </head>
 <body>
 
@@ -77,8 +88,17 @@
 
 <main>
 <h1>Solar System Size Calculator</h1>
+<p class="small" id="last-updated">Last updated: September 16, 2026 (CT)</p>
 <p class="sub">Off-grid solar sizing calculator for cabin and van owners.</p>
 <p class="sub">Add your daily loads. Get the panel count, battery bank Ah, inverter rating, and charge controller amps — worst-month sun hours and derating handled.</p>
+
+<aside class="tldr panel" id="quick-answer" aria-label="Quick answer" style="display:block;margin:1rem 0 1.25rem;padding:1rem 1.1rem;border:1px solid var(--bd,#30363d);border-radius:10px;background:var(--card,#161b22)">
+  <h2 style="font-size:1.05rem;margin:0 0 .5rem;border:0;padding:0">Quick answer</h2>
+  <p style="margin:0 0 .45rem">Size from <strong>daily watt-hours</strong>: array watts ≈ daily Wh ÷ worst-month sun hours ÷ ~0.75 system efficiency (≈ +25% panel derating for heat, dust, wiring).</p>
+  <p style="margin:0 0 .45rem">A minimalist cabin at <strong>3 kWh/day</strong> typically needs about <strong>1,200–1,500 W</strong> of panels in most of the US, paired with a <strong>400–600 Ah 12 V LiFePO4</strong> bank (or 24 V/48 V equivalent) for cloudy days.</p>
+  <p style="margin:0">A <strong>200 Ah 12 V</strong> battery (~2,400 Wh) recharges in about a day with roughly <strong>400–600 W</strong> of panels in average sun. Enter your loads below for panel count, bank Ah, inverter, and charge-controller amps.</p>
+</aside>
+
 
 <div id="calc" class="tabs" role="tablist" aria-label="Calculators">
   <button role="tab" aria-selected="true" onclick="showTab('tab-sys', this)">System size</button>
@@ -251,8 +271,8 @@
 </table>
 
 <h2>Guides</h2>
-<div class="card"><h3><a href="off-grid-cabin-solar.html">What size solar system for an off-grid cabin?</a></h3><p>Worked examples from a weekend cabin to a full-time homestead — panel counts, bank sizes, and where the budget actually goes.</p></div>
-<div class="card"><h3><a href="panels-to-charge-battery.html">How many solar panels to charge a battery?</a></h3><p>The 100 Ah to 400 Ah recharge math for 12/24/48 V banks — and why winter changes the answer by 3×.</p></div>
+<div class="card"><h3><a href="off-grid-cabin-solar.html">What size solar system for an off-grid cabin?</a></h3><p>Direct answer: a minimalist cabin at <strong>3 kWh/day</strong> typically needs about <strong>1,200–1,500 W</strong> of panels plus a <strong>400–600 Ah 12 V LiFePO4</strong> bank in most of the US. Worked examples on the guide.</p></div>
+<div class="card"><h3><a href="panels-to-charge-battery.html">How many solar panels to charge a battery?</a></h3><p>Direct answer: a <strong>200 Ah 12 V</strong> bank (~2,400 Wh) needs roughly <strong>400–600 W</strong> of panels to recharge in one average sun day. Winter sun hours can change the answer by ~3× — math on the guide.</p></div>
 <div class="card"><h3><a href="https://battery-bank-sizer.com/" rel="noopener">Battery bank sizer ↗</a></h3><p>Sizing the storage side in depth — LiFePO4 vs AGM bank builder with parallel-string planning. Generator backup? GeneratorSizer has the fuel-side math.</p></div>
 </main>
 
