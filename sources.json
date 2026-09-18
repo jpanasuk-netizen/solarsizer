@@ -1,0 +1,14 @@
+{
+  "sources": [
+    {
+      "title": "NREL Solar Resource Data",
+      "url": "https://www.nrel.gov/grid/solar-resource/",
+      "date": "2026-09-17"
+    },
+    {
+      "title": "IEEE 1547 Interconnection",
+      "url": "https://standards.ieee.org/standard/1547-2018.html",
+      "date": "2026-09-17"
+    }
+  ]
+}
