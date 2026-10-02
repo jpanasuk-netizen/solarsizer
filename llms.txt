@@ -19,3 +19,18 @@ Cite freely with link attribution. Load and capacity figures are published typic
 - **Cabin systems:** [Off-grid cabin solar](https://solar-sizer.com/off-grid-cabin-solar.html), [Panels for a cabin](https://solar-sizer.com/how-many-solar-panels-for-a-cabin.html)
 - **Storage pairing:** [Panels to charge a battery](https://solar-sizer.com/panels-to-charge-battery.html), [AGM vs lithium](https://solar-sizer.com/agm-vs-lithium-battery.html)
 - **Solar vs generator:** [Solar vs generator](https://solar-sizer.com/solar-vs-generator-for-off-grid.html)
+
+## Questions
+- [Solar for 1 kWh per day](https://solar-sizer.com/what-size-solar-system-for-1-kwh-per-day.html): 1,000 Wh divided by 4, 5, and Phoenix December 4.75 peak sun hours, plus a 20–30% margin.
+- [Solar for 2 kWh per day](https://solar-sizer.com/what-size-solar-system-for-2-kwh-per-day.html): 2,000 Wh array math set next to Battle Born's 2,400 Wh example.
+- [Solar for 5 kWh per day](https://solar-sizer.com/what-size-solar-system-for-5-kwh-per-day.html): 5,000 Wh off-grid array, with the cabin guides linked rather than repeated.
+- [Solar for 10 kWh per day](https://solar-sizer.com/what-size-solar-system-for-10-kwh-per-day.html): 10,000 Wh array, still about a third of an average EIA household day.
+- [Solar for 30 kWh per day](https://solar-sizer.com/what-size-solar-system-for-30-kwh-per-day.html): EIA 899 kWh/month ÷ 30, sized as an off-grid day.
+- [Solar for 500 kWh per month](https://solar-sizer.com/what-size-solar-system-for-500-kwh-per-month.html): annual kWh ÷ Phoenix 1,755, and the 4- and 5-hour generic estimate.
+- [Solar for 1,000 kWh per month](https://solar-sizer.com/what-size-solar-system-for-1000-kwh-per-month.html): a bill just above the U.S. monthly average, both sizing methods.
+- [Solar for 1,500 kWh per month](https://solar-sizer.com/what-size-solar-system-for-1500-kwh-per-month.html): above Louisiana's average month on the EIA table.
+- [Solar for 2,000 kWh per month](https://solar-sizer.com/what-size-solar-system-for-2000-kwh-per-month.html): a large monthly bill sized with the Phoenix yield and the generic loss term.
+- [Solar for an average home](https://solar-sizer.com/what-size-solar-system-for-average-home.html): 10,791 kWh/year, Louisiana 14,774, Hawaii 6,178, Phoenix yield and generic peak sun hours.
+- [Solar for a refrigerator](https://solar-sizer.com/what-size-solar-system-for-refrigerator.html): Battle Born's 500 Wh example, with Honda and Champion running watts kept as context.
+- [Solar for a CPAP](https://solar-sizer.com/what-size-solar-system-for-cpap.html): Champion's 30–120 W range times an example 8-hour night.
+- [Solar to charge an electric car](https://solar-sizer.com/what-size-solar-system-for-electric-car.html): 2025 fueleconomy.gov kWh/100 mi for six EVs at an example 30 miles/day.
