@@ -22,26 +22,6 @@
 }
 </script>
 
-<script id="sources-data" type="application/json">
-{
-  "sources": [
-    {
-      "title": "NLR Solar Resource Data and Tools (formerly NREL)",
-      "url": "https://www.nlr.gov/grid/solar-resource/renewable-resource-data",
-      "date": "2026-10-02"
-    },
-    {
-      "title": "IEEE 1547-2018 Interconnection",
-      "url": "https://standards.ieee.org/ieee/1547/5915/",
-      "date": "2026-10-02"
-    }
-  ]
-}
-</script>
-<script>
-document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getElementById('sources-data').textContent);var s=document.createElement('div');s.className='sources-section';s.innerHTML='<h2 id="sources-heading">Sources & Standards</h2><p>All calculations verified against:</p><ul>'+d.sources.map(x=>'<li><a href="'+x.url+'" target="_blank">'+x.title+'</a></li>').join('')+'</ul><p><button id="cite-toggle">Show Copyable Citations</button></p><div id="cite-output" style="display:none"></div>';var t=document.querySelector('nav')||document.querySelector('footer')||document.body;t.parentNode.insertBefore(s,t);var o=s.querySelector('#cite-toggle'),c=s.querySelector('#cite-output');o.onclick=()=>{c.textContent=d.sources.map(x=>x.title+'. '+x.url+'. Accessed '+x.date).join('\n\n');c.style.display='block';o.style.display='none'};});
-</script>
-<meta name="llms.txt" content="https://solar-sizer.com/sources.json">
 </head>
 <body>
 <header class="site-head">
@@ -111,10 +91,27 @@ document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getE
 </ul>
 <h2>Sisters</h2>
 <p>Adjacent math lives next door, not here. <a href="https://battery-bank-sizer.com/">Battery Bank Sizer</a> · <a href="https://generator-sizer.com/">GeneratorSizer</a></p>
+<p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+<h2>Sources</h2>
+<p>Each figure in the lists above is the figure on the linked page. The publications those pages use for those figures are:</p>
+<ul>
+<li><a href="https://battlebornbatteries.com/blogs/academy/how-to-size-solar-panels-for-a-deep-cycle-battery-system-the-battle-born-educational-series">Battle Born Batteries, How to Size Solar Panels for a Deep Cycle Battery System</a> — the daily-energy array examples. Accessed Oct 3, 2026.</li>
+<li><a href="https://battlebornbatteries.com/blogs/academy/how-to-size-a-deep-cycle-battery-bank-the-battle-born-educational-series">Battle Born Batteries, How to Size a Deep Cycle Battery Bank</a> — the 500 Wh and 2,400 Wh examples and the two-day battery count. Accessed Oct 3, 2026.</li>
+<li><a href="https://www.eia.gov/tools/faqs/faq.php?id=97&amp;t=3">U.S. Energy Information Administration, How much electricity does an American home use?</a> — 10,791 kWh/year and the monthly and state figures named in the question list. Accessed Oct 3, 2026.</li>
+<li><a href="https://developer.nlr.gov/docs/solar/pvwatts/v8/">NREL/NLR PVWatts Version 8 API documentation</a>, <a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">PVWatts Version 5 Manual</a>, and <a href="https://pvwatts.nlr.gov/">PVWatts</a> — the monthly-bill and Phoenix figures on the linked question pages. Accessed Oct 3, 2026.</li>
+<li><a href="https://www.championpowerequipment.com/generator-wattage-chart/">Champion Power Equipment, Generator Wattage Chart</a> — the CPAP watt range on the linked page. Accessed Oct 3, 2026.</li>
+<li><a href="https://www.fueleconomy.gov/feg/noframes/48765.shtml">fueleconomy.gov, 2025 Tesla Model 3 Long Range RWD</a> and the other five 2025 model pages linked from the electric-car page — kWh per 100 miles. Accessed Oct 3, 2026.</li>
+<li><a href="https://www.energy.gov/eere/solar/how-does-solar-work">U.S. Department of Energy, How Does Solar Work?</a> — the cell description on the linked page. Accessed Oct 3, 2026.</li>
+<li><a href="https://www.energy.gov/eere/solar/solar-photovoltaic-system-design-basics">U.S. Department of Energy, Solar Photovoltaic System Design Basics</a> — south-facing tilt equal to latitude. Accessed Oct 3, 2026.</li>
+<li><a href="https://www.canadiansolar.com/wp-content/uploads/2020/08/Installation_Manual_of_Standard_Solar_Modules_en.pdf">Canadian Solar, Installation Manual of Standard Solar Modules (UL), July 2020</a> — 10 cm rear clearance, the 220 W CS6A-220M nameplate, and Isc 9.31 A with a 15 A maximum series fuse (two strings: 18.62 A). Accessed Oct 3, 2026.</li>
+<li><a href="https://docs.nlr.gov/docs/fy12osti/51664.pdf">NREL/JA-5200-51664, Jordan and Kurtz, June 2012</a> — median degradation 0.5%/year. Accessed Oct 3, 2026.</li>
+<li><a href="https://battlebornbatteries.com/cdn/shop/files/BB10012i_BB1002iH_Manual.pdf">Battle Born BB10012i / BB10012iH manual, PMI_BB10012i Rev 015</a> — 14.2–14.6 V absorption, 50 A maximum charge, no charge under 32°F. Accessed Oct 3, 2026.</li>
+<li><a href="https://powerequipment.honda.com/generators/models/eu2200i">Honda EU2200i</a> and <a href="https://www.championpowerequipment.com/product/201296-3500w-dual-fuel-generator/">Champion 201296</a> — tank size and runtime used for the fuel side of the solar-vs-generator page. Accessed Oct 3, 2026.</li>
+<li><a href="assets/app.js">SolarSizer calculator, assets/app.js</a> — <code>sizeSystem</code> results named on the linked pages, including the 800 W array at 2,400 Wh, 4 sun hours, and the 0.75 factor. Accessed Oct 3, 2026.</li>
+</ul>
 </main>
 <footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
 <script src="assets/magnet-cta.js"></script>
-
 
 <section class="faq" style="max-width:760px;margin:3rem auto;padding:0 1rem">
 <h2>Frequently asked questions</h2>

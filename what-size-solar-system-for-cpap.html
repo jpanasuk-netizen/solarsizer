@@ -111,41 +111,6 @@
   ]
 }
 </script>
-<script id="sources-data" type="application/json">
-{
-  "sources": [
-    {
-      "title": "Champion Power Equipment, Generator Wattage Chart",
-      "url": "https://www.championpowerequipment.com/generator-wattage-chart/",
-      "date": "2026-10-02"
-    },
-    {
-      "title": "Battle Born Batteries, How to Size Solar Panels for a Deep Cycle Battery System",
-      "url": "https://battlebornbatteries.com/blogs/academy/how-to-size-solar-panels-for-a-deep-cycle-battery-system-the-battle-born-educational-series",
-      "date": "2026-10-02"
-    },
-    {
-      "title": "Battle Born Batteries, How to Size a Deep Cycle Battery Bank",
-      "url": "https://battlebornbatteries.com/blogs/academy/how-to-size-a-deep-cycle-battery-bank-the-battle-born-educational-series",
-      "date": "2026-10-02"
-    },
-    {
-      "title": "NREL/NLR PVWatts Version 8 API documentation",
-      "url": "https://developer.nlr.gov/docs/solar/pvwatts/v8/",
-      "date": "2026-10-02"
-    },
-    {
-      "title": "PVWatts calculator",
-      "url": "https://pvwatts.nlr.gov/",
-      "date": "2026-10-02"
-    }
-  ]
-}
-</script>
-<script>
-document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getElementById('sources-data').textContent);var s=document.createElement('div');s.className='sources-section';s.innerHTML='<h2 id="sources-heading">Sources & Standards</h2><p>All calculations verified against:</p><ul>'+d.sources.map(x=>'<li><a href="'+x.url+'" target="_blank">'+x.title+'</a></li>').join('')+'</ul><p><button id="cite-toggle">Show Copyable Citations</button></p><div id="cite-output" style="display:none"></div>';var t=document.querySelector('nav')||document.querySelector('footer')||document.body;t.parentNode.insertBefore(s,t);var o=s.querySelector('#cite-toggle'),c=s.querySelector('#cite-output');o.onclick=()=>{c.textContent=d.sources.map(x=>x.title+'. '+x.url+'. Accessed '+x.date).join('\n\n');c.style.display='block';o.style.display='none'};});
-</script>
-<meta name="llms.txt" content="https://solar-sizer.com/sources.json">
 </head>
 <body>
 <header class="site-head">

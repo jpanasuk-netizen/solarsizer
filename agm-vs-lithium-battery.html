@@ -45,26 +45,6 @@
 }
 </script>
 
-<script id="sources-data" type="application/json">
-{
-  "sources": [
-    {
-      "title": "NLR Solar Resource Data and Tools (formerly NREL)",
-      "url": "https://www.nlr.gov/grid/solar-resource/renewable-resource-data",
-      "date": "2026-10-02"
-    },
-    {
-      "title": "IEEE 1547-2018 Interconnection",
-      "url": "https://standards.ieee.org/ieee/1547/5915/",
-      "date": "2026-10-02"
-    }
-  ]
-}
-</script>
-<script>
-document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getElementById('sources-data').textContent);var s=document.createElement('div');s.className='sources-section';s.innerHTML='<h2 id="sources-heading">Sources & Standards</h2><p>All calculations verified against:</p><ul>'+d.sources.map(x=>'<li><a href="'+x.url+'" target="_blank">'+x.title+'</a></li>').join('')+'</ul><p><button id="cite-toggle">Show Copyable Citations</button></p><div id="cite-output" style="display:none"></div>';var t=document.querySelector('nav')||document.querySelector('footer')||document.body;t.parentNode.insertBefore(s,t);var o=s.querySelector('#cite-toggle'),c=s.querySelector('#cite-output');o.onclick=()=>{c.textContent=d.sources.map(x=>x.title+'. '+x.url+'. Accessed '+x.date).join('\n\n');c.style.display='block';o.style.display='none'};});
-</script>
-<meta name="llms.txt" content="https://solar-sizer.com/sources.json">
 </head>
 <body>
 
@@ -135,7 +115,8 @@ document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getE
 <p>The <a href="index.html#calc">solar size calculator</a> defaults are 2 days and 80% depth of discharge. On the same 2,400 Wh, <code>sizeSystem</code> in <a href="assets/app.js">assets/app.js</a> does 2,400 × 2 ÷ 0.8 = 6,000 Wh, then 6,000 ÷ 12 = 500 Ah. That is five 100 Ah batteries, one more than the article's two-day count. Switch the form to the 50% option and the bank becomes 2,400 × 2 ÷ 0.5 = 9,600 Wh, or 800 Ah at 12 V. The array line stays 2,400 ÷ 4 ÷ 0.75 = 800 W at 4 sun hours, because depth of discharge is only in the bank formula. The 50% row is the calculator's AGM / lead-acid option, not a second datasheet.</p>
 <p>Using the 80% input on a battery the manufacturer rates at 100% usable is what adds the fifth battery. Charge voltages, the 50 A limit, and the 32°F cutoff are on <a href="how-to-charge-lifepo4-with-solar.html">how to charge LiFePO4 batteries with solar</a>. The full count, including the form's 24 V default, is on <a href="how-many-solar-batteries-do-i-need.html">how many solar batteries do I need</a>.</p>
 <p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
-<h2>Sources for the section added October 3, 2026</h2>
+<h2>Sources</h2>
+<p>The list covers the BB10012i table and the calculator contrast in the section added October 3, 2026. The comparison table and the break-even dollars above that section are a general chemistry summary.</p>
 <ul>
 <li><a href="https://battlebornbatteries.com/cdn/shop/files/BB10012i_BB1002iH_Manual.pdf">Battle Born / Dragonfly Energy, BB10012i and BB10012iH manual, PMI_BB10012i Rev 015, 8/12/2026</a> — accessed Oct 3, 2026.</li>
 <li><a href="https://battlebornbatteries.com/blogs/academy/how-to-size-a-deep-cycle-battery-bank-the-battle-born-educational-series">Battle Born Batteries, How to Size a Deep Cycle Battery Bank</a> — accessed Oct 3, 2026.</li>
@@ -144,14 +125,11 @@ document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getE
 <p><a href="index.html">← Back to the solar size calculator</a></p>
 </main>
 
-
   <div class="affil" style="border-left:3px solid var(--warn,#f5a623);padding:.85rem 1rem;margin:1.2rem 0">
     <span class="tag" style="display:inline-block;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--warn,#f5a623);border:1px solid var(--warn,#f5a623);border-radius:20px;padding:.05rem .55rem">Affiliate</span>
     <p class="small" style="margin:.4rem 0 0">Shop gear matched to this page: <a class="btn-amz btn-amz-primary" href="https://www.amazon.com/s?k=100ah+lifepo4+battery+12v&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">LiFePO4 on Amazon</a> · <a class="btn-amz" href="https://www.amazon.com/s?k=AGM+deep+cycle+battery+100ah&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">AGM batteries on Amazon</a> · <a class="btn-amz" href="https://www.amazon.com/s?k=battery+monitor+shunt+500a&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">battery monitors on Amazon</a></p>
   </div>
 <footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
-
-
 
 <section class="faq" style="max-width:760px;margin:3rem auto;padding:0 1rem">
 <h2>Frequently asked questions</h2>

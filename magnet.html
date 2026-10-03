@@ -66,26 +66,6 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:v
 }
 </script>
 
-<script id="sources-data" type="application/json">
-{
-  "sources": [
-    {
-      "title": "NLR Solar Resource Data and Tools (formerly NREL)",
-      "url": "https://www.nlr.gov/grid/solar-resource/renewable-resource-data",
-      "date": "2026-10-02"
-    },
-    {
-      "title": "IEEE 1547-2018 Interconnection",
-      "url": "https://standards.ieee.org/ieee/1547/5915/",
-      "date": "2026-10-02"
-    }
-  ]
-}
-</script>
-<script>
-document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getElementById('sources-data').textContent);var s=document.createElement('div');s.className='sources-section';s.innerHTML='<h2 id="sources-heading">Sources & Standards</h2><p>All calculations verified against:</p><ul>'+d.sources.map(x=>'<li><a href="'+x.url+'" target="_blank">'+x.title+'</a></li>').join('')+'</ul><p><button id="cite-toggle">Show Copyable Citations</button></p><div id="cite-output" style="display:none"></div>';var t=document.querySelector('nav')||document.querySelector('footer')||document.body;t.parentNode.insertBefore(s,t);var o=s.querySelector('#cite-toggle'),c=s.querySelector('#cite-output');o.onclick=()=>{c.textContent=d.sources.map(x=>x.title+'. '+x.url+'. Accessed '+x.date).join('\n\n');c.style.display='block';o.style.display='none'};});
-</script>
-<meta name="llms.txt" content="https://solar-sizer.com/sources.json">
 </head>
 <body>
 <div class="wrap">
@@ -114,7 +94,7 @@ document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getE
 <tr><td>Microwave</td><td class="n">1,000</td><td class="n">0.25</td><td class="n">250</td></tr>
 <tr><td>Induction cooktop (per burner)</td><td class="n">1,500</td><td class="n">0.75</td><td class="n">1,125</td></tr>
 </table>
-<p class="muted">Draw figures are published manufacturer/DOE typicals on solar-sizer.com.</p>
+<p class="muted">Draw figures are the preset rows in the <a href="https://solar-sizer.com/assets/app.js">solar calculator</a>: watts × hours.</p>
 <h2>Worst-month sun hours</h2>
 <table><tr><th>Climate</th><th class="n">Peak sun hrs/day</th></tr>
 <tr><td>US Southwest (AZ, NV, NM)</td><td class="n">5–6</td></tr>
@@ -128,10 +108,15 @@ document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getE
   <a class="cta" href="https://solar-sizer.com/">Run the solar calculator →</a>
   <a class="cta ghost" href="#" onclick="window.print();return false;">Print / Save PDF</a>
 </p>
+<p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://solar-sizer.com/assets/app.js">SolarSizer calculator, assets/app.js</a> — the load table is the preset rows (watts × hours), the same rows as the calculator. Array watts use daily watt-hours ÷ sun hours ÷ 0.75. Bank watt-hours use daily watt-hours × days ÷ depth of discharge. The form's depth-of-discharge options are 0.80 and 0.50. Accessed Oct 3, 2026.</li>
+</ul>
+<p>The climate sun-hour table and the 3 kWh/day cabin line (1,200–1,500 W of panels, 400–600 Ah at 12 V) are this page's examples.</p>
 <footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
 </div>
 <a class="cta print noprint" href="#" onclick="window.print();return false;">Print</a>
-
 
 <section class="faq" style="max-width:760px;margin:3rem auto;padding:0 1rem">
 <h2>Frequently asked questions</h2>

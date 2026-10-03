@@ -45,26 +45,6 @@
 }
 </script>
 
-<script id="sources-data" type="application/json">
-{
-  "sources": [
-    {
-      "title": "NLR Solar Resource Data and Tools (formerly NREL)",
-      "url": "https://www.nlr.gov/grid/solar-resource/renewable-resource-data",
-      "date": "2026-10-02"
-    },
-    {
-      "title": "IEEE 1547-2018 Interconnection",
-      "url": "https://standards.ieee.org/ieee/1547/5915/",
-      "date": "2026-10-02"
-    }
-  ]
-}
-</script>
-<script>
-document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getElementById('sources-data').textContent);var s=document.createElement('div');s.className='sources-section';s.innerHTML='<h2 id="sources-heading">Sources & Standards</h2><p>All calculations verified against:</p><ul>'+d.sources.map(x=>'<li><a href="'+x.url+'" target="_blank">'+x.title+'</a></li>').join('')+'</ul><p><button id="cite-toggle">Show Copyable Citations</button></p><div id="cite-output" style="display:none"></div>';var t=document.querySelector('nav')||document.querySelector('footer')||document.body;t.parentNode.insertBefore(s,t);var o=s.querySelector('#cite-toggle'),c=s.querySelector('#cite-output');o.onclick=()=>{c.textContent=d.sources.map(x=>x.title+'. '+x.url+'. Accessed '+x.date).join('\n\n');c.style.display='block';o.style.display='none'};});
-</script>
-<meta name="llms.txt" content="https://solar-sizer.com/sources.json">
 </head>
 <body>
 
@@ -128,17 +108,20 @@ document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getE
 </ul>
 
 <p>The cell and the inverter, before the watt-hour formula, are on <a href="how-do-solar-panels-work.html">how solar panels work</a>. What a median degradation rate does to an array that landed on an exact wattage is on <a href="solar-panel-degradation.html">solar panel degradation</a>. Turning the bank watt-hours into a battery count is on <a href="how-many-solar-batteries-do-i-need.html">how many solar batteries do I need</a>.</p>
+<p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+<h2>Sources</h2>
+<ul>
+<li><a href="assets/app.js">SolarSizer calculator, assets/app.js (sizeController)</a> — array watts ÷ bank volts ÷ 0.85, then the first of 10, 20, 30, 40, 60, 80, and 100 A at or above that current. The row 1,900 ÷ 48 ÷ 0.85 is about 46.6 A, so the listed size is 60 A. Accessed Oct 3, 2026.</li>
+</ul>
+<p>The array rows are this page's 0.80 divisor: 6,000 ÷ 4.0 ÷ 0.80 = 1,875 W, printed as ~1,900 W, and 6,000 ÷ 4.8 ÷ 0.80 = 1,562.5 W, printed as ≈ 1,560 W. The 5 kWh bank line is 5 × 2 ÷ 0.85 ≈ 12 kWh, this page's depth of discharge. The 25–35 kWh/day quick answer, the 3,000–4,000 W inverter row, the ~0.3%/°C open-circuit note, and the 20–40 W idle-draw note are this page's examples.</p>
 <p><a href="index.html">← Back to the solar size calculator</a></p>
 </main>
-
 
   <div class="affil" style="border-left:3px solid var(--warn,#f5a623);padding:.85rem 1rem;margin:1.2rem 0">
     <span class="tag" style="display:inline-block;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--warn,#f5a623);border:1px solid var(--warn,#f5a623);border-radius:20px;padding:.05rem .55rem">Affiliate</span>
     <p class="small" style="margin:.4rem 0 0">Shop gear matched to this page: <a class="btn-amz btn-amz-primary" href="https://www.amazon.com/s?k=1000+watt+off+grid+solar+kit&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">system kits on Amazon</a> · <a class="btn-amz" href="https://www.amazon.com/s?k=100ah+lifepo4+battery+12v&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">LiFePO4 on Amazon</a> · <a class="btn-amz" href="https://www.amazon.com/s?k=MPPT+charge+controller&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">MPPT controllers on Amazon</a></p>
   </div>
 <footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
-
-
 
 <section class="faq" style="max-width:760px;margin:3rem auto;padding:0 1rem">
 <h2>Frequently asked questions</h2>

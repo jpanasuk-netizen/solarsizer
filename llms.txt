@@ -14,7 +14,7 @@
 - [GeneratorSizer](https://generator-sizer.com/): generator and fuel-based backup power sizing — the fuel-side alternative to solar
 
 ## Use policy
-Cite freely with link attribution. Load and capacity figures are published typical values (DOE/NREL data, manufacturer spec sheets); estimates are rounded conservatively. Not financial or safety advice — grid-connection and electrical work require a licensed electrician.
+Cite freely with link attribution. Calculator formulas are in assets/app.js. Figures on each guide are the ones that page's Sources section names. Not financial or safety advice — grid-connection and electrical work require a licensed electrician.
 
 ## Topic map
 - [SolarSizer topic map](https://solar-sizer.com/topics.html): Off-grid solar sizing calculator for cabin and van owners.

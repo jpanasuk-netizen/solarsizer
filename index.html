@@ -76,26 +76,6 @@
 {"@context":"https://schema.org","@type":"Organization","name":"Solar Sizer","url":"https://solar-sizer.com","description":"Off-grid solar system sizing calculators.","sameAs":[]}
 </script>
 
-<script id="sources-data" type="application/json">
-{
-  "sources": [
-    {
-      "title": "NLR Solar Resource Data and Tools (formerly NREL)",
-      "url": "https://www.nlr.gov/grid/solar-resource/renewable-resource-data",
-      "date": "2026-10-02"
-    },
-    {
-      "title": "IEEE 1547-2018 Interconnection",
-      "url": "https://standards.ieee.org/ieee/1547/5915/",
-      "date": "2026-10-02"
-    }
-  ]
-}
-</script>
-<script>
-document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getElementById('sources-data').textContent);var s=document.createElement('div');s.className='sources-section';s.innerHTML='<h2 id="sources-heading">Sources & Standards</h2><p>All calculations verified against:</p><ul>'+d.sources.map(x=>'<li><a href="'+x.url+'" target="_blank">'+x.title+'</a></li>').join('')+'</ul><p><button id="cite-toggle">Show Copyable Citations</button></p><div id="cite-output" style="display:none"></div>';var t=document.querySelector('nav')||document.querySelector('footer')||document.body;t.parentNode.insertBefore(s,t);var o=s.querySelector('#cite-toggle'),c=s.querySelector('#cite-output');o.onclick=()=>{c.textContent=d.sources.map(x=>x.title+'. '+x.url+'. Accessed '+x.date).join('\n\n');c.style.display='block';o.style.display='none'};});
-</script>
-<meta name="llms.txt" content="https://solar-sizer.com/sources.json">
 </head>
 <body>
 
@@ -122,7 +102,6 @@ document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getE
   <p style="margin:0 0 .45rem">A minimalist cabin at <strong>3 kWh/day</strong> typically needs about <strong>1,200–1,500 W</strong> of panels in most of the US, paired with a <strong>400–600 Ah 12 V LiFePO4</strong> bank (or 24 V/48 V equivalent) for cloudy days.</p>
   <p style="margin:0">A <strong>200 Ah 12 V</strong> battery (~2,400 Wh) recharges in about a day with roughly <strong>400–600 W</strong> of panels in average sun. Enter your loads below for panel count, bank Ah, inverter, and charge-controller amps.</p>
 </aside>
-
 
 <div id="calc" class="tabs" role="tablist" aria-label="Calculators">
   <button role="tab" aria-selected="true" onclick="showTab('tab-sys', this)">System size</button>
@@ -282,7 +261,7 @@ document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getE
 <tr><td>Induction cooktop (per burner)</td><td class="num">1,500</td><td class="num">0.75</td><td class="num">1,125</td></tr>
 </table>
 </div>
-<p class="small">Draw figures are published manufacturer/DOE typical values. Anything with heat in it (cooking, water heating, space heat) is what blows up solar budgets — propane or wood wins there in 2026 economics.</p>
+<p class="small">Draw figures are the preset rows in <a href="assets/app.js">assets/app.js</a>: watts × hours. Anything with heat in it (cooking, water heating, space heat) is what blows up solar budgets — propane or wood wins there in 2026 economics.</p>
 
 <h2>How many sun hours should you plan for (worst month)?</h2>
 <table>
@@ -333,6 +312,12 @@ document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getE
 <li><a href="how-to-buy-solar-panels.html">How to buy solar panels</a></li>
 <li><a href="how-many-solar-batteries-do-i-need.html">How many solar batteries do I need?</a></li>
 </ul>
+<p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+<h2>Sources</h2>
+<ul>
+<li><a href="assets/app.js">SolarSizer calculator, assets/app.js</a> — the load table is the preset rows (watts × hours): refrigerator 150 W × 8 h = 1,200 Wh, LED lights 80 W × 5 h = 400 Wh, laptop 100 W × 6 h = 600 Wh, water pump 60 W × 0.5 h = 30 Wh, CPAP 40 W × 8 h = 320 Wh, Starlink 60 W × 12 h = 720 Wh, TV 100 W × 4 h = 400 Wh, microwave 1,000 W × 0.25 h = 250 Wh, induction cooktop 1,500 W × 0.75 h = 1,125 Wh. <code>sizeSystem</code> uses daily watt-hours ÷ sun hours ÷ 0.75, rounds array watts up to the next 100 W, and sets bank watt-hours to daily watt-hours × days ÷ depth of discharge. The form opens at 4 sun hours, 2 days, 24 V, and 80% depth of discharge, with a 50% option. <code>sizeController</code> uses array watts ÷ bank volts ÷ 0.85 and the sizes 10, 20, 30, 40, 60, 80, and 100 A. <code>panelsForBattery</code> uses amp-hours × volts ÷ sun hours ÷ 0.85; 200 × 12 ÷ 4.5 ÷ 0.85 is about 627 W, which this page rounds to 630 W. <code>sizeInverter</code> multiplies continuous watts by 1.25 and uses a 3× motor factor and a 4× compressor factor. Accessed Oct 3, 2026.</li>
+</ul>
+<p>The climate sun-hour table, the 3 kWh cabin range of 1,200–1,500 W, the 400–600 Ah bank range, the 400–600 W recharge bracket, and the 1,000–1,500 W and 2,000–3,000 W inverter landings are this page's examples. A 400 W array on the same 2,400 Wh and 0.85 divisor is 2,400 ÷ (400 × 4.5 × 0.85) ≈ 1.57 days, which is the "day and a half" line.</p>
 </main>
 
 <section id="soft-rail" class="panel" aria-label="Related guides and offers" style="margin-top:1.5rem">
@@ -358,7 +343,6 @@ document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getE
   </div>
 </section>
 
-
 <footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
 
 <script src="assets/app.js"></script>
@@ -369,8 +353,6 @@ document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getE
   <a id="amzStickyLink" class="btn-amz btn-amz-primary" href="https://www.amazon.com/s?k=home+tools&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">Shop on Amazon</a>
   <button type="button" class="dismiss" onclick="dismissAmzSticky()" aria-label="Dismiss">Not now</button>
 </div>
-
-
 
 <section class="faq" style="max-width:760px;margin:3rem auto;padding:0 1rem">
 <h2>Frequently asked questions</h2>
