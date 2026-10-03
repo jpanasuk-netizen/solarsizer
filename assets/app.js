@@ -1,6 +1,6 @@
 /* SolarSizer calculators — vanilla JS, no dependencies.
    Solar figures use published NREL sun-hour data, manufacturer panel/battery specs,
-   and standard derating assumptions (75% overall system efficiency). All estimates
+   and NREL PVWatts' default 14% system losses (0.86 derate; PVWatts V5 manual, Table 6). All estimates
    rounded UP to be safe. Matches the GeneratorSizer app pattern. */
 "use strict";
 
@@ -92,9 +92,13 @@ document.addEventListener("input", function(e){
 });
 
 /* ---------- 1. System size ---------- */
-// Array sizing: daily Wh ÷ sun hrs ÷ 0.75 overall efficiency (wiring, controller,
-// battery round-trip, panel heat/soiling), rounded up to the next 100 W.
+// Array sizing: daily Wh ÷ sun hrs ÷ 0.86, rounded up to the next 100 W.
+// 0.86 = 1 − 0.14, NREL PVWatts' default total system losses (soiling, shading, snow,
+// mismatch, wiring, connections, light-induced degradation, nameplate, age, availability).
+// Source: https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf (Table 6). It excludes inverter
+// and battery round-trip losses, which PVWatts does not lump into this figure.
 // Bank sizing: daily Wh × autonomy days ÷ max DoD.
+var DERATE = 0.86; // NREL PVWatts V5 default 14% system losses
 function sizeSystem(){
   if(!loads.length){ alert("Add at least one load first."); return; }
   var sun   = Math.max(1, parseFloat(el("sunHrs").value) || 4);
@@ -109,14 +113,14 @@ function sizeSystem(){
     if(wh > worstWh){ worstWh = wh; worst = l; }
   });
 
-  var arrayW  = ceilTo(dailyWh / sun / 0.75, 100);
+  var arrayW  = ceilTo(dailyWh / sun / DERATE, 100);
   var bankWh  = dailyWh * days / dod;
   var bankAh  = ceilTo(bankWh / sysV, 10);
   var panels300 = Math.ceil(arrayW / 300);
-  var winterArray = ceilTo(dailyWh / 2.5 / 0.75, 100); // 2.5 sun-hr worst-case winter
+  var winterArray = ceilTo(dailyWh / 2.5 / DERATE, 100); // 2.5 sun-hr worst-case winter
 
   var html = '<div class="big">'+fmt(arrayW)+' <span class="unit">watts of solar panels</span></div>'+
-    '<p class="note">Daily use '+fmt(dailyWh)+' Wh · '+sun+' sun hrs/day · 75% system efficiency. Largest single load: '+worst.name+' ('+fmt(worstWh)+' Wh/day).</p>'+
+    '<p class="note">Daily use '+fmt(dailyWh)+' Wh · '+sun+' sun hrs/day · 0.86 derate (NREL PVWatts default 14% system losses). Largest single load: '+worst.name+' ('+fmt(worstWh)+' Wh/day).</p>'+
     '<div class="grid2">'+
       '<div class="stat"><b>'+panels300+'×</b><span>300 W panels to buy ('+fmt(panels300*300)+' W array)</span></div>'+
       '<div class="stat"><b>'+fmt(bankAh)+' Ah</b><span>Battery bank at '+sysV+' V ('+fmt(bankWh)+' Wh usable)</span></div>'+

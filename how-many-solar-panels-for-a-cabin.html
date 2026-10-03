@@ -29,12 +29,12 @@
     {
       "@type": "Question",
       "name": "How many solar panels does a weekend cabin need?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Two to three 200–300 W panels (400–500 W total) cover a weekend cabin running lights, device charging, a water pump, and internet — about 1,450 Wh/day ÷ 4 sun hours ÷ 0.75 efficiency ≈ 500 W of array. Pair it with a 24 V 100 Ah LiFePO4 battery and a 1,000 W pure sine inverter." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Two to three 200–300 W panels (400–500 W total) cover a weekend cabin running lights, device charging, a water pump, and internet — about 1,450 Wh/day ÷ 4 sun hours ÷ 0.86 (NREL PVWatts' default 14% system losses) ≈ 422 W, which the calculator prints as 500 W of array. Pair it with a 24 V 100 Ah LiFePO4 battery and a 1,000 W pure sine inverter." }
     },
     {
       "@type": "Question",
       "name": "How many solar panels for a full-time cabin with a refrigerator?",
-      "acceptedAnswer": { "@type": "Answer", "text": "About five 300 W panels (1,300–1,500 W total). Adding an Energy Star fridge brings daily use to roughly 3,800 Wh/day; at 4 sun hours and 0.75 system efficiency that needs ~1,300 W of array, rounded up for winter. Battery bank: 400 Ah at 24 V LiFePO4 for two days of autonomy." }
+      "acceptedAnswer": { "@type": "Answer", "text": "About five 300 W panels (1,300–1,500 W total). Adding an Energy Star fridge brings daily use to roughly 3,800 Wh/day; at 4 sun hours and a 0.86 derate the calculator prints 1,200 W (3,800 ÷ 4 ÷ 0.86 ≈ 1,105 W); the five-panel pick carries margin above that for winter. Battery bank: 400 Ah at 24 V LiFePO4 for two days of autonomy." }
     },
     {
       "@type": "Question",
@@ -62,7 +62,7 @@
 <h1>How many solar panels do I need for a cabin?</h1>
 <p class="sub">Panel counts by how you actually use the cabin — weekend, full-time, or homestead — with the daily watt-hour math behind each number.</p>
 
-<div class="answer-box"><strong>Quick answer:</strong> A <strong>weekend cabin needs 2–3 panels (400–500 W)</strong>, a <strong>full-time cabin with a fridge needs about 5 (1,300–1,500 W)</strong>, and a <strong>small homestead with a well pump and workshop needs 10+ (3,000 W)</strong>. The number comes from daily watt-hours ÷ sun hours ÷ 0.75 — not from cabin square footage.</div>
+<div class="answer-box"><strong>Quick answer:</strong> A <strong>weekend cabin needs 2–3 panels (400–500 W)</strong>, a <strong>full-time cabin with a fridge needs about 5 (1,300–1,500 W)</strong>, and a <strong>small homestead with a well pump and workshop needs 10+ (3,000 W)</strong>. The number comes from daily watt-hours ÷ sun hours ÷ 0.86 — not from cabin square footage.</div>
 
 <h2>Panel count by cabin type</h2>
 <div class="tbl-wrap">
@@ -73,10 +73,10 @@
 <tr><td>Homestead (+ well pump, workshop)</td><td class="num">~8,000 Wh</td><td class="num">3,000 W</td><td class="num">10</td><td class="num">48 V 400 Ah LiFePO4</td><td class="num">4,000–5,000 W</td></tr>
 </table>
 </div>
-<p class="small">Assumes 4 peak sun hours and 0.75 system efficiency (wiring, controller, battery round-trip, panel heat/dust). Batteries sized for 1–2 days autonomy at 80% depth of discharge.</p>
+<p class="small">Array sizes are this page's picks. At 4 peak sun hours, the calculator's formula (daily Wh ÷ 4 ÷ 0.86, rounded up to the next 100 W) prints 500 W, 1,200 W, and 2,400 W for these three rows; the full-time and homestead picks carry margin above that. The 0.86 is <a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">NREL PVWatts' default 14% system losses</a> and does not include inverter or battery round-trip losses. Batteries sized for 1–2 days autonomy at 80% depth of discharge.</p>
 
 <h2>The math, once</h2>
-<p>Square footage doesn't matter — usage does. Sum your daily watt-hours (a fridge cycles ~1,200 Wh/day, LED lights 10 W × 5 hrs each, a water pump ~100 Wh/day for a small cabin), then: array watts = daily Wh ÷ worst-month sun hours ÷ 0.75. Panels = array watts ÷ panel watts, rounded up. Full worked examples live in our <a href="off-grid-cabin-solar.html">off-grid cabin solar guide</a>. The flat daily question at 5 kWh is <a href="what-size-solar-system-for-5-kwh-per-day.html">what size solar system for 5 kWh per day</a>.</p>
+<p>Square footage doesn't matter — usage does. Sum your daily watt-hours (a fridge cycles ~1,200 Wh/day, LED lights 10 W × 5 hrs each, a water pump ~100 Wh/day for a small cabin), then: array watts = daily Wh ÷ worst-month sun hours ÷ 0.86. Panels = array watts ÷ panel watts, rounded up. Full worked examples live in our <a href="off-grid-cabin-solar.html">off-grid cabin solar guide</a>. The flat daily question at 5 kWh is <a href="what-size-solar-system-for-5-kwh-per-day.html">what size solar system for 5 kWh per day</a>.</p>
 
 <h2>What breaks the "2 panel" answer</h2>
 <p><strong>A fridge</strong> roughly triples daily use — that's the line between weekend and full-time. <strong>A well pump</strong> doesn't add much daily energy (~500–1,000 Wh/day) but demands a big inverter for its 2–3× startup surge, which is why the homestead tier jumps to a 4,000+ W inverter. <strong>Electric cooking, water heating, or space heat</strong> add 4–10+ kWh/day each — keep those on propane or wood at every tier, or the panel count doubles for loads a $30 propane burner covers.</p>
@@ -97,7 +97,8 @@
 <p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
 <h2>Sources</h2>
 <ul>
-<li><a href="assets/app.js">SolarSizer calculator, assets/app.js</a> — array watts = daily watt-hours ÷ sun hours ÷ 0.75. The refrigerator preset is 150 W × 8 h = 1,200 Wh, the "~1,200 Wh/day" fridge line. The form's lithium depth of discharge is 80%. Accessed Oct 3, 2026.</li>
+<li><a href="assets/app.js">SolarSizer calculator, assets/app.js</a> — array watts = daily watt-hours ÷ sun hours ÷ 0.86. The refrigerator preset is 150 W × 8 h = 1,200 Wh, the "~1,200 Wh/day" fridge line. The form's lithium depth of discharge is 80%. Accessed Oct 3, 2026.</li>
+<li><a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">NREL PVWatts Version 5 Manual, A. Dobos, September 4, 2014</a> — Table 6, 14% default system losses; 1 − 0.14 = 0.86. Accessed Oct 3, 2026.</li>
 </ul>
 <p>The 1,450, 3,800, and 8,000 Wh/day rows, the inverter watt picks, the dollar ranges, the $30 propane-burner line, and the 1.5–3 winter sun-hour band are this page's examples. LED lights at 10 W × 5 h and a water pump at ~100 Wh/day are also this page's examples; the calculator presets are 80 W for the cabin light row and 60 W × 0.5 h for the pump.</p>
 <p><a href="index.html">← Back to the solar size calculator</a></p>

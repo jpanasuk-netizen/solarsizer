@@ -65,10 +65,10 @@
 <div class="answer-box"><strong>Quick answer:</strong> 400 W of solar runs a weekend cabin&#x27;s lights, pump, and charging with a 24V LiFePO4 bank — full-time living in the same cabin starts around 1,300–1,500 W. Run the calculator below for your exact load.</div>
 
 <h2>The formula, once</h2>
-<p>Everything flows from one number: <strong>daily watt-hours</strong>. Array watts = daily watt-hours ÷ worst-month sun hours ÷ 0.75 (wiring, controller, battery round-trip, panel heat and dust). Bank watt-hours = daily Wh × days of autonomy ÷ max depth of discharge. LiFePO4's 80% usable depth is why it beats AGM's 50% on paper even before cycle life. Run your own numbers in the <a href="index.html#calc">solar size calculator</a>.</p>
+<p>Everything flows from one number: <strong>daily watt-hours</strong>. Array watts = daily watt-hours ÷ worst-month sun hours ÷ 0.86 (<a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">NREL PVWatts' default 14% system losses</a>: soiling, shading, mismatch, wiring, availability; not inverter or battery losses). Bank watt-hours = daily Wh × days of autonomy ÷ max depth of discharge. LiFePO4's 80% usable depth is why it beats AGM's 50% on paper even before cycle life. Run your own numbers in the <a href="index.html#calc">solar size calculator</a>.</p>
 
 <h2>Example 1 — Weekend cabin</h2>
-<p>Loads: lights, device charging, water pump, internet ≈ 1,450 Wh/day. Array: 1,450 ÷ 4 sun hrs ÷ 0.75 ≈ <strong>500 W</strong> (2×250 W). Bank: one day autonomy ÷ 80% DoD → <strong>24 V 100 Ah LiFePO4</strong>. Inverter: no big motors → <strong>1,000 W pure sine</strong>. Controller: 500 ÷ 24 ÷ 0.85 ≈ 25 A → <strong>30 A MPPT</strong>. DIY parts: ~$1,200–1,800.</p>
+<p>Loads: lights, device charging, water pump, internet ≈ 1,450 Wh/day. Array: 1,450 ÷ 4 sun hrs ÷ 0.86 ≈ 422 W, printed as <strong>500 W</strong> (2×250 W). Bank: one day autonomy ÷ 80% DoD → <strong>24 V 100 Ah LiFePO4</strong>. Inverter: no big motors → <strong>1,000 W pure sine</strong>. Controller: 500 ÷ 24 ÷ 0.85 ≈ 25 A → <strong>30 A MPPT</strong>. DIY parts: ~$1,200–1,800.</p>
 
 <h2>Example 2 — Full-time cabin (fridge, propane cooking)</h2>
 <p>Add an Energy Star fridge (1,200 Wh/day cycled), TV, fan, occasional washing machine ≈ <strong>3,800 Wh/day</strong>. Array: ≈ <strong>1,300–1,500 W</strong> (5×300 W). Bank: 2 days autonomy ÷ 80% DoD → <strong>400 Ah at 24 V LiFePO4</strong>. Inverter: fridge surge + microwave → <strong>2,000 W pure sine</strong>. Controller: ≈ 74 A → <strong>80 A MPPT</strong> (or 2×40 A). DIY parts: ~$4,000–6,500. Cooking and water heating stay on propane — electrifying them adds ~4 kWh/day and thousands in panels.</p>
@@ -84,9 +84,10 @@
 <p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
 <h2>Sources</h2>
 <ul>
-<li><a href="assets/app.js">SolarSizer calculator, assets/app.js</a> — array watts = daily watt-hours ÷ sun hours ÷ 0.75, and controller amps = array watts ÷ bank volts ÷ 0.85, then the first of 10, 20, 30, 40, 60, 80, and 100 A at or above that current. Weekend: 1,450 ÷ 4 ÷ 0.75 ≈ 483 W, printed as 500 W; 500 ÷ 24 ÷ 0.85 ≈ 24.5 A, so 30 A. The form's depth-of-discharge options are 80% and 50%. Accessed Oct 3, 2026.</li>
+<li><a href="assets/app.js">SolarSizer calculator, assets/app.js</a> — array watts = daily watt-hours ÷ sun hours ÷ 0.86, and controller amps = array watts ÷ bank volts ÷ 0.85, then the first of 10, 20, 30, 40, 60, 80, and 100 A at or above that current. Weekend: 1,450 ÷ 4 ÷ 0.86 ≈ 422 W, printed as 500 W; 500 ÷ 24 ÷ 0.85 ≈ 24.5 A, so 30 A. The form's depth-of-discharge options are 80% and 50%. Accessed Oct 3, 2026.</li>
+<li><a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">NREL PVWatts Version 5 Manual, A. Dobos, September 4, 2014</a> — Table 6, 14% default system losses; 1 − 0.14 = 0.86. Accessed Oct 3, 2026.</li>
 </ul>
-<p>The 1,450, 3,800, and 8,000 Wh/day load totals, the inverter watt picks, the dollar ranges, and the propane and wood notes are this page's examples. Full-time 3,800 ÷ 4 ÷ 0.75 ≈ 1,267 W sits inside the printed 1,300–1,500 W band. Homestead 8,000 ÷ 4 ÷ 0.75 ≈ 2,667 W; the page prints ≈ 3,000 W.</p>
+<p>The 1,450, 3,800, and 8,000 Wh/day load totals, the inverter watt picks, the dollar ranges, and the propane and wood notes are this page's examples. Full-time 3,800 ÷ 4 ÷ 0.86 ≈ 1,105 W, which the calculator prints as 1,200 W; the page's 1,300–1,500 W band is above that. Homestead 8,000 ÷ 4 ÷ 0.86 ≈ 2,326 W, which the calculator prints as 2,400 W; the page prints ≈ 3,000 W.</p>
 <p><a href="index.html">← Back to the solar size calculator</a></p>
 </main>
 

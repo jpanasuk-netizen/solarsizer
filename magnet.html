@@ -79,7 +79,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:v
 </div>
 <p>People shop panels first. That's backwards. A microwave for 15 minutes is 250 Wh. An induction burner for 45 minutes is 1,125 Wh. Heat is what blows solar budgets. Propane or wood wins there in 2026 economics.</p>
 <div class="sheet">
-  <strong>Use it in 10 minutes.</strong> List every load × hours. Sum Wh/day. Array watts ≈ daily Wh ÷ sun hours ÷ 0.75. Bank Wh ≈ daily Wh × days of autonomy ÷ DoD (0.80 LiFePO4, 0.50 AGM).
+  <strong>Use it in 10 minutes.</strong> List every load × hours. Sum Wh/day. Array watts ≈ daily Wh ÷ sun hours ÷ 0.86 (NREL PVWatts' default 14% system losses). Bank Wh ≈ daily Wh × days of autonomy ÷ DoD (0.80 LiFePO4, 0.50 AGM).
 </div>
 <h2>Typical daily loads</h2>
 <table>
@@ -111,7 +111,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:v
 <p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
 <h2>Sources</h2>
 <ul>
-<li><a href="https://solar-sizer.com/assets/app.js">SolarSizer calculator, assets/app.js</a> — the load table is the preset rows (watts × hours), the same rows as the calculator. Array watts use daily watt-hours ÷ sun hours ÷ 0.75. Bank watt-hours use daily watt-hours × days ÷ depth of discharge. The form's depth-of-discharge options are 0.80 and 0.50. Accessed Oct 3, 2026.</li>
+<li><a href="https://solar-sizer.com/assets/app.js">SolarSizer calculator, assets/app.js</a> — the load table is the preset rows (watts × hours), the same rows as the calculator. Array watts use daily watt-hours ÷ sun hours ÷ 0.86, from the 14% default losses in the <a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">NREL PVWatts Version 5 manual</a>. Bank watt-hours use daily watt-hours × days ÷ depth of discharge. The form's depth-of-discharge options are 0.80 and 0.50. Accessed Oct 3, 2026.</li>
 </ul>
 <p>The climate sun-hour table and the 3 kWh/day cabin line (1,200–1,500 W of panels, 400–600 Ah at 12 V) are this page's examples.</p>
 <footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
