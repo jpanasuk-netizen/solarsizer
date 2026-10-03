@@ -59,7 +59,7 @@
 <p>The calculator on the homepage runs in your browser (<code>assets/app.js</code>). The values you enter — loads, sun hours, battery type — are not transmitted to or stored on a server. They exist only in that browser session. There are no accounts, and the calculator does not ask for your name or email.</p>
 
 <h2>What the pages load</h2>
-<p>Pages load files from this same site: <code>assets/styles.css</code> on every styled page, and on the homepage <code>assets/app.js</code>, <code>assets/monetization.js</code>, and <code>assets/magnet-cta.js</code>. The topic map also loads <code>assets/magnet-cta.js</code>. These pages do not load Google AdSense, an analytics script, or any other third-party script.</p>
+<p>Pages load files from this same site: <code>assets/styles.css</code> on every styled page, and on the homepage <code>assets/app.js</code>, <code>assets/monetization.js</code>, and <code>assets/magnet-cta.js</code>. The topic map also loads <code>assets/magnet-cta.js</code>. The HTML does not load Google AdSense or an analytics script. The domain is served through Cloudflare, which rewrites <code>mailto</code> links and loads its email-decode script on those pages.</p>
 <p><code>assets/monetization.js</code> stores one <code>sessionStorage</code> value in your browser if you dismiss the Amazon bar, so the bar stays dismissed for that browser session. That value is not sent to us.</p>
 <p><code>assets/magnet-cta.js</code> adds a link to the cabin load sheet on this site and a link to a TikTok profile. Nothing is sent unless you follow a link.</p>
 
