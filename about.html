@@ -3,64 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About SolarSizer — Free Off-Grid Solar Calculator</title>
-<meta name="description" content="Who runs SolarSizer, how the sizing formulas work, and how the free solar calculator is funded.">
+<title>About &amp; how this site is built — SolarSizer</title>
+<meta name="description" content="Who owns SolarSizer, how the calculators and pages are made, and why the site exists.">
 <link rel="canonical" href="https://solar-sizer.com/about.html">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="shortcut icon" href="assets/favicon.ico">
 <meta name="robots" content="index,follow">
-<meta property="og:title" content="About SolarSizer — Free Off-Grid Solar Calculator">
-<meta property="og:description" content="Who runs SolarSizer, how the sizing formulas work, and how the free solar calculator is funded.">
+<meta property="og:title" content="About &amp; how this site is built — SolarSizer">
+<meta property="og:description" content="Who owns SolarSizer, how the calculators and pages are made, and why the site exists.">
 <meta property="og:url" content="https://solar-sizer.com/about.html">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://solar-sizer.com/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="About SolarSizer — Free Off-Grid Solar Calculator">
-<meta name="twitter:description" content="Who runs SolarSizer, how the sizing formulas work, and how the free solar calculator is funded.">
+<meta name="twitter:title" content="About &amp; how this site is built — SolarSizer">
+<meta name="twitter:description" content="Who owns SolarSizer, how the calculators and pages are made, and why the site exists.">
 <meta name="twitter:image" content="https://solar-sizer.com/assets/og-image.png">
 <link rel="stylesheet" href="assets/styles.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "About SolarSizer — Free Off-Grid Solar Calculator",
+  "@type": "AboutPage",
+  "name": "About & how this site is built",
   "url": "https://solar-sizer.com/about.html",
-  "applicationCategory": "UtilitiesApplication",
-  "operatingSystem": "Any",
-  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
-  "description": "Who runs SolarSizer, how the sizing formulas work, and how the free solar calculator is funded."
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{"@type": "Question", "name": "Is this calculator free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 free to use, no signup, no email required."}}, {"@type": "Question", "name": "How accurate is the estimate?", "acceptedAnswer": {"@type": "Answer", "text": "Estimates follow industry-standard sizing rules and common safety margins. Always confirm with a licensed professional for final sizing."}}, {"@type": "Question", "name": "Can I use this on mobile?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 the page is fully responsive and works on phones, tablets, and desktop."}}]
-}
-</script>
-
-<script id="sources-data" type="application/json">
-{
-  "sources": [
-    {
-      "title": "NLR Solar Resource Data and Tools (formerly NREL)",
-      "url": "https://www.nlr.gov/grid/solar-resource/renewable-resource-data",
-      "date": "2026-10-02"
-    },
-    {
-      "title": "IEEE 1547-2018 Interconnection",
-      "url": "https://standards.ieee.org/ieee/1547/5915/",
-      "date": "2026-10-02"
+  "dateModified": "2026-10-03",
+  "description": "Who owns SolarSizer, how the calculators and pages are made, and why the site exists.",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "SolarSizer",
+    "url": "https://solar-sizer.com/",
+    "email": "jpanasuk@gmail.com",
+    "founder": {
+      "@type": "Person",
+      "name": "Jeremy Panasuk",
+      "email": "jpanasuk@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "New Auburn",
+        "addressRegion": "Wisconsin"
+      }
     }
-  ]
+  }
 }
 </script>
-<script>
-document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getElementById('sources-data').textContent);var s=document.createElement('div');s.className='sources-section';s.innerHTML='<h2 id="sources-heading">Sources & Standards</h2><p>All calculations verified against:</p><ul>'+d.sources.map(x=>'<li><a href="'+x.url+'" target="_blank">'+x.title+'</a></li>').join('')+'</ul><p><button id="cite-toggle">Show Copyable Citations</button></p><div id="cite-output" style="display:none"></div>';var t=document.querySelector('nav')||document.querySelector('footer')||document.body;t.parentNode.insertBefore(s,t);var o=s.querySelector('#cite-toggle'),c=s.querySelector('#cite-output');o.onclick=()=>{c.textContent=d.sources.map(x=>x.title+'. '+x.url+'. Accessed '+x.date).join('\n\n');c.style.display='block';o.style.display='none'};});
-</script>
-<meta name="llms.txt" content="https://solar-sizer.com/sources.json">
 </head>
 <body>
 
@@ -75,26 +61,20 @@ document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getE
 </header>
 
 <main>
-<h1>About SolarSizer</h1>
-<p class="sub">Free, no-signup off-grid solar sizing tools.</p>
-<p>SolarSizer exists to answer one question quickly: <strong>what size off-grid solar system do I actually need?</strong> Enter your daily loads and the calculator returns panel wattage and count, battery bank amp-hours, inverter rating, and charge controller amps &mdash; using the same published sizing formulas installers and manufacturer guides teach, with worst-month sun hours and derating applied.</p>
-<p>The sizing rules behind every answer are the standard ones: daily watt-hours &divide; sun hours &divide; ~0.75 system efficiency for the array, and days of autonomy &times; depth of discharge for the battery bank. Where a number depends on your climate or equipment, we show the formula and the range instead of pretending one answer fits every site. Our reference tables use published manufacturer and DOE typical values &mdash; we don&rsquo;t invent specs, and we tell you when a decision needs your own site data.</p>
-<p>SolarSizer is built and maintained by an agent-operated web studio: calculation, content drafting, and quality checks are handled by automated agents, and every published page is reviewed and approved by a human before it goes live. That means fast, regularly updated tools with a human accountable for accuracy. If you spot an error, <a href="contact.html">tell us</a> &mdash; corrections go straight to the reviewer.</p>
-<p>The site is free to use, requires no account, and runs no tracking beyond basic ad personalization (see our <a href="privacy.html">privacy policy</a>). It is supported by advertising and, occasionally, contextual affiliate links to relevant components; affiliate relationships never influence the sizing math.</p>
-<p>SolarSizer is part of a small family of sibling calculators &mdash; including <a href="https://battery-bank-sizer.com/" rel="noopener">Battery Bank Sizer</a> for the storage side and <a href="https://welding-calculator.com/" rel="noopener">WeldingCalc</a> for welding amperage &mdash; all built on the same principle: transparent formulas, honest ranges, no signup.</p>
+<h1>About &amp; how this site is built</h1>
+<p class="sub">SolarSizer is a free off-grid solar sizing calculator at solar-sizer.com.</p>
+
+<h2>Who</h2>
+<p>Built and owned by Jeremy Panasuk, New Auburn, Wisconsin. Contact: <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>. Jeremy is a data/software person, not a licensed electrician or solar installer. These are planning tools, not professional advice.</p>
+
+<h2>How</h2>
+<p>The calculators use published rules of thumb from the sources listed on each page. Page text is drafted with AI agents (Cursor and local models) from those sources. Formulas are checked against the cited sources. If you spot an error, email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a> and it gets fixed.</p>
+
+<h2>Why</h2>
+<p>The site earns money from Amazon affiliate links. That doesn't change the math.</p>
 </main>
 
-<footer>SolarSizer &middot; <a href="index.html">solar size calculator</a> &middot; <a href="about.html">About</a> &middot; <a href="contact.html">Contact</a> &middot; <a href="privacy.html">Privacy</a> &middot; pages may contain affiliate links</footer>
-
-
-
-<section class="faq" style="max-width:760px;margin:3rem auto;padding:0 1rem">
-<h2>Frequently asked questions</h2>
-<details><summary>Is this calculator free?</summary><p>Yes — free to use, no signup, no email required.</p></details>
-<details><summary>How accurate is the estimate?</summary><p>Estimates follow industry-standard sizing rules and common safety margins. Always confirm with a licensed professional for final sizing.</p></details>
-<details><summary>Can I use this on mobile?</summary><p>Yes — the page is fully responsive and works on phones, tablets, and desktop.</p></details>
-<details><summary>Where does the math come from?</summary><p>Formulas are shown inline on the result panel so you can verify each step yourself.</p></details>
-</section>
+<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
 
 <nav class="seo-nav" aria-label="Related calculators" style="margin-top:2rem;padding:1rem;border-top:1px solid #ccc;font-size:.9rem">
 <strong>More free calculators:</strong><br>

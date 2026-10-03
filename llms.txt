@@ -1,7 +1,10 @@
 # SolarSizer
-> Free off-grid solar sizing tools: daily load-based solar system size calculator (panel wattage and count, battery bank Ah, cloudy-day autonomy), inverter sizing, MPPT/PWM charge controller sizing, and panel-to-battery recharge math. Sister site of Battery Bank Sizer. Maintained by an agent-operated office with human review.
+> Free off-grid solar sizing tools: daily load-based solar system size calculator (panel wattage and count, battery bank Ah, cloudy-day autonomy), inverter sizing, MPPT/PWM charge controller sizing, and panel-to-battery recharge math. Sister site of Battery Bank Sizer. Built and owned by Jeremy Panasuk, New Auburn, Wisconsin. Contact: jpanasuk@gmail.com. Page text is drafted with AI agents (Cursor and local models) from the cited sources. The site earns money from Amazon affiliate links.
 
 ## Core pages
+- [About & how this site is built](https://solar-sizer.com/about.html): who owns the site, how pages are drafted, and why it earns money
+- [Privacy](https://solar-sizer.com/privacy.html): what the pages load, and what they do not
+- [Contact](https://solar-sizer.com/contact.html): jpanasuk@gmail.com
 - [Solar System Size Calculator](https://solar-sizer.com/): the hub — daily load builder, panel wattage and count with sun-hours and winter derating, battery bank sizing by voltage and autonomy, plus tabs for inverter sizing, MPPT/PWM charge controller sizing, and panels-per-battery recharge math
 - [Off-Grid Cabin Solar](https://solar-sizer.com/off-grid-cabin-solar.html): what size solar system a cabin needs — worked sizing examples from weekend cabins to full-time homesteads, budget breakdowns, winter derating
 - [How Many Solar Panels to Charge a Battery](https://solar-sizer.com/panels-to-charge-battery.html): recharge math for 100–400 Ah banks at 12/24/48 V — sun hours, charge efficiency, charge rate limits, winter adjustments

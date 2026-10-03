@@ -1,0 +1,20 @@
+# GitHub Pages builds this repo with Jekyll (no .nojekyll file).
+# Keep repo-internal docs and scripts out of the published site.
+# HTML pages have no front matter and must be copied unchanged:
+# do not add a theme, a layout, or Liquid processing.
+exclude:
+  - README.md
+  - LAUNCH_CHECKLIST.md
+  - smoke-test.js
+  - test
+  - tests
+  - node_modules
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - .sass-cache
+  - .jekyll-cache
+  - gemfiles
+  - "*.md"
+  - "*.markdown"
+  - "*.yaml"
