@@ -37,3 +37,10 @@ Cite freely with link attribution. Load and capacity figures are published typic
 - [Solar for a refrigerator](https://solar-sizer.com/what-size-solar-system-for-refrigerator.html): Battle Born's 500 Wh example, with Honda and Champion running watts kept as context.
 - [Solar for a CPAP](https://solar-sizer.com/what-size-solar-system-for-cpap.html): Champion's 30–120 W range times an example 8-hour night.
 - [Solar to charge an electric car](https://solar-sizer.com/what-size-solar-system-for-electric-car.html): 2025 fueleconomy.gov kWh/100 mi for six EVs at an example 30 miles/day.
+- [How solar panels work](https://solar-sizer.com/how-do-solar-panels-work.html): DOE's description of a PV cell, then Battle Born's 2,400 Wh through this site's sizeSystem (800 W, 500 Ah at 12 V, 80 A controller).
+- [How to mount solar panels](https://solar-sizer.com/how-to-mount-solar-panels.html): DOE south-at-latitude orientation and Canadian Solar's clearance, bolting, and professional-engineer requirements.
+- [How to fuse a solar panel array](https://solar-sizer.com/how-to-fuse-a-solar-panel-array.html): Canadian Solar's two-string rule, with CS6A-220M Isc 9.31 A and a 15 A maximum series fuse.
+- [How to charge LiFePO4 with solar](https://solar-sizer.com/how-to-charge-lifepo4-with-solar.html): BB10012i charge profile set next to an 80 A controller result on one battery's 50 A max.
+- [Solar panel degradation](https://solar-sizer.com/solar-panel-degradation.html): Jordan and Kurtz median 0.5%/year and mean 0.8%/year, applied as an illustration to an exact 800 W result.
+- [How to buy solar panels](https://solar-sizer.com/how-to-buy-solar-panels.html): CS6A-220M nameplate watts versus the calculator's 800 W, four modules to cover it.
+- [How many solar batteries](https://solar-sizer.com/how-many-solar-batteries-do-i-need.html): 2,400 Wh as 4 batteries in Battle Born's two-day method and 5 at this calculator's 80% depth of discharge.

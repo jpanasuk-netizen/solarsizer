@@ -31,7 +31,7 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://solar-sizer.com/agm-vs-lithium-battery.html</loc><lastmod>2026-09-17</lastmod>
+    <loc>https://solar-sizer.com/agm-vs-lithium-battery.html</loc><lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -101,7 +101,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://solar-sizer.com/what-size-solar-system-for-refrigerator.html</loc><lastmod>2026-10-02</lastmod>
+    <loc>https://solar-sizer.com/what-size-solar-system-for-refrigerator.html</loc><lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -124,5 +124,40 @@
     <loc>https://solar-sizer.com/privacy.html</loc><lastmod>2026-10-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://solar-sizer.com/how-do-solar-panels-work.html</loc><lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://solar-sizer.com/how-to-mount-solar-panels.html</loc><lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://solar-sizer.com/how-to-fuse-a-solar-panel-array.html</loc><lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://solar-sizer.com/how-to-charge-lifepo4-with-solar.html</loc><lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://solar-sizer.com/solar-panel-degradation.html</loc><lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://solar-sizer.com/how-to-buy-solar-panels.html</loc><lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://solar-sizer.com/how-many-solar-batteries-do-i-need.html</loc><lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solar Panel Degradation: 0.5% Median, and an 800 W Array With No Cushion</title>
+<meta name="description" content="Jordan and Kurtz report a median degradation rate of 0.5% per year and a mean of 0.8% per year across 1,920 rates. An array that the calculator lands on exactly 800 W has no rounding left for that decline.">
+<link rel="canonical" href="https://solar-sizer.com/solar-panel-degradation.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Solar Panel Degradation: 0.5% Median, and an 800 W Array With No Cushion">
+<meta property="og:description" content="Jordan and Kurtz report a median degradation rate of 0.5% per year and a mean of 0.8% per year across 1,920 rates. An array that the calculator lands on exactly 800 W has no rounding left for that decline.">
+<meta property="og:url" content="https://solar-sizer.com/solar-panel-degradation.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://solar-sizer.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Solar Panel Degradation: 0.5% Median, and an 800 W Array With No Cushion">
+<meta name="twitter:description" content="Jordan and Kurtz report a median degradation rate of 0.5% per year and a mean of 0.8% per year across 1,920 rates. An array that the calculator lands on exactly 800 W has no rounding left for that decline.">
+<meta name="twitter:image" content="https://solar-sizer.com/assets/og-image.png">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Solar Panel Degradation",
+  "description": "Jordan and Kurtz report a median degradation rate of 0.5% per year and a mean of 0.8% per year across 1,920 rates. An array that the calculator lands on exactly 800 W has no rounding left for that decline.",
+  "url": "https://solar-sizer.com/solar-panel-degradation.html",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://solar-sizer.com/solar-panel-degradation.html"
+  },
+  "datePublished": "2026-10-03",
+  "dateModified": "2026-10-03",
+  "author": {
+    "@type": "Organization",
+    "name": "SolarSizer"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SolarSizer",
+    "url": "https://solar-sizer.com"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://solar-sizer.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Questions",
+      "item": "https://solar-sizer.com/topics.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Solar Panel Degradation",
+      "item": "https://solar-sizer.com/solar-panel-degradation.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What degradation rates do Jordan and Kurtz report?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The conclusion of NREL/JA-5200-51664 states a mean of 0.8% per year and a median of 0.5% per year. The histogram uses 1,920 reported rates, and 78% of the data are below 1% per year. Those long-term rates exclude short-term light-induced degradation. The authors say linearity and the precise impact of climate were not satisfactorily answered."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is left of an exact 800 W calculator result after 25 years at 0.5% per year?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If the 0.5% per year median is compounded constantly, 0.995 to the 25th is 0.88222, and 800 \u00d7 0.88222 = 705.78 W. The same 2,400 Wh at 4 sun hours still calculates to 800 W. The compounding is an illustration, because the paper says linearity is not settled."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does the 500 Wh case still clear its un-rounded watts at year 25?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "500 \u00f7 4 \u00f7 0.75 = 166.67 W, and the calculator rounds up to 200 W. At the same constant 0.5% per year, 200 \u00d7 0.88222 = 176.44 W after 25 years. In that illustration, year 36 is 166.98 W and year 37 is 166.14 W."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">SolarSizer</a>
+  <nav aria-label="Site">
+    <a href="index.html#calc">Calculator</a>
+    <a href="how-many-solar-panels.html">Panel count</a>
+    <a href="what-size-solar-system.html">System size</a>
+    <a href="off-grid-cabin-solar.html">Cabin solar</a>
+    <a href="topics.html">Topics</a>
+  </nav>
+</header>
+<main>
+<h1>Solar Panel Degradation</h1>
+<p class="small">Built by <a href="/about.html">Jeremy Panasuk</a>. Published October 3, 2026.</p>
+
+<p class="sub">The rates are from an NREL review of published field measurements. The wattage they are applied to is this site's calculator. The straight-line compound is an illustration, because the review says linearity is not settled.</p>
+<div class="answer-box"><strong>The review's summary:</strong> Jordan and Kurtz, NREL/JA-5200-51664 (June 2012), assembled nearly 2,000 degradation rates for flat-plate modules and systems. The conclusion states a mean of 0.8% per year and a median of 0.5% per year. In the histogram, 78% of the data are below 1% per year, and the count of reported rates is 1,920. Long-term rates in that histogram exclude short-term light-induced degradation. The authors say a 20% decline is typically considered a failure, and that there is no consensus on that definition.</div>
+<h2>What they would not claim</h2>
+<p>The conclusion says that linearity, and the precise impact of climate, have not been satisfactorily answered. The introduction says a higher degradation rate means less energy later, and that a wrong rate becomes financial risk. This page uses the median and the mean as published summary statistics. It does not turn them into a warranty, a climate correction, or a forecast for one brand of module.</p>
+<h2>An 800 W result with nothing left to give</h2>
+<p><a href="https://battlebornbatteries.com/blogs/academy/how-to-size-a-deep-cycle-battery-bank-the-battle-born-educational-series">Battle Born's 2,400 Wh</a> example, at 4 sun hours, goes through <code>sizeSystem</code> as 2,400 ÷ 4 ÷ 0.75 = 800 W. Eight hundred is already a multiple of 100, so the round-up to the next 100 W adds nothing. The array the calculator prints is the array the day's load asked for, once the 0.75 factor is included.</p>
+<p>Apply the median 0.5% per year as a constant compound, which is the illustration the paper's own caveat limits: the remaining fraction after 25 years is 0.995<sup>25</sup> = 0.88222. Then 800 × 0.88222 = 705.78 W. The same day's 2,400 Wh still wants 800 W at 4 sun hours. The gap from 705.78 W back to 800 W is the cushion the rounding step did not create.</p>
+<p>The mean rate in the same paper is 0.8% per year. Held constant, 0.992<sup>25</sup> = 0.81807, and 800 × 0.81807 = 654.46 W. A 20% decline, the figure the paper says is typically called a failure, would leave 640 W. Both illustrated 25-year results are still above 640 W. They are both below the 800 W this particular load still divides out to. <a href="https://www.energy.gov/eere/solar/solar-photovoltaic-system-design-basics">DOE</a> separately says an inverter is expected to be replaced at least once in a 25-year array life. That replacement is a balance-of-system event, not the module median.</p>
+<h2>Where rounding does leave a cushion</h2>
+<p>The refrigerator example on this site is <a href="https://battlebornbatteries.com/blogs/academy/how-to-size-a-deep-cycle-battery-bank-the-battle-born-educational-series">100 W × 5 h = 500 Wh</a>. At 4 sun hours, 500 ÷ 4 ÷ 0.75 = 166.67 W, and the calculator rounds that up to 200 W. The same 0.5% per year illustration leaves 200 × 0.88222 = 176.44 W after 25 years, which is still above 166.67 W. Held to the same constant rate, year 36 is 200 × 0.995<sup>36</sup> = 166.98 W, and year 37 is 166.14 W. Year 37 is the first year that illustration falls under the un-rounded 166.67 W. The paper's statement that linearity is unsettled applies to every one of those years. The <a href="what-size-solar-system-for-refrigerator.html">refrigerator page</a> keeps the 500 Wh label as an example, not a meter reading.</p>
+<p>A cabin that sizes to winter sun hours is already buying the larger of the two lines in <code>sizeSystem</code>. For 2,400 Wh that winter line is 1,300 W, because 2,400 ÷ 2.5 ÷ 0.75 = 1,280 and the function rounds up to the next 100 W. Degradation and winter are different enlargements. One is a sun-hours input. The other is a literature rate applied after the array exists. The cabin walkthroughs live on <a href="off-grid-cabin-solar.html">off-grid cabin solar</a> and <a href="what-size-solar-system.html">what size solar system</a>.</p>
+<h2>One common mistake</h2>
+<p>Subtracting 0.5% once and calling the array done. The median is a per-year rate in a skewed distribution whose mean is 0.8% per year. A single 0.5% haircut on 800 W is 796 W, which is not 0.995<sup>25</sup>. The other mistake is treating the median as linear because a spreadsheet makes it linear. Jordan and Kurtz wrote that the linearity question was not settled.</p>
+<h2>Limits</h2>
+<p>These rates are a literature summary through the studies they reviewed, reported in 2012, with short-term light-induced degradation left out of the long-term histogram. They are not a measurement of a module on a roof this year. Module warranties, if you need one, are the manufacturer's document. Production at a specific address belongs in PVWatts. Electrical work belongs with a licensed electrician.</p>
+
+<h2>FAQ</h2>
+<h3>What degradation rates do Jordan and Kurtz report?</h3><p>The conclusion of NREL/JA-5200-51664 states a mean of 0.8% per year and a median of 0.5% per year. The histogram uses 1,920 reported rates, and 78% of the data are below 1% per year. Those long-term rates exclude short-term light-induced degradation. The authors say linearity and the precise impact of climate were not satisfactorily answered.</p>
+<h3>What is left of an exact 800 W calculator result after 25 years at 0.5% per year?</h3><p>If the 0.5% per year median is compounded constantly, 0.995 to the 25th is 0.88222, and 800 × 0.88222 = 705.78 W. The same 2,400 Wh at 4 sun hours still calculates to 800 W. The compounding is an illustration, because the paper says linearity is not settled.</p>
+<h3>Why does the 500 Wh case still clear its un-rounded watts at year 25?</h3><p>500 ÷ 4 ÷ 0.75 = 166.67 W, and the calculator rounds up to 200 W. At the same constant 0.5% per year, 200 × 0.88222 = 176.44 W after 25 years. In that illustration, year 36 is 166.98 W and year 37 is 166.14 W.</p>
+<p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+<h2>Sources</h2><ul>
+<li><a href="https://docs.nlr.gov/docs/fy12osti/51664.pdf">Jordan and Kurtz, Photovoltaic Degradation Rates — An Analytical Review, NREL/JA-5200-51664, June 2012</a> — accessed Oct 3, 2026.</li>
+<li><a href="https://www.energy.gov/eere/solar/solar-photovoltaic-system-design-basics">U.S. Department of Energy, Solar Photovoltaic System Design Basics</a> — accessed Oct 3, 2026.</li>
+<li><a href="https://battlebornbatteries.com/blogs/academy/how-to-size-a-deep-cycle-battery-bank-the-battle-born-educational-series">Battle Born Batteries, How to Size a Deep Cycle Battery Bank, May 22, 2026</a> — accessed Oct 3, 2026.</li>
+<li><a href="https://solar-sizer.com/assets/app.js">SolarSizer calculator, assets/app.js (sizeSystem)</a> — accessed Oct 3, 2026.</li>
+</ul>
+<p><a href="index.html">← Back to the solar size calculator</a></p>
+</main>
+<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
+<nav class="seo-nav" aria-label="Related calculators" style="margin-top:2rem;padding:1rem;border-top:1px solid #ccc;font-size:.9rem">
+<strong>More free calculators:</strong><br>
+  <a href="/how-do-solar-panels-work.html">How Do Solar Panels Work?</a>
+  <a href="/how-to-mount-solar-panels.html">How to Mount Solar Panels</a>
+  <a href="/how-to-fuse-a-solar-panel-array.html">How to Fuse a Solar Panel Array</a>
+  <a href="/how-to-charge-lifepo4-with-solar.html">How to Charge LiFePO4 Batteries with Solar</a>
+  <a href="/solar-panel-degradation.html">Solar Panel Degradation</a>
+  <a href="/how-to-buy-solar-panels.html">How to Buy Solar Panels</a>
+  <a href="/how-many-solar-batteries-do-i-need.html">How Many Solar Batteries Do I Need?</a>
+  <a href="/index.html">Solar System Size Calculator</a>
+  <a href="/what-size-solar-system.html">What Size Solar System Do I Need?</a>
+  <a href="/how-many-solar-panels.html">How Many Solar Panels Do I Need?</a>
+  <a href="/panels-to-charge-battery.html">How Many Solar Panels to Charge a Battery?</a>
+  <a href="/agm-vs-lithium-battery.html">AGM vs Lithium Battery</a>
+  <a href="/what-size-solar-system-for-refrigerator.html">What Size Solar System for a Refrigerator?</a>
+  <a href="/topics.html">Topic map</a>
+</nav>
+</body>
+</html>

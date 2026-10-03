@@ -114,6 +114,33 @@ document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getE
 <h3>Do I need a special charge controller or inverter for lithium?</h3>
 <p>Any MPPT controller with an adjustable or LiFePO4 profile works — set absorption ~14.2–14.6 V and float low or off. The one real gotcha is surge: a well pump or big tool startup can exceed a 100 Ah lithium battery's BMS limit, so parallel batteries or a higher-BMS model is standard for pump systems.</p>
 
+<h2>Published specs for one LiFePO4 model</h2>
+<p>Section added October 3, 2026. The comparison table higher on this page is a general chemistry summary. The figures in this section are from the Battle Born BB10012i / BB10012iH manual, document PMI_BB10012i, revision 015, dated 8/12/2026. That manual's weight for this model is 31 lb, and its cycle range is 3,000–5,000. Those are this model's published figures.</p>
+<div class="tbl-wrap">
+<table>
+<tr><th>BB10012i specification</th><th>Published value</th></tr>
+<tr><td>Voltage and capacity</td><td>12 V, 100 Ah</td></tr>
+<tr><td>Usable depth of discharge</td><td>100%</td></tr>
+<tr><td>Cycles</td><td>3,000–5,000</td></tr>
+<tr><td>Efficiency</td><td>99%</td></tr>
+<tr><td>Self-discharge</td><td>2–3% per month</td></tr>
+<tr><td>Weight</td><td>31 lb</td></tr>
+<tr><td>Maximum series voltage</td><td>48 V</td></tr>
+<tr><td>Recommended charge / max charge current</td><td>0.5C / 50 A</td></tr>
+<tr><td>Absorption / float</td><td>14.2–14.6 V / 13.4–13.8 V</td></tr>
+<tr><td>Charging below freezing</td><td>BMS will not charge under 32°F (0°C); discharge continues down to −4°F (−20°C)</td></tr>
+</table>
+</div>
+<p><a href="https://battlebornbatteries.com/blogs/academy/how-to-size-a-deep-cycle-battery-bank-the-battle-born-educational-series">Battle Born's sizing article</a> uses a 2,400 Wh day at 12 V: 2,400 ÷ 12 = 200 Ah, which is two 100 Ah batteries for one day, and two days doubles that to 400 Ah and four batteries. Their article does not divide by a depth of discharge below the 100% this manual publishes.</p>
+<p>The <a href="index.html#calc">solar size calculator</a> defaults are 2 days and 80% depth of discharge. On the same 2,400 Wh, <code>sizeSystem</code> in <a href="assets/app.js">assets/app.js</a> does 2,400 × 2 ÷ 0.8 = 6,000 Wh, then 6,000 ÷ 12 = 500 Ah. That is five 100 Ah batteries, one more than the article's two-day count. Switch the form to the 50% option and the bank becomes 2,400 × 2 ÷ 0.5 = 9,600 Wh, or 800 Ah at 12 V. The array line stays 2,400 ÷ 4 ÷ 0.75 = 800 W at 4 sun hours, because depth of discharge is only in the bank formula. The 50% row is the calculator's AGM / lead-acid option, not a second datasheet.</p>
+<p>Using the 80% input on a battery the manufacturer rates at 100% usable is what adds the fifth battery. Charge voltages, the 50 A limit, and the 32°F cutoff are on <a href="how-to-charge-lifepo4-with-solar.html">how to charge LiFePO4 batteries with solar</a>. The full count, including the form's 24 V default, is on <a href="how-many-solar-batteries-do-i-need.html">how many solar batteries do I need</a>.</p>
+<p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+<h2>Sources for the section added October 3, 2026</h2>
+<ul>
+<li><a href="https://battlebornbatteries.com/cdn/shop/files/BB10012i_BB1002iH_Manual.pdf">Battle Born / Dragonfly Energy, BB10012i and BB10012iH manual, PMI_BB10012i Rev 015, 8/12/2026</a> — accessed Oct 3, 2026.</li>
+<li><a href="https://battlebornbatteries.com/blogs/academy/how-to-size-a-deep-cycle-battery-bank-the-battle-born-educational-series">Battle Born Batteries, How to Size a Deep Cycle Battery Bank</a> — accessed Oct 3, 2026.</li>
+<li><a href="https://solar-sizer.com/assets/app.js">SolarSizer calculator, assets/app.js (sizeSystem)</a> — accessed Oct 3, 2026.</li>
+</ul>
 <p><a href="index.html">← Back to the solar size calculator</a></p>
 </main>
 
