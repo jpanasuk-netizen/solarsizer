@@ -21,7 +21,7 @@ Cite freely with link attribution. Load and capacity figures are published typic
 - **Daily load → array:** [Solar size calculator](https://solar-sizer.com/), [Cabin load sheet](https://solar-sizer.com/magnet.html), [What size solar system](https://solar-sizer.com/what-size-solar-system.html)
 - **Cabin systems:** [Off-grid cabin solar](https://solar-sizer.com/off-grid-cabin-solar.html), [Panels for a cabin](https://solar-sizer.com/how-many-solar-panels-for-a-cabin.html)
 - **Storage pairing:** [Panels to charge a battery](https://solar-sizer.com/panels-to-charge-battery.html), [AGM vs lithium](https://solar-sizer.com/agm-vs-lithium-battery.html)
-- **Solar vs generator:** [Solar vs generator](https://solar-sizer.com/solar-vs-generator-for-off-grid.html)
+- **Solar vs generator:** [Solar vs generator](https://solar-sizer.com/solar-vs-generator-for-off-grid.html): Battle Born's 2,400 Wh as an 800 W calculator array, or as fuel from Honda EU2200i and Champion 201296 runtime specs
 
 ## Questions
 - [Solar for 1 kWh per day](https://solar-sizer.com/what-size-solar-system-for-1-kwh-per-day.html): 1,000 Wh divided by 4, 5, and Phoenix December 4.75 peak sun hours, plus a 20–30% margin.
