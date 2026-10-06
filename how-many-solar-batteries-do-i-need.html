@@ -33,7 +33,7 @@
     "@id": "https://solar-sizer.com/how-many-solar-batteries-do-i-need.html"
   },
   "datePublished": "2026-10-03",
-  "dateModified": "2026-10-03",
+  "dateModified": "2026-10-06",
   "author": {
     "@type": "Organization",
     "name": "SolarSizer"
@@ -117,7 +117,7 @@
 </header>
 <main>
 <h1>How Many Solar Batteries Do I Need?</h1>
-<p class="small">Built by <a href="/about.html">Jeremy Panasuk</a>. Published October 3, 2026.</p>
+<p class="small">Built by <a href="/about.html">Jeremy Panasuk</a>. Published October 3, 2026. Updated October 6, 2026.</p>
 
 <p class="sub">Both counts use Battle Born's 2,400 Wh and 12 V. They disagree because one method stops at watt-hours ÷ voltage and the other divides by the depth of discharge selected in the calculator.</p>
 <div class="answer-box"><strong>Same day, two battery counts:</strong> <a href="https://battlebornbatteries.com/blogs/academy/how-to-size-a-deep-cycle-battery-bank-the-battle-born-educational-series">Battle Born's article</a> does 2,400 ÷ 12 = 200 Ah, then 200 ÷ 100 = 2 batteries for one day. Two days off-grid doubles that to 4 batteries. This site's calculator, at its default 2 days and 80% depth of discharge, does 2,400 × 2 ÷ 0.8 = 6,000 Wh, then 6,000 ÷ 12 = 500 Ah. At 100 Ah each, that is 5 batteries.</div>
@@ -149,6 +149,9 @@
 <h2>Limits</h2>
 <p>The manual's cover warning stands: risk of fire and burns; do not open, crush, heat above 150°F, or incinerate. Do not series past 48 V. Do not parallel or series this model with a different battery type. The BMS will not charge under 32°F (0°C). A licensed electrician sizes the overcurrent protection on the battery cables the manual says must carry the bank's maximum current. This count is a capacity count. It is not a wiring diagram.</p>
 
+<h2>Days of autonomy</h2>
+<p>The calculator's bank watt-hours are daily watt-hours × days of autonomy ÷ the depth of discharge selected in the form. On this same 2,400 Wh day, one day at 80% is 2,400 × 1 ÷ 0.8 = 3,000 Wh. At 12 V that is 3,000 ÷ 12 = 250 Ah, and the 10 Ah rounding step leaves 250 Ah. The 100 Ah-unit line rounds 250 Ah up to 300 Ah, the same rounding the 24 V section shows for the two-day 250 Ah result. Two days at 80% is the 6,000 Wh and 500 Ah already in the table. Two days at the form's 50% option is 800 Ah. One day in Battle Born's article, which does not divide by a depth of discharge below 100%, is 200 Ah and 2 batteries.</p>
+<p>A rested open-circuit voltage is not this amp-hour count. Trojan's 12 V table, including 12.50 V on the 80% row, is on <a href="check-a-12v-battery-open-circuit-voltage.html">check a 12V battery open-circuit voltage</a>. That 80% is state of charge on a lead-acid table. The 80% in the paragraph above is the calculator's form input.</p>
 <h2>FAQ</h2>
 <h3>How many 100 Ah batteries does 2,400 Wh need for two days?</h3><p>Battle Born divides 2,400 by 12 V to get 200 Ah, then doubles it for two days, which is 400 Ah and 4 batteries of 100 Ah. This calculator at 2 days and 80% depth of discharge produces 6,000 Wh and 500 Ah at 12 V, which is 5 batteries. Their manual rates the BB10012i at 100% usable depth of discharge.</p>
 <h3>What changes at the form's default 24 V?</h3><p>The bank is still 6,000 Wh, now 250 Ah. The calculator's 100 Ah-unit line rounds that up to 300 Ah. Two BB10012i batteries in series are a 24 V 100 Ah bank, so three such pairs are 300 Ah and six batteries. Two pairs are 200 Ah, which is short of 250 Ah.</p>

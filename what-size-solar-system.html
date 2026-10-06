@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>What Size Solar System Do I Need? Off-Grid & Grid-Tie Siz...</title>
+<title>What Size Solar System Do I Need?</title>
 <meta name="description" content="What size solar system you need: array watts, battery kWh, and inverter sizing for off-grid vs grid-tie, with charge-controller pairing math and examples.">
 <link rel="canonical" href="https://solar-sizer.com/what-size-solar-system.html">
 <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -21,30 +21,28 @@
 <meta property="og:description" content="Whole-system sizing: array watts, battery kWh, inverter and charge-controller pairing for off-grid and grid-tie setups.">
 <meta name="twitter:image" content="https://solar-sizer.com/assets/og-image.png">
 <link rel="stylesheet" href="assets/styles.css">
+
+
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What size solar system do I need for a 2,000 sq ft house?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Square footage is a weak proxy — usage is what matters. A typical 2,000 sq ft home uses 25–35 kWh/day; at 4.5 sun hours and a 0.86 derate (NREL PVWatts' default 14% system losses) that's a 6.5–9 kW array, roughly 17–23 panels at 400 W. Pull your actual kWh from 12 months of utility bills and divide by 30 for daily use." }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I match an inverter to my solar array?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The inverter's continuous AC rating must cover your largest simultaneous load (everything that could run at once), and its max PV input voltage must never be exceeded by your coldest-day string voltage. Inverter watts equal to array watts is a common, safe starting point; oversizing the array up to ~130% of inverter rating (DC/AC ratio) is normal for grid-tie." }
-    },
-    {
-      "@type": "Question",
-      "name": "What size charge controller do I need?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Amps = array watts ÷ battery volts ÷ 0.85, then round up to the next standard size. A 1,200 W array on a 24 V bank needs 1,200 ÷ 24 ÷ 0.85 ≈ 59 A — a 60 A MPPT controller. Check the controller's max input voltage against your coldest-weather string voltage too." }
-    }
-  ]
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Solar Sizer",
+   "item": "https://solar-sizer.com/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "What size solar system do I need?",
+   "item": "https://solar-sizer.com/what-size-solar-system.html"
+  }
+ ]
 }
 </script>
-
 </head>
 <body>
 

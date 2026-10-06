@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Check a 12V Battery Open-Circuit Voltage</title>
+<meta name="description" content="Trojan's 12 V open-circuit table runs from 12.73 V at 100% to 11.51 V at 10%, after the battery has sat idle. That reading is state of charge, not a measured amp-hour capacity.">
+<link rel="canonical" href="https://solar-sizer.com/check-a-12v-battery-open-circuit-voltage.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Check a 12V Battery Open-Circuit Voltage">
+<meta property="og:description" content="Trojan's 12 V open-circuit table runs from 12.73 V at 100% to 11.51 V at 10%, after the battery has sat idle. That reading is state of charge, not a measured amp-hour capacity.">
+<meta property="og:url" content="https://solar-sizer.com/check-a-12v-battery-open-circuit-voltage.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://solar-sizer.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Check a 12V Battery Open-Circuit Voltage">
+<meta name="twitter:description" content="Trojan's 12 V open-circuit table runs from 12.73 V at 100% to 11.51 V at 10%, after the battery has sat idle. That reading is state of charge, not a measured amp-hour capacity.">
+<meta name="twitter:image" content="https://solar-sizer.com/assets/og-image.png">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Check a 12V Battery Open-Circuit Voltage",
+  "description": "Trojan's 12 V open-circuit table runs from 12.73 V at 100% to 11.51 V at 10%, after the battery has sat idle. That reading is state of charge, not a measured amp-hour capacity.",
+  "url": "https://solar-sizer.com/check-a-12v-battery-open-circuit-voltage.html",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://solar-sizer.com/check-a-12v-battery-open-circuit-voltage.html"
+  },
+  "datePublished": "2026-10-06",
+  "dateModified": "2026-10-06",
+  "author": {"@type": "Organization", "name": "Solar Sizer"},
+  "publisher": {"@type": "Organization", "name": "Solar Sizer", "url": "https://solar-sizer.com"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://solar-sizer.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Questions", "item": "https://solar-sizer.com/topics.html"},
+    {"@type": "ListItem", "position": 3, "name": "Check a 12V Battery Open-Circuit Voltage", "item": "https://solar-sizer.com/check-a-12v-battery-open-circuit-voltage.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Open-circuit voltage test",
+  "description": "Trojan's open-circuit voltage test for an idle battery. For accurate readings the battery must remain idle (no charging, no discharging) for at least 6 hours, preferably 24 hours.",
+  "step": [
+    {"@type": "HowToStep", "position": 1, "name": "Disconnect all loads from the batteries.", "text": "Disconnect all loads from the batteries."},
+    {"@type": "HowToStep", "position": 2, "name": "Measure the voltage using a DC voltmeter.", "text": "Measure the voltage using a DC voltmeter."},
+    {"@type": "HowToStep", "position": 3, "name": "Check the state of charge with Table 1 below.", "text": "Check the state of charge with Table 1 below."},
+    {"@type": "HowToStep", "position": 4, "name": "Charge the battery if it registers 0% to 70% charged.", "text": "Charge the battery if it registers 0% to 70% charged."}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does 12.50 V mean the battery still has 80% of its nameplate amp-hours?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. Trojan's table maps 12.50 V to 80% state of charge on a rested open-circuit reading. It does not measure remaining amp-hours. Multiplying 0.80 by a 100 Ah nameplate is 80 Ah of arithmetic on that label. It is not a capacity test."}
+    },
+    {
+      "@type": "Question",
+      "name": "Can this table be used on a LiFePO4 battery?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. Trojan's maintenance page is for deep-cycle flooded and VRLA lead-acid batteries. The 12.73 V to 11.51 V column is that table's 12 V open-circuit voltages. Do not read a lithium iron phosphate battery against it."}
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">SolarSizer</a>
+  <nav aria-label="Site">
+    <a href="index.html#calc">Calculator</a>
+    <a href="how-many-solar-panels.html">Panel count</a>
+    <a href="what-size-solar-system.html">System size</a>
+    <a href="off-grid-cabin-solar.html">Cabin solar</a>
+    <a href="topics.html">Topics</a>
+  </nav>
+</header>
+<main>
+<h1>Check a 12V Battery Open-Circuit Voltage</h1>
+<p class="small">Built by <a href="/about.html">Jeremy Panasuk</a>. Published October 6, 2026.</p>
+<p class="sub">Trojan's open-circuit table is a state-of-charge check for flooded and VRLA lead-acid batteries after they have sat idle. It is not a measurement of remaining amp-hours.</p>
+<div class="answer-box"><strong>12 V open-circuit voltages from Trojan's Table 1:</strong> 100% is 12.73 V, 80% is 12.50 V, 50% is 12.10 V, and 10% is 11.51 V. The battery has to sit with no charging and no discharging for at least 6 hours, preferably 24, before that reading. The amp-hour count in the <a href="index.html#calc">solar size calculator</a> is nameplate math (amp-hours × volts, and daily watt-hours × days ÷ depth of discharge). A rested voltage does not replace it.</div>
+
+<h2>Open-circuit voltage test</h2>
+<p><a href="https://www.trojanbattery.com/resources/battery-maintenance">Trojan's battery maintenance page</a> says both open-circuit voltage and specific gravity can indicate charge level, age, and health. For an accurate voltage reading, batteries must remain idle (no charging, no discharging) for at least 6 hours, preferably 24 hours. The numbered steps on that page are:</p>
+<ol>
+<li>Disconnect all loads from the batteries.</li>
+<li>Measure the voltage using a DC voltmeter.</li>
+<li>Check the state of charge with Table 1 below.</li>
+<li>Charge the battery if it registers 0% to 70% charged.</li>
+</ol>
+<p>If the battery registers below the Table 1 values, Trojan says the battery may have been left discharged too long, or it may have a bad cell. Batteries in those conditions should be taken to a specialist for further evaluation or retired from service.</p>
+<p>Trojan's warning on terminals: do not overtighten terminals. Doing so can result in post breakage, post meltdown, or fire. Always wear protective clothing, gloves, and goggles when handling batteries, electrolyte, and charging your battery.</p>
+
+<h2>Table 1, 12 V column</h2>
+<p>These are the percentage-of-charge, specific-gravity, and 12 V open-circuit columns from Trojan's table. The specific-gravity test on the same page says to correct hydrometer readings to 80°F (26.6°C): add 0.004 for every 10°F (5.6°C) above 80°F, and subtract 0.004 for every 10°F below 80°F. Factory specification is 1.277 ± 0.007. The specific-gravity steps are for flooded batteries only.</p>
+<div class="tbl-wrap">
+<table>
+<tr><th>Percentage of charge</th><th class="num">Specific gravity</th><th class="num">12 V open-circuit voltage</th></tr>
+<tr><td>100%</td><td class="num">1.277</td><td class="num">12.73</td></tr>
+<tr><td>90%</td><td class="num">1.258</td><td class="num">12.62</td></tr>
+<tr><td>80%</td><td class="num">1.238</td><td class="num">12.50</td></tr>
+<tr><td>70%</td><td class="num">1.217</td><td class="num">12.37</td></tr>
+<tr><td>60%</td><td class="num">1.195</td><td class="num">12.27</td></tr>
+<tr><td>50%</td><td class="num">1.172</td><td class="num">12.10</td></tr>
+<tr><td>40%</td><td class="num">1.148</td><td class="num">11.89</td></tr>
+<tr><td>30%</td><td class="num">1.124</td><td class="num">11.81</td></tr>
+<tr><td>20%</td><td class="num">1.098</td><td class="num">11.66</td></tr>
+<tr><td>10%</td><td class="num">1.073</td><td class="num">11.51</td></tr>
+</table>
+</div>
+<p>The same Trojan table also lists 6 V, 8 V, 24 V, 36 V, and 48 V open-circuit columns. This page copies the 12 V column because that is the check the heading is about. Flooded batteries also need the watering procedure on Trojan's page: add water, never acid, and do not overwater. If any specific-gravity reading stays below 1.277 ± 0.007 after a complete charge and an equalization charge, Trojan says one of several conditions may exist, including an old battery or a weak cell, and batteries in those conditions should go to a specialist or be retired.</p>
+
+<h2>What this does not tell the calculator</h2>
+<p><code>panelsForBattery</code> in <a href="assets/app.js">assets/app.js</a> sets stored watt-hours to amp-hours × volts, then array watts to that product ÷ sun hours ÷ 0.85. A 100 Ah label at 12 V is 1,200 Wh on that line. At the form's 4.5 sun-hour default, 1,200 ÷ 4.5 ÷ 0.85 = 313.7 W, which the screen rounds to 314 W. With the 300 W panel option, that rounds up to 2 panels. None of those steps reads a voltmeter.</p>
+<p><code>sizeSystem</code> sets bank watt-hours to daily watt-hours × days of autonomy ÷ the depth of discharge selected in the form. On a 2,400 Wh day, one day at the form's 80% selection is 2,400 × 1 ÷ 0.8 = 3,000 Wh, then 3,000 ÷ 12 = 250 Ah. That 80% is the form's input. Trojan's 12.50 V row is also labeled 80%, and the two are not the same fact. Multiplying 0.80 × a stated 100 Ah nameplate is 80 Ah of arithmetic on the label. It is not a measured capacity, and it is not what 12.50 V proved.</p>
+<p>The battery count that uses this 2,400 Wh day, including two days at 80% (6,000 Wh, 500 Ah at 12 V), is on <a href="how-many-solar-batteries-do-i-need.html">how many solar batteries do I need</a>. Chemistry differences, including why a lithium charge profile is not this lead-acid table, are on <a href="agm-vs-lithium-battery.html">AGM vs lithium</a>.</p>
+
+<div class="affil">
+<span class="tag">Affiliate</span>
+<p class="small">Affiliate disclosure: as an Amazon Associate, we earn from qualifying purchases — at no cost to you.</p>
+<p><a class="btn-amz" href="https://www.amazon.com/s?k=dc+voltmeter&amp;tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">Shop a DC voltmeter on Amazon</a></p>
+</div>
+
+<h2>One common mistake</h2>
+<p>Measuring the battery while a charger or a load is still connected, then treating that voltage as Table 1. Trojan requires idle time: at least 6 hours, preferably 24, with no charging and no discharging. The other mistake is reading 12.50 V and typing 80% of nameplate amp-hours into a design as if the battery had been capacity-tested.</p>
+
+<h2>Limits</h2>
+<p>This table is Trojan's guideline for deep-cycle flooded and VRLA batteries. Do not apply the 12.73 V to 11.51 V column to a lithium iron phosphate battery. Do not overtighten terminals. Acid, watering, and equalization belong to the procedure on Trojan's page; this summary does not replace it. If a cell stays low after charge and equalization, Trojan's instruction is a specialist or retirement, not another voltage guess. The calculator's amp-hour result is still a sizing input. It does not certify the battery on the bench.</p>
+
+<h2>FAQ</h2>
+<h3>Does 12.50 V mean the battery still has 80% of its nameplate amp-hours?</h3>
+<p>No. Trojan's table maps 12.50 V to 80% state of charge on a rested open-circuit reading. It does not measure remaining amp-hours. Multiplying 0.80 by a 100 Ah nameplate is 80 Ah of arithmetic on that label. It is not a capacity test.</p>
+<h3>Can this table be used on a LiFePO4 battery?</h3>
+<p>No. Trojan's maintenance page is for deep-cycle flooded and VRLA lead-acid batteries. The 12.73 V to 11.51 V column is that table's 12 V open-circuit voltages. Do not read a lithium iron phosphate battery against it.</p>
+<p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.trojanbattery.com/resources/battery-maintenance">Trojan Battery, Battery Maintenance</a> — open-circuit test steps, the idle requirement, Table 1 (specific gravity and 12 V open-circuit voltage), factory specific gravity 1.277 ± 0.007, and the terminal warning. Accessed Oct 6, 2026.</li>
+<li><a href="assets/app.js">SolarSizer calculator, assets/app.js</a> — <code>panelsForBattery</code> (amp-hours × volts ÷ sun hours ÷ 0.85) and <code>sizeSystem</code> (daily watt-hours × days ÷ depth of discharge). Accessed Oct 6, 2026.</li>
+</ul>
+<p><a href="index.html">← Back to the solar size calculator</a></p>
+</main>
+<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
+</body>
+</html>

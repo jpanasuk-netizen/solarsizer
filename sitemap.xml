@@ -156,8 +156,24 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://solar-sizer.com/how-many-solar-batteries-do-i-need.html</loc><lastmod>2026-10-03</lastmod>
+    <loc>https://solar-sizer.com/how-many-solar-batteries-do-i-need.html</loc><lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://solar-sizer.com/how-to-size-a-solar-charge-controller.html</loc><lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://solar-sizer.com/check-a-12v-battery-open-circuit-voltage.html</loc><lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://solar-sizer.com/how-many-solar-panels-for-a-heat-pump.html</loc><lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>
+

@@ -3,34 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Solar System Size Calculator [Free] | SolarSizer</title>
-<meta name="description" content="Use this free solar system size calculator to turn daily loads into panel watts, battery Ah, inverter size, and charge-controller amps.">
+<title>Off-Grid Solar System Sizing Calculator | SolarSizer</title>
+<meta name="description" content="Free off-grid solar sizing calculator: turn daily loads into panel watts, battery bank Ah, inverter size and charge controller amps.">
 <link rel="canonical" href="https://solar-sizer.com/">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="shortcut icon" href="assets/favicon.ico">
 <meta name="robots" content="index,follow">
-<meta property="og:title" content="Solar System Size Calculator — What Size Off-Grid Solar Do I Need?">
-<meta property="og:description" content="Enter your daily loads, get the exact solar system: panel count, battery bank size, inverter rating, and charge controller amps — sun-hours and winter derating included.">
+<meta property="og:title" content="Off-Grid Solar System Sizing Calculator | SolarSizer">
+<meta property="og:description" content="Free off-grid solar sizing calculator: turn daily loads into panel watts, battery bank Ah, inverter size and charge controller amps.">
 <meta property="og:url" content="https://solar-sizer.com/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://solar-sizer.com/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Solar System Size Calculator — What Size Off-Grid Solar Do I Need?">
-<meta name="twitter:description" content="Enter your daily loads, get the exact solar system: panel count, battery bank size, inverter rating, and charge controller amps — sun-hours and winter derating included.">
+<meta name="twitter:title" content="Off-Grid Solar System Sizing Calculator | SolarSizer">
+<meta name="twitter:description" content="Free off-grid solar sizing calculator: turn daily loads into panel watts, battery bank Ah, inverter size and charge controller amps.">
 <meta name="twitter:image" content="https://solar-sizer.com/assets/og-image.png">
 <link rel="stylesheet" href="assets/styles.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "SolarSizer Off-Grid Solar Calculator",
+  "@type": "WebApplication",
+  "name": "Solar System Size Calculator",
   "applicationCategory": "UtilitiesApplication",
-  "operatingSystem": "Web",
+  "operatingSystem": "Any",
   "url": "https://solar-sizer.com/",
-  "description": "Free off-grid solar sizing calculator: daily load builder, solar panel wattage and count with seasonal sun-hours, battery bank Ah (LiFePO4 vs AGM), inverter sizing, and MPPT charge controller amps.",
-  "dateModified": "2026-09-16",
+  "description": "Off-grid solar sizing calculator for cabin and van owners. Add your daily loads. Get the panel count, battery bank Ah, inverter rating, and charge controller amps — worst-month sun hours and derating handled.",
+  "dateModified": "2026-10-06",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
@@ -68,7 +68,7 @@
   "@type": "WebPage",
   "name": "Solar System Size Calculator",
   "url": "https://solar-sizer.com/",
-  "dateModified": "2026-09-16",
+  "dateModified": "2026-10-06",
   "description": "Free off-grid solar sizing calculator: daily loads to panel watts, battery Ah, inverter size, and charge-controller amps."
 }
 </script>
@@ -76,6 +76,14 @@
 {"@context":"https://schema.org","@type":"Organization","name":"Solar Sizer","url":"https://solar-sizer.com","description":"Off-grid solar system sizing calculators.","sameAs":[]}
 </script>
 
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "WebSite",
+ "name": "Solar Sizer",
+ "url": "https://solar-sizer.com/"
+}
+</script>
 </head>
 <body>
 
@@ -92,11 +100,12 @@
 
 <main>
 <h1>Solar System Size Calculator</h1>
-<p class="small" id="last-updated">Last updated: September 16, 2026 (CT)</p>
+<p data-magnet-cta="1" style="margin:.6rem 0 1.1rem;padding:.7rem .9rem;border-left:4px solid #f59e0b;background:rgba(245,158,11,.08);font-size:1.02rem"><a href="magnet.html" style="font-weight:700">Free cabin load sheet — print it, 10 minutes.</a></p>
+<p class="small" id="last-updated">Last updated: October 6, 2026 (CT)</p>
 <p class="sub">Off-grid solar sizing calculator for cabin and van owners.</p>
 <p class="sub">Add your daily loads. Get the panel count, battery bank Ah, inverter rating, and charge controller amps — worst-month sun hours and derating handled.</p>
 
-<aside class="tldr panel" id="quick-answer" aria-label="Quick answer" style="display:block;margin:1rem 0 1.25rem;padding:1rem 1.1rem;border:1px solid var(--bd,#30363d);border-radius:10px;background:var(--card,#161b22)">
+<aside class="tldr" id="quick-answer" aria-label="Quick answer" style="display:block;margin:1rem 0 1.25rem;padding:1rem 1.1rem;border:1px solid var(--bd,#30363d);border-radius:10px;background:var(--card,#161b22)">
   <h2 style="font-size:1.05rem;margin:0 0 .5rem;border:0;padding:0">Quick answer</h2>
   <p style="margin:0 0 .45rem">Size from <strong>daily watt-hours</strong>: array watts ≈ daily Wh ÷ worst-month sun hours ÷ 0.86 (<a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">NREL PVWatts' default 14% system losses</a>).</p>
   <p style="margin:0 0 .45rem">A minimalist cabin at <strong>3 kWh/day</strong> typically needs about <strong>1,200–1,500 W</strong> of panels in most of the US, paired with a <strong>400–600 Ah 12 V LiFePO4</strong> bank (or 24 V/48 V equivalent) for cloudy days.</p>
@@ -121,7 +130,7 @@
         <button data-add style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.55rem 1rem;font-size:1rem;cursor:pointer">Add</button>
       </div>
     </div>
-    <div id="loadRows"></div>
+    <div id="loadRows"><div class="load-row load-head"><span>Load</span><span class="num">Watts</span><span class="num">Hrs/day</span><span class="num">Qty</span><span></span></div><div class="load-row"><input type="text" value="Refrigerator (Energy Star)" data-i="0" data-f="name" aria-label="Load name"><input type="number" min="0" value="150" data-i="0" data-f="w" aria-label="Watts"><input type="number" min="0" step="0.25" value="8" data-i="0" data-f="hrs" aria-label="Hours per day"><input type="number" min="1" value="1" data-i="0" data-f="qty" aria-label="Quantity"><button class="del" data-del="0" aria-label="Remove Refrigerator (Energy Star)">✕</button></div><div class="load-row"><input type="text" value="LED lights, cabin" data-i="1" data-f="name" aria-label="Load name"><input type="number" min="0" value="80" data-i="1" data-f="w" aria-label="Watts"><input type="number" min="0" step="0.25" value="5" data-i="1" data-f="hrs" aria-label="Hours per day"><input type="number" min="1" value="1" data-i="1" data-f="qty" aria-label="Quantity"><button class="del" data-del="1" aria-label="Remove LED lights, cabin">✕</button></div><div class="load-row"><input type="text" value="Laptop + phone charging" data-i="2" data-f="name" aria-label="Load name"><input type="number" min="0" value="100" data-i="2" data-f="w" aria-label="Watts"><input type="number" min="0" step="0.25" value="6" data-i="2" data-f="hrs" aria-label="Hours per day"><input type="number" min="1" value="1" data-i="2" data-f="qty" aria-label="Quantity"><button class="del" data-del="2" aria-label="Remove Laptop + phone charging">✕</button></div></div>
   </fieldset>
 
   <div class="row2">
@@ -311,6 +320,9 @@
 <li><a href="solar-panel-degradation.html">Solar panel degradation</a></li>
 <li><a href="how-to-buy-solar-panels.html">How to buy solar panels</a></li>
 <li><a href="how-many-solar-batteries-do-i-need.html">How many solar batteries do I need?</a></li>
+<li><a href="how-to-size-a-solar-charge-controller.html">How to size a solar charge controller</a></li>
+<li><a href="check-a-12v-battery-open-circuit-voltage.html">Check a 12V battery open-circuit voltage</a></li>
+<li><a href="how-many-solar-panels-for-a-heat-pump.html">How many solar panels for a heat pump?</a></li>
 </ul>
 <p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
 <h2>Sources</h2>
@@ -320,7 +332,7 @@
 <p>The climate sun-hour table, the 3 kWh cabin range of 1,200–1,500 W, the 400–600 Ah bank range, the 400–600 W recharge bracket, and the 1,000–1,500 W and 2,000–3,000 W inverter landings are this page's examples. A 400 W array on the same 2,400 Wh and 0.85 divisor is 2,400 ÷ (400 × 4.5 × 0.85) ≈ 1.57 days, which is the "day and a half" line.</p>
 </main>
 
-<section id="soft-rail" class="panel" aria-label="Related guides and offers" style="margin-top:1.5rem">
+<section id="soft-rail" aria-label="Related guides and offers" style="margin-top:1.5rem">
   <h2>Next steps</h2>
   <p class="small">Related guides · Amazon picks (affiliate)</p>
   <div class="rail-cols" style="display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:.75rem">
@@ -343,11 +355,7 @@
   </div>
 </section>
 
-<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
-
-<script src="assets/app.js"></script>
-<script src="assets/monetization.js"></script>
-<script src="assets/magnet-cta.js"></script>
+<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links · <a href="https://www.tiktok.com/@3jsa7" rel="noopener" target="_blank" data-tiktok-cta="1">TikTok @3jsa7</a></footer>
 
 <div id="amzSticky" hidden aria-hidden="true">
   <a id="amzStickyLink" class="btn-amz btn-amz-primary" href="https://www.amazon.com/s?k=home+tools&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">Shop on Amazon</a>
@@ -378,5 +386,8 @@
   <a href="/what-size-solar-system.html">What Size Solar System Do I Need? Off-Grid & Grid-Tie Sizing (2026)</a>
 </nav>
 
+<script src="assets/app.js" defer></script>
+<script src="assets/monetization.js" defer></script>
+<script src="assets/magnet-cta.js" defer></script>
 </body>
 </html>

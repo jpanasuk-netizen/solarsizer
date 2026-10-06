@@ -28,23 +28,45 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is lithium worth it over AGM for off-grid solar?",
-      "acceptedAnswer": { "@type": "Answer", "text": "For any system that cycles daily, yes. A 100 Ah AGM delivers ~50 Ah usable (50% depth of discharge) for 400–600 cycles; a 100 Ah LiFePO4 delivers ~80–90 Ah usable for 3,000–5,000 cycles. Cost per usable kWh over life lands around $0.30–0.50 for lithium versus $0.80–1.20 for AGM. AGM only wins for rarely-cycled backup systems, sub-freezing unheated installs without battery heaters, or budgets that must land under a hard ceiling today." }
+      "name": "Can I mix AGM and lithium in the same bank?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Different charge profiles (AGM absorbs at ~14.4 V, LiFePO4 at ~14.2 V with different current behavior) mean one chemistry always charges wrong. Replace whole banks at once, or keep them on separate controllers."
+      }
     },
     {
       "@type": "Question",
-      "name": "How much larger does my AGM battery bank need to be than a lithium one?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Roughly 60–80% larger in rated amp-hours for the same usable energy, because of the 50% vs 80–90% depth-of-discharge gap. A cabin needing 2.4 kWh usable overnight needs 2×200 Ah at 24 V in AGM, or a single 24 V 100–130 Ah LiFePO4 battery — half the weight, a third the volume." }
-    },
-    {
-      "@type": "Question",
-      "name": "Do lithium batteries charge faster than AGM?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes — and it matters more than the spec sheet suggests. AGM must absorb at low current for hours to reach full, often never quite getting there from solar; LiFePO4 accepts full charge current until nearly full, so the same solar array puts meaningfully more energy into the bank on short winter days. Lithium also holds voltage flat through discharge, so inverters run efficiently to the last percent." }
+      "name": "Do I need a special charge controller or inverter for lithium?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Any MPPT controller with an adjustable or LiFePO4 profile works — set absorption ~14.2–14.6 V and float low or off. The one real gotcha is surge: a well pump or big tool startup can exceed a 100 Ah lithium battery's BMS limit, so parallel batteries or a higher-BMS model is standard for pump systems. A rested lead-acid voltage is a different check, on Trojan's 12 V open-circuit table."
+      }
     }
   ]
 }
 </script>
 
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Solar Sizer",
+   "item": "https://solar-sizer.com/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "AGM or lithium battery for my off-grid system?",
+   "item": "https://solar-sizer.com/agm-vs-lithium-battery.html"
+  }
+ ]
+}
+</script>
 </head>
 <body>
 
@@ -92,7 +114,7 @@
 <h3>Can I mix AGM and lithium in the same bank?</h3>
 <p>No. Different charge profiles (AGM absorbs at ~14.4 V, LiFePO4 at ~14.2 V with different current behavior) mean one chemistry always charges wrong. Replace whole banks at once, or keep them on separate controllers.</p>
 <h3>Do I need a special charge controller or inverter for lithium?</h3>
-<p>Any MPPT controller with an adjustable or LiFePO4 profile works — set absorption ~14.2–14.6 V and float low or off. The one real gotcha is surge: a well pump or big tool startup can exceed a 100 Ah lithium battery's BMS limit, so parallel batteries or a higher-BMS model is standard for pump systems.</p>
+<p>Any MPPT controller with an adjustable or LiFePO4 profile works — set absorption ~14.2–14.6 V and float low or off. The one real gotcha is surge: a well pump or big tool startup can exceed a 100 Ah lithium battery's BMS limit, so parallel batteries or a higher-BMS model is standard for pump systems. A rested lead-acid voltage is a different check, on <a href="check-a-12v-battery-open-circuit-voltage.html">Trojan's 12 V open-circuit table</a>.</p>
 
 <h2>Published specs for one LiFePO4 model</h2>
 <p>Section added October 3, 2026. The comparison table higher on this page is a general chemistry summary. The figures in this section are from the Battle Born BB10012i / BB10012iH manual, document PMI_BB10012i, revision 015, dated 8/12/2026. That manual's weight for this model is 31 lb, and its cycle range is 3,000–5,000. Those are this model's published figures.</p>

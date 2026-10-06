@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Size a Solar Charge Controller</title>
+<meta name="description" content="PWM pulls the array down to battery voltage. MPPT does not. A 700 W array at 12 V is 68.6 A in this calculator, which lists an 80 A controller.">
+<link rel="canonical" href="https://solar-sizer.com/how-to-size-a-solar-charge-controller.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="How to Size a Solar Charge Controller">
+<meta property="og:description" content="PWM pulls the array down to battery voltage. MPPT does not. A 700 W array at 12 V is 68.6 A in this calculator, which lists an 80 A controller.">
+<meta property="og:url" content="https://solar-sizer.com/how-to-size-a-solar-charge-controller.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://solar-sizer.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Size a Solar Charge Controller">
+<meta name="twitter:description" content="PWM pulls the array down to battery voltage. MPPT does not. A 700 W array at 12 V is 68.6 A in this calculator, which lists an 80 A controller.">
+<meta name="twitter:image" content="https://solar-sizer.com/assets/og-image.png">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Size a Solar Charge Controller",
+  "description": "PWM pulls the array down to battery voltage. MPPT does not. A 700 W array at 12 V is 68.6 A in this calculator, which lists an 80 A controller.",
+  "url": "https://solar-sizer.com/how-to-size-a-solar-charge-controller.html",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://solar-sizer.com/how-to-size-a-solar-charge-controller.html"
+  },
+  "datePublished": "2026-10-06",
+  "dateModified": "2026-10-06",
+  "author": {"@type": "Organization", "name": "Solar Sizer"},
+  "publisher": {"@type": "Organization", "name": "Solar Sizer", "url": "https://solar-sizer.com"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://solar-sizer.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Questions", "item": "https://solar-sizer.com/topics.html"},
+    {"@type": "ListItem", "position": 3, "name": "How to Size a Solar Charge Controller", "item": "https://solar-sizer.com/how-to-size-a-solar-charge-controller.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why is the 12 V result 80 A when the division is 68.6 A?",
+      "acceptedAnswer": {"@type": "Answer", "text": "sizeController divides array watts by bank volts and then by 0.85, and the screen prints that current to one decimal. 700 ÷ 12 ÷ 0.85 = 68.6 A. The listed sizes are 10, 20, 30, 40, 60, 80, and 100 A, so 68.6 A becomes 80 A."}
+    },
+    {
+      "@type": "Question",
+      "name": "Is 0.85 the same as multiplying short-circuit current by 1.25?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. In app.js the 0.85 is a charge-inefficiency margin on array watts ÷ battery volts. Canadian Solar's July 2020 installation manual says module short-circuit current at STC should be multiplied by 1.25 when determining component ratings and capacities, and that local regulations may apply an additional 1.25 (a total of 1.56) when sizing conductors and fuses. Those are different steps. A licensed electrician applies the code adopted where the array is installed."}
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">SolarSizer</a>
+  <nav aria-label="Site">
+    <a href="index.html#calc">Calculator</a>
+    <a href="how-many-solar-panels.html">Panel count</a>
+    <a href="what-size-solar-system.html">System size</a>
+    <a href="off-grid-cabin-solar.html">Cabin solar</a>
+    <a href="topics.html">Topics</a>
+  </nav>
+</header>
+<main>
+<h1>How to Size a Solar Charge Controller</h1>
+<p class="small">Built by <a href="/about.html">Jeremy Panasuk</a>. Published October 6, 2026.</p>
+<p class="sub">The amp number on this site is array watts ÷ battery volts ÷ 0.85, then the next size in a fixed list. A model's maximum charge current and maximum PV voltage are separate limits, printed on that model's datasheet.</p>
+<div class="answer-box"><strong>Worked example:</strong> 2,400 Wh at 4 sun hours is 2,400 ÷ 4 ÷ 0.86 = 697.67 W, which <code>sizeSystem</code> prints as 700 W. <code>sizeController</code> then does 700 ÷ 12 ÷ 0.85 = 68.6 A and lists an 80 A controller. The same 700 W at 24 V is 700 ÷ 24 ÷ 0.85 = 34.3 A, listed as 40 A. Enter the array watts on the <a href="index.html#calc">charge controller tab</a>.</div>
+
+<h2>PWM and MPPT are not the same switch</h2>
+<p><a href="https://www.victronenergy.com/upload/documents/Technical-Information-Which-solar-charge-controller-PWM-or-MPPT.pdf">Victron's 20 January 2020 note, "Which solar charge controller: PWM or MPPT?"</a>, describes a PWM controller as a switch that connects the array to the battery, so the array voltage is pulled down to near the battery voltage. An MPPT controller adjusts its input voltage to take maximum power from the array and then transforms that power for the battery. Victron's example of that decoupling is a 12 V battery on one side and panels wired in series to 36 V on the other.</p>
+<p>The same note says it is generally accepted that MPPT will outperform PWM in a cold to temperate climate, while both controllers show approximately the same performance in a subtropical to tropical climate. The worked panel in that note is a 100 W, 36-cell module with Vm 18 V, Im 5.56 A, Voc 21.6 V, and Isc 6.12 A. The note states that 18 V × 5.56 A equals 100 W at STC (cell temperature 25°C, irradiance 1,000 W/m², AM 1.5).</p>
+<p>The <a href="https://www.victronenergy.com/upload/documents/Datasheet-SmartSolar-charge-controller-MPPT-100-30-%26-100-50-EN.pdf">SmartSolar MPPT 100/30 and 100/50 datasheet</a> says an ultra-fast MPPT controller improves energy harvest by up to 30% compared with PWM controllers and by up to 10% compared with slower MPPT controllers, especially under a clouded sky when light intensity keeps changing. That "up to 30%" is the datasheet's harvest claim. It is not a multiplier this calculator applies to array watts.</p>
+
+<h2>What the calculator prints</h2>
+<p>In <a href="assets/app.js">assets/app.js</a>, <code>sizeController</code> sets amps = array watts ÷ bank volts ÷ 0.85. The comment in that function calls 0.85 a charge-inefficiency margin. The screen prints that current with one decimal, then picks the first size in 10, 20, 30, 40, 60, 80, and 100 A that is at least that current. If the current is above 100 A, the fallback is <code>Math.ceil(amps / 20) × 20</code>.</p>
+<div class="tbl-wrap">
+<table>
+<tr><th>Input</th><th>Division</th><th class="num">Printed amps</th><th class="num">Listed size</th></tr>
+<tr><td>700 W, 12 V</td><td>700 ÷ 12 ÷ 0.85</td><td class="num">68.6 A</td><td class="num">80 A</td></tr>
+<tr><td>700 W, 24 V</td><td>700 ÷ 24 ÷ 0.85</td><td class="num">34.3 A</td><td class="num">40 A</td></tr>
+</table>
+</div>
+<p>The 700 W is the same <code>sizeSystem</code> result used on <a href="how-to-charge-lifepo4-with-solar.html">how to charge LiFePO4 batteries with solar</a>: 2,400 ÷ 4 ÷ 0.86. The 0.86 is 1 − 0.14 from Table 6 of the <a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">NREL PVWatts Version 5 manual</a>. Recharge watts that start from battery amp-hours, instead of from daily watt-hours, are on <a href="panels-to-charge-battery.html">panels to charge a battery</a>.</p>
+
+<h2>Check the model's two limits</h2>
+<p>The <a href="https://www.victronenergy.com/upload/documents/Manual_SmartSolar_MPPT_75-10_up_to_100-20/29694-MPPT_solar_charger_manual-pdf-en.pdf">SmartSolar MPPT 75/10 up to 100/20 manual</a> says the product name encodes the maximum PV voltage and the maximum battery charge current. A 75/15 model has a maximum PV voltage of 75 V and can charge the battery at a maximum of 15 A. The manual's PV-array conditions are that the maximum open-circuit PV voltage cannot exceed 75 V or 100 V, depending on the model, and that the nominal PV voltage should be at least 5 V higher than the battery voltage. Charging starts when PV voltage is 5 V higher than battery voltage, and it continues only while PV voltage stays at least 1 V higher.</p>
+<p>Fifteen amps is below the 68.6 A the 12 V example prints, and it is also below the 34.3 A the 24 V example prints. A 75/15 is not the controller for this 700 W array at either voltage.</p>
+<p>On the 100/30 and 100/50 datasheet, rated charge current is 30 A and 50 A. Nominal PV power, footnote 1a and 1b, is 440 W at 12 V and 880 W at 24 V for the 100/30, and 700 W at 12 V and 1,400 W at 24 V for the 100/50. Footnote 1a: if more PV power is connected, the controller limits input power. Footnote 1b: PV voltage must exceed battery voltage + 5 V for the controller to start, and thereafter the minimum is battery voltage + 1 V. Footnote 2: a PV array with a higher short-circuit current may damage the controller. Maximum PV open-circuit voltage on both of those models is 100 V. Maximum PV short-circuit current is 35 A on the 100/30 and 60 A on the 100/50.</p>
+<p>A 50 A rated charge current is still below 68.6 A, so the 100/50's charge-current rating does not cover the 12 V line even though its 12 V nominal PV power is 700 W. At 24 V, 34.3 A is under that 50 A rating, and 700 W is under the 1,400 W nominal PV power the datasheet lists for 24 V. The calculator still lists 40 A for that line, because 40 is the next size in its own list.</p>
+
+<h2>Short-circuit current is a different multiplication</h2>
+<p>The <a href="https://www.canadiansolar.com/wp-content/uploads/2020/08/Installation_Manual_of_Standard_Solar_Modules_en.pdf">Canadian Solar installation manual of standard solar modules, July 2020 (EN-Rev IM/GN-AM-EN/2.2)</a>, says a module may produce more current or voltage than at STC. For component ratings and capacities it says short-circuit current under STC should be multiplied by 1.25, and a correction factor from that manual's Table 1 should be applied to open-circuit voltage. It also says that, depending on local regulations, an additional 1.25 multiplier on short-circuit current (a total multiplier of 1.56) may apply when sizing conductors and fuses. The series-fuse walkthrough for one Canadian Solar model is on <a href="how-to-fuse-a-solar-panel-array.html">how to fuse a solar panel array</a>.</p>
+<p>That 1.25 is applied to the module's short-circuit current. It is not the calculator's ÷ 0.85, and this page does not relabel 68.6 A as a code current. Conductor size is the job of a licensed electrician under the code adopted for the building.</p>
+
+<div class="affil">
+<span class="tag">Affiliate</span>
+<p class="small">Affiliate disclosure: as an Amazon Associate, we earn from qualifying purchases — at no cost to you.</p>
+<p><a class="btn-amz" href="https://www.amazon.com/s?k=MPPT+charge+controller&amp;tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">Shop an MPPT charge controller on Amazon</a></p>
+</div>
+
+<h2>One common mistake</h2>
+<p>Reading 68.6 A and buying a controller whose nameplate maximum charge current is 15 A or 30 A. The listed 80 A is the calculator rounding up inside its size list. The model's maximum battery charge current still has to sit at or above the current you intend the controller to pass, and the array's cold open-circuit voltage still has to sit at or under the model's maximum PV voltage. The other mistake is treating ÷ 0.85 as the module manual's × 1.25.</p>
+
+<h2>Limits</h2>
+<p>Victron's installation section says the DC (PV) input is not isolated from the battery circuit, so the PV, battery, and control circuit are considered hazardous and should not be user accessible. Do not use a higher short-circuit current than the datasheet allows: the 100/30 and 100/50 footnote says that can damage the controller. This page does not pick a wire gauge. A licensed electrician sizes the conductors and the overcurrent devices.</p>
+
+<h2>FAQ</h2>
+<h3>Why is the 12 V result 80 A when the division is 68.6 A?</h3>
+<p><code>sizeController</code> divides array watts by bank volts and then by 0.85, and the screen prints that current to one decimal. 700 ÷ 12 ÷ 0.85 = 68.6 A. The listed sizes are 10, 20, 30, 40, 60, 80, and 100 A, so 68.6 A becomes 80 A.</p>
+<h3>Is 0.85 the same as multiplying short-circuit current by 1.25?</h3>
+<p>No. In <a href="assets/app.js">app.js</a> the 0.85 is a charge-inefficiency margin on array watts ÷ battery volts. Canadian Solar's July 2020 installation manual says module short-circuit current at STC should be multiplied by 1.25 when determining component ratings and capacities, and that local regulations may apply an additional 1.25 (a total of 1.56) when sizing conductors and fuses. Those are different steps. A licensed electrician applies the code adopted where the array is installed.</p>
+<p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.victronenergy.com/upload/documents/Technical-Information-Which-solar-charge-controller-PWM-or-MPPT.pdf">Victron Energy, Which solar charge controller: PWM or MPPT?, 20 January 2020</a> — PWM as a switch, MPPT decoupling, the climate sentence, and the 100 W panel (Vm 18 V, Im 5.56 A). Accessed Oct 6, 2026.</li>
+<li><a href="https://www.victronenergy.com/upload/documents/Datasheet-SmartSolar-charge-controller-MPPT-100-30-%26-100-50-EN.pdf">Victron Energy, SmartSolar MPPT 100/30 and 100/50 datasheet</a> — up to 30% versus PWM, rated charge current, nominal PV power, and footnotes 1a, 1b, and 2. Accessed Oct 6, 2026.</li>
+<li><a href="https://www.victronenergy.com/upload/documents/Manual_SmartSolar_MPPT_75-10_up_to_100-20/29694-MPPT_solar_charger_manual-pdf-en.pdf">Victron Energy, SmartSolar MPPT 75/10 up to 100/20 manual</a> — a 75/15 is 75 V and 15 A; open-circuit PV voltage limit; nominal PV at least 5 V above the battery. Accessed Oct 6, 2026.</li>
+<li><a href="https://www.canadiansolar.com/wp-content/uploads/2020/08/Installation_Manual_of_Standard_Solar_Modules_en.pdf">Canadian Solar, Installation Manual of Standard Solar Modules, July 2020</a> — Isc × 1.25 for component ratings, and a possible further × 1.25 (total 1.56) for conductors and fuses. Accessed Oct 6, 2026.</li>
+<li><a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">NREL PVWatts Version 5 Manual, A. Dobos, September 4, 2014</a> — Table 6, 14% default system losses; 1 − 0.14 = 0.86. Accessed Oct 6, 2026.</li>
+<li><a href="assets/app.js">SolarSizer calculator, assets/app.js</a> — <code>sizeSystem</code> and <code>sizeController</code>. Accessed Oct 6, 2026.</li>
+</ul>
+<p><a href="index.html">← Back to the solar size calculator</a></p>
+</main>
+<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
+</body>
+</html>
