@@ -129,7 +129,7 @@ function sizeSystem(){
       '<div class="stat"><b>'+fmt(Math.ceil(bankAh*sysV*0.15/100)*100)+' W</b><span>Min charge rate (0.15C) to keep the bank healthy</span></div>'+
       '<div class="stat"><b>≥ '+fmt(ceilTo(bankAh/100,1)*100)+' Ah</b><span>Common 100 Ah units to parallel</span></div>'+
     '</div>'+
-    '<p class="note">Sizing rule of thumb: array watts ÷ battery volts ÷ 0.85 gives the charge controller amps — check the charge controller tab. If your winter sun hours are half your annual average, size the array to winter or accept generator/shore charging in the dark months.</p>';
+    '<p class="note">Sizing rule of thumb: array watts ÷ battery volts ÷ 0.85 gives the charge controller amps — check the charge controller tab.</p>';
   var box = el("sysResult"); box.hidden = false; box.innerHTML = html;
   if (window.updateMatchedCTA) window.updateMatchedCTA(arrayW, 'system');
 }
@@ -154,7 +154,7 @@ function sizeInverter(){
       '<div class="stat"><b>'+dcAmps.toFixed(0)+' A</b><span>DC draw at '+v+' V (incl. ~8% inverter loss)</span></div>'+
       '<div class="stat"><b>'+fmt(v)+' V</b><span>Match inverter to bank voltage</span></div>'+
     '</div>'+
-    '<p class="note">Pure sine wave only — modified-sine inverters run hot and kill compressor motors. Above 2,000 W continuous, prefer a 48 V bank: DC amps (and cable cost) drop by half each time you double voltage.</p>';
+    '<p class="note">Pure sine wave only — modified-sine inverters run hot and kill compressor motors.</p>';
 }
 
 /* ---------- 3. Charge controller ---------- */
@@ -166,9 +166,7 @@ function sizeController(){
   var amps = watts / v / 0.85;   // charge inefficiency margin
   var std = [10,20,30,40,60,80,100];
   var rec = std.find(function(s){ return s >= amps; }) || Math.ceil(amps/20)*20;
-  var mpptTip = type === "pwm" && watts > 200
-    ? '<p class="note">Above 200 W, MPPT usually pays for itself: 20–30% more harvest in cold/cloudy conditions and it lets you run a higher-voltage array on thinner wire.</p>'
-    : '<p class="note">MPPT harvests 20–30% more than PWM in cold or cloudy weather. PWM is fine for small ~100–200 W trickle arrays.</p>';
+  var mpptTip = '<p class="note">Amps = array watts ÷ bank volts ÷ 0.85, then the next size in 10, 20, 30, 40, 60, 80, and 100 A.</p>';
   var box = el("ccResult"); box.hidden = false;
   if (window.updateMatchedCTA) window.updateMatchedCTA(rec, 'controller');
   box.innerHTML = '<div class="big">'+rec+' A <span class="unit">'+type.toUpperCase()+' charge controller</span></div>'+

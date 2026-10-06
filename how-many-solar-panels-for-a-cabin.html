@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>How Many Solar Panels for a Cabin?</title>
-<meta name="description" content="Solar panel counts by cabin type: 2 panels (400–500 W) for a weekend cabin, 5 panels (~1,500 W) full-time with a fridge, 10+ panels (3,000 W) for a homestead.">
+<meta name="description" content="Panel count is daily watt-hours ÷ sun hours ÷ 0.86 ÷ panel watts. The calculator's refrigerator preset is 150 W × 8 h = 1,200 Wh.">
 <link rel="canonical" href="https://solar-sizer.com/how-many-solar-panels-for-a-cabin.html">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="shortcut icon" href="assets/favicon.ico">
 <meta name="robots" content="index,follow">
 <meta property="og:title" content="How Many Solar Panels for a Cabin?">
-<meta property="og:description" content="Panel counts by cabin type — weekend, full-time, homestead — with battery bank sizes and the watt-hours-per-day math behind each.">
+<meta property="og:description" content="Panel count is daily watt-hours ÷ sun hours ÷ 0.86 ÷ panel watts. The calculator's refrigerator preset is 150 W × 8 h = 1,200 Wh.">
 <meta property="og:url" content="https://solar-sizer.com/how-many-solar-panels-for-a-cabin.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://solar-sizer.com/assets/og-image.png">
@@ -18,7 +18,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How Many Solar Panels for a Cabin?">
-<meta name="twitter:description" content="2 panels for a weekend cabin, ~5 for full-time with a fridge, 10+ for a homestead.">
+<meta name="twitter:description" content="Panel count is daily watt-hours ÷ sun hours ÷ 0.86 ÷ panel watts. The calculator's refrigerator preset is 150 W × 8 h = 1,200 Wh.">
 <meta name="twitter:image" content="https://solar-sizer.com/assets/og-image.png">
 <link rel="stylesheet" href="assets/styles.css">
 <script type="application/ld+json">
@@ -82,32 +82,21 @@
 
 <main>
 <h1>How many solar panels do I need for a cabin?</h1>
-<p class="sub">Panel counts by how you actually use the cabin — weekend, full-time, or homestead — with the daily watt-hour math behind each number.</p>
+<p class="sub">The count is daily watt-hours ÷ sun hours ÷ 0.86 ÷ the watts of the panel you buy, rounded up.</p>
 
-<div class="answer-box"><strong>Quick answer:</strong> A <strong>weekend cabin needs 2–3 panels (400–500 W)</strong>, a <strong>full-time cabin with a fridge needs about 5 (1,300–1,500 W)</strong>, and a <strong>small homestead with a well pump and workshop needs 10+ (3,000 W)</strong>. The number comes from daily watt-hours ÷ sun hours ÷ 0.86 — not from cabin square footage.</div>
-
-<h2>Panel count by cabin type</h2>
-<div class="tbl-wrap">
-<table>
-<tr><th>Cabin type</th><th class="num">Daily use</th><th class="num">Array size</th><th class="num">Panels (300 W)</th><th class="num">Battery bank</th><th class="num">Inverter</th></tr>
-<tr><td>Weekend (lights, pump, charging, internet)</td><td class="num">~1,450 Wh</td><td class="num">500 W</td><td class="num">2</td><td class="num">24 V 100 Ah LiFePO4</td><td class="num">1,000 W</td></tr>
-<tr><td>Full-time (+ fridge, TV, fan)</td><td class="num">~3,800 Wh</td><td class="num">1,500 W</td><td class="num">5</td><td class="num">24 V 400 Ah LiFePO4</td><td class="num">2,000 W</td></tr>
-<tr><td>Homestead (+ well pump, workshop)</td><td class="num">~8,000 Wh</td><td class="num">3,000 W</td><td class="num">10</td><td class="num">48 V 400 Ah LiFePO4</td><td class="num">4,000–5,000 W</td></tr>
-</table>
-</div>
-<p class="small">Array sizes are this page's picks. At 4 peak sun hours, the calculator's formula (daily Wh ÷ 4 ÷ 0.86, rounded up to the next 100 W) prints 500 W, 1,200 W, and 2,400 W for these three rows; the full-time and homestead picks carry margin above that. The 0.86 is <a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">NREL PVWatts' default 14% system losses</a> and does not include inverter or battery round-trip losses. Batteries sized for 1–2 days autonomy at 80% depth of discharge.</p>
+<div class="answer-box"><strong>Quick answer:</strong> Square footage does not set the count. The refrigerator preset in <a href="assets/app.js">assets/app.js</a> is 150 W × 8 h = 1,200 Wh. At 4 sun hours, 1,200 ÷ 4 ÷ 0.86 = 348.8 W, which the calculator prints as 400 W. Panels = that array ÷ the module watts you buy, rounded up. Run the whole cabin list in the <a href="index.html#calc">solar size calculator</a>.</div>
 
 <h2>The math, once</h2>
-<p>Square footage doesn't matter — usage does. Sum your daily watt-hours (a fridge cycles ~1,200 Wh/day, LED lights 10 W × 5 hrs each, a water pump ~100 Wh/day for a small cabin), then: array watts = daily Wh ÷ worst-month sun hours ÷ 0.86. Panels = array watts ÷ panel watts, rounded up. Full worked examples live in our <a href="off-grid-cabin-solar.html">off-grid cabin solar guide</a>. The flat daily question at 5 kWh is <a href="what-size-solar-system-for-5-kwh-per-day.html">what size solar system for 5 kWh per day</a>.</p>
+<p>Sum daily watt-hours, then array watts = daily Wh ÷ worst-month sun hours ÷ 0.86. The 0.86 is <a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">NREL PVWatts' default 14% system losses</a>. It does not include inverter or battery round-trip losses. The same refrigerator preset, with the bank and controller lines, is on the <a href="off-grid-cabin-solar.html">off-grid cabin solar guide</a>. A flat 5 kWh day is <a href="what-size-solar-system-for-5-kwh-per-day.html">what size solar system for 5 kWh per day</a>.</p>
 
-<h2>What breaks the "2 panel" answer</h2>
-<p><strong>A fridge</strong> roughly triples daily use — that's the line between weekend and full-time. <strong>A well pump</strong> doesn't add much daily energy (~500–1,000 Wh/day) but demands a big inverter for its 2–3× startup surge, which is why the homestead tier jumps to a 4,000+ W inverter. <strong>Electric cooking, water heating, or space heat</strong> add 4–10+ kWh/day each — keep those on propane or wood at every tier, or the panel count doubles for loads a $30 propane burner covers.</p>
+<h2>What changes the count</h2>
+<p>Adding the refrigerator preset adds 1,200 Wh to the day. A pump's daily watt-hours can be a small part of that day while its startup sets the inverter; the inverter tab uses a 3× motor factor and a 4× compressor factor. Keep electric cooking, water heating, and space heat off the list unless you have measured those watt-hours.</p>
 
-<h2>Winter changes the answer</h2>
-<p>The table uses 4 sun hours; northern winters deliver 1.5–3. A year-round cabin either doubles the array to worst-month hours (10 panels full-time) or keeps the summer array and adds a generator for December–January — most off-gridders pick the generator route since it costs a few hundred dollars instead of a few thousand. The <a href="https://battery-bank-sizer.com/" rel="noopener">battery bank sizer</a> sizes the storage side once you've settled the array.</p>
+<h2>Winter changes the sun-hour input</h2>
+<p>Type the worst-month sun hours into the calculator, or keep a summer array and add generator charging for the dark months. The <a href="https://battery-bank-sizer.com/" rel="noopener">battery bank sizer</a> sizes the storage side once the array is settled.</p>
 
-<h2>The pick</h2>
-<p><strong>Weekends:</strong> 2×250 W panels, 30 A MPPT, 24 V 100 Ah bank, 1,000 W inverter — ~$1,200–1,800 DIY. <strong>Full-time:</strong> 5×300 W, 80 A MPPT, 24 V 400 Ah bank, 2,000 W inverter — ~$4,000–6,500. <strong>Homestead:</strong> 10×300 W ground-mounted, 48 V 400 Ah, 4,000–5,000 W inverter. Plug your own load list into the <a href="index.html#calc">solar size calculator</a> for exact numbers.</p>
+<h2>Use your own list</h2>
+<p>Plug the loads you actually run into the <a href="index.html#calc">solar size calculator</a>. The panel count is the printed array watts divided by the module watts you buy, rounded up.</p>
 
 <h2>FAQ</h2>
 <h3>Do panel counts change with 200 W vs 400 W panels?</h3>
@@ -122,7 +111,7 @@
 <li><a href="assets/app.js">SolarSizer calculator, assets/app.js</a> — array watts = daily watt-hours ÷ sun hours ÷ 0.86. The refrigerator preset is 150 W × 8 h = 1,200 Wh, the "~1,200 Wh/day" fridge line. The form's lithium depth of discharge is 80%. Accessed Oct 3, 2026.</li>
 <li><a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">NREL PVWatts Version 5 Manual, A. Dobos, September 4, 2014</a> — Table 6, 14% default system losses; 1 − 0.14 = 0.86. Accessed Oct 3, 2026.</li>
 </ul>
-<p>The 1,450, 3,800, and 8,000 Wh/day rows, the inverter watt picks, the dollar ranges, the $30 propane-burner line, and the 1.5–3 winter sun-hour band are this page's examples. LED lights at 10 W × 5 h and a water pump at ~100 Wh/day are also this page's examples; the calculator presets are 80 W for the cabin light row and 60 W × 0.5 h for the pump.</p>
+<p>1,200 ÷ 4 ÷ 0.86 = 348.8 W, printed as 400 W. The inverter factors 3× and 4× are <code>sizeInverter</code> in the same file.</p>
 <p><a href="index.html">← Back to the solar size calculator</a></p>
 </main>
 

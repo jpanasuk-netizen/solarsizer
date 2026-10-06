@@ -61,7 +61,7 @@
 <h1>How many solar panels do I need?</h1>
 <p class="sub">The panel-count math in one line, worked examples from a fridge to a full house, and why batteries change the answer.</p>
 
-<div class="answer-box"><strong>Quick answer:</strong> At 4.5 sun hours, a 1,500 Wh/day refrigerator needs 400 W of panels (one 400 W panel); a 30 kWh/day home needs 7,800 W, or 20 panels at 400 W. Run the calculator below for your exact load.</div>
+<div class="answer-box"><strong>Quick answer:</strong> At 4.5 sun hours, array watts = daily watt-hours ÷ 4.5 ÷ 0.86, rounded up to the next 100 W. The rows below are inputs to that function. The calculator's refrigerator preset is 150 W × 8 h = 1,200 Wh, which is 310.1 W before rounding and 400 W after it.</div>
 
 <h2>The math</h2>
 <p>Every panel-count question reduces to the same division chain — the energy you use per day, spread across the sun hours you actually get, adjusted for real-world losses, divided by what one panel produces:</p>
@@ -72,11 +72,11 @@
 <div class="tbl-wrap">
 <table>
 <tr><th>Load</th><th class="num">Daily Wh</th><th class="num">÷ 4.5 ÷ 0.86</th><th class="num">Calculator array (next 100 W)</th><th class="num">300 W panels (calculator)</th><th class="num">400 W panels</th></tr>
-<tr><td>Fridge + lights + phone</td><td class="num">2,000</td><td class="num">516.8 W</td><td class="num">600 W</td><td class="num">2</td><td class="num">2</td></tr>
-<tr><td>Small cabin, weekend use</td><td class="num">4,000</td><td class="num">1,033.6 W</td><td class="num">1,100 W</td><td class="num">4</td><td class="num">3</td></tr>
-<tr><td>Full-time tiny home</td><td class="num">8,000</td><td class="num">2,067.2 W</td><td class="num">2,100 W</td><td class="num">7</td><td class="num">6</td></tr>
-<tr><td>Efficient whole home (no AC)</td><td class="num">15,000</td><td class="num">3,876.0 W</td><td class="num">3,900 W</td><td class="num">13</td><td class="num">10</td></tr>
-<tr><td>Average US home</td><td class="num">30,000</td><td class="num">7,751.9 W</td><td class="num">7,800 W</td><td class="num">26</td><td class="num">20</td></tr>
+<tr><td>2,000 Wh input</td><td class="num">2,000</td><td class="num">516.8 W</td><td class="num">600 W</td><td class="num">2</td><td class="num">2</td></tr>
+<tr><td>4,000 Wh input</td><td class="num">4,000</td><td class="num">1,033.6 W</td><td class="num">1,100 W</td><td class="num">4</td><td class="num">3</td></tr>
+<tr><td>8,000 Wh input</td><td class="num">8,000</td><td class="num">2,067.2 W</td><td class="num">2,100 W</td><td class="num">7</td><td class="num">6</td></tr>
+<tr><td>15,000 Wh input</td><td class="num">15,000</td><td class="num">3,876.0 W</td><td class="num">3,900 W</td><td class="num">13</td><td class="num">10</td></tr>
+<tr><td>30,000 Wh input</td><td class="num">30,000</td><td class="num">7,751.9 W</td><td class="num">7,800 W</td><td class="num">26</td><td class="num">20</td></tr>
 </table>
 </div>
 <p class="note">The table uses 4.5 sun hours. Type 4.5 into the calculator's sun-hour field (it opens at 4) and the same daily watt-hours print the same array and 300 W panel count. The 400 W column is the calculator array ÷ 400, rounded up.</p>
@@ -85,8 +85,8 @@
 <h2>Battery coupling changes the count</h2>
 <p>If your panels charge a battery and the battery runs your night loads, the bank adds losses and the array has to refill what the night drains. Two adjustments:</p>
 <ul>
-  <li><strong>Round-trip efficiency:</strong> lithium banks deliver ~90–95% of what you charge in; lead-acid ~80–85%. Budget the panel wattage 1.2× over the load-only figure.</li>
-  <li><strong>Autonomy days:</strong> a bank sized for 2 days of autonomy still needs to be refilled daily in normal operation — panels sized for one day's load refill a 1-day bank, but a 2-day bank needs roughly the daily load plus whatever was drawn overnight, every day.</li>
+  <li><strong>Round-trip losses:</strong> the 0.86 derate does not include them. <code>panelsForBattery</code> divides by 0.85 on the recharge path. Do not stack another factor on top of that division.</li>
+  <li><strong>Autonomy days:</strong> a bank sized for more than one day still has to be refilled from the watt-hours you actually drew. Size that refill from the measured day, not from a second copy of the array formula.</li>
 </ul>
 <p>Work the other direction with the <a href="panels-to-charge-battery.html">panels-per-battery recharge math</a>, or size the whole bank first with the <a href="https://battery-bank-sizer.com/" rel="noopener">battery bank sizer</a>, then size panels to refill it.</p>
 
@@ -95,7 +95,7 @@
 
 <h2>Sanity checks before you buy</h2>
 <ul>
-  <li><strong>Roof space:</strong> a 400 W panel is roughly 21 sq ft. Twenty panels ≈ 420 sq ft of usable roof.</li>
+  <li><strong>Roof space:</strong> check the module's own dimensions against the roof before you order the count.</li>
   <li><strong>Inverter headroom:</strong> array watts should stay within your inverter's max PV input — see <a href="what-size-solar-system.html">whole-system sizing</a> for pairing.</li>
   <li><strong>Reduce, then size:</strong> every 100 Wh/day you trim (LED swaps, an efficient fridge) removes about 26 W of array at 4.5 sun hours (100 ÷ 4.5 ÷ 0.86). Efficiency is cheaper than panels.</li>
 </ul>
@@ -107,7 +107,7 @@
 <li><a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">NREL PVWatts Version 5 Manual, A. Dobos, September 4, 2014</a> — Table 6 default system losses, 14% total; 1 − 0.14 = 0.86. Accessed Oct 3, 2026.</li>
 <li><a href="assets/app.js">SolarSizer calculator, assets/app.js</a> — <code>sizeSystem</code>: daily watt-hours ÷ sun hours ÷ 0.86, rounded up to the next 100 W, then ÷ 300 W panels, rounded up. Every table row is that function at 4.5 sun hours. Accessed Oct 3, 2026.</li>
 </ul>
-<p>The 21 sq ft panel area, the 90–95% and 80–85% round-trip ranges, and the 1.2× battery adjustment are this page's examples. Accessed Oct 3, 2026.</p>
+<p>1,200 ÷ 4.5 ÷ 0.86 = 310.1 W, and <code>sizeSystem</code> rounds that up to 400 W. Each table row is the same function at 4.5 sun hours. Accessed Oct 6, 2026.</p>
 <p><a href="index.html">← Back to the solar size calculator</a></p>
 </main>
 

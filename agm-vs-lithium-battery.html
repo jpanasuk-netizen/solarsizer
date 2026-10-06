@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AGM vs Lithium (LiFePO4) Battery for Off-Grid (2026)</title>
-<meta name="description" content="AGM vs LiFePO4 batteries compared: 50% vs 80–90% usable capacity, 500 vs 3,000+ cycles, 2× the weight.">
+<meta name="description" content="The BB10012i manual rates that model at 100% usable depth of discharge and 3,000–5,000 cycles. The calculator's form uses 80% and 50%.">
 <link rel="canonical" href="https://solar-sizer.com/agm-vs-lithium-battery.html">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="shortcut icon" href="assets/favicon.ico">
 <meta name="robots" content="index,follow">
 <meta property="og:title" content="AGM vs Lithium Battery for Off-Grid Solar">
-<meta property="og:description" content="50% vs 80–90% usable capacity, 500 vs 3,000+ cycles — the real cost-per-usable-kWh comparison and when AGM still wins.">
+<meta property="og:description" content="The BB10012i manual rates that model at 100% usable depth of discharge and 3,000–5,000 cycles. The calculator's form uses 80% and 50%.">
 <meta property="og:url" content="https://solar-sizer.com/agm-vs-lithium-battery.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://solar-sizer.com/assets/og-image.png">
@@ -18,7 +18,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AGM vs Lithium (LiFePO4) Battery (2026)">
-<meta name="twitter:description" content="Lithium costs ~2× upfront and delivers 3–5× the usable life. The break-even math.">
+<meta name="twitter:description" content="The BB10012i manual rates that model at 100% usable depth of discharge and 3,000–5,000 cycles. The calculator's form uses 80% and 50%.">
 <meta name="twitter:image" content="https://solar-sizer.com/assets/og-image.png">
 <link rel="stylesheet" href="assets/styles.css">
 <script type="application/ld+json">
@@ -31,7 +31,7 @@
       "name": "Can I mix AGM and lithium in the same bank?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Different charge profiles (AGM absorbs at ~14.4 V, LiFePO4 at ~14.2 V with different current behavior) mean one chemistry always charges wrong. Replace whole banks at once, or keep them on separate controllers."
+        "text": "No. The two chemistries use different charge profiles, so one of them charges wrong if they share a controller. Replace whole banks at once, or keep them on separate controllers. The BB10012i manual's absorption range for that model is 14.2–14.6 V."
       }
     },
     {
@@ -39,7 +39,7 @@
       "name": "Do I need a special charge controller or inverter for lithium?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Any MPPT controller with an adjustable or LiFePO4 profile works — set absorption ~14.2–14.6 V and float low or off. The one real gotcha is surge: a well pump or big tool startup can exceed a 100 Ah lithium battery's BMS limit, so parallel batteries or a higher-BMS model is standard for pump systems. A rested lead-acid voltage is a different check, on Trojan's 12 V open-circuit table."
+        "text": "Set the controller to the battery manual. For the BB10012i, absorption is 14.2–14.6 V, float is 13.4–13.8 V, and the maximum charge current is 50 A. A rested lead-acid voltage is a different check, on Trojan's 12 V open-circuit table."
       }
     }
   ]
@@ -84,37 +84,16 @@
 <h1>AGM or lithium battery for my off-grid system?</h1>
 <p class="sub">Same amp-hour label, very different batteries. The usable-capacity and cycle-life math that settles which chemistry goes in your bank.</p>
 
-<div class="answer-box"><strong>Quick answer:</strong> For daily-cycling off-grid systems, <strong>LiFePO4 wins</strong>: 80–90% usable capacity vs AGM's 50%, 3,000–5,000 cycles vs 400–600, half the weight — and ~3–4× cheaper per usable kWh over the system's life despite ~2× the upfront price. AGM only wins for rarely-cycled backup banks, unheated sub-freezing installs, or a hard budget ceiling today.</div>
+<div class="answer-box"><strong>Quick answer:</strong> Use the battery manual's depth of discharge and cycle rating. The BB10012i manual rates that model at 100% usable depth of discharge and 3,000–5,000 cycles. The calculator's form uses 80% for its LiFePO4 option and 50% for AGM / lead-acid. Those form values are not printed in that manual.</div>
 
-<h2>Side by side</h2>
-<div class="tbl-wrap">
-<table>
-<tr><th></th><th>AGM (sealed lead-acid)</th><th>LiFePO4 (lithium iron phosphate)</th></tr>
-<tr><td>Upfront cost, 100 Ah @ 12 V</td><td class="num">~$200–280</td><td class="num">~$400–600</td></tr>
-<tr><td>Usable capacity (DoD)</td><td class="num">50% → 50 Ah</td><td class="num">80–90% → 80–90 Ah</td></tr>
-<tr><td>Cycle life (to 80% health)</td><td class="num">400–600 cycles</td><td class="num">3,000–5,000 cycles</td></tr>
-<tr><td>Cost per usable kWh over life</td><td class="num">~$0.80–1.20</td><td class="num">~$0.30–0.50</td></tr>
-<tr><td>Weight, 100 Ah @ 12 V</td><td class="num">~63 lb (30 kg)</td><td class="num">~26 lb (12 kg)</td></tr>
-<tr><td>Charge efficiency</td><td class="num">~80–85%</td><td class="num">~98%</td></tr>
-<tr><td>Charging below 32°F</td><td class="num">Allowed (derated)</td><td class="num">Blocked by BMS without a low-temp heater</td></tr>
-<tr><td>Peak current</td><td class="num">Handles motor surges well</td><td class="num">100 Ah models often limited to ~100 A BMS — check inverter surge</td></tr>
-</table>
-</div>
-
-<h2>The break-even math</h2>
-<p>A 24 V 400 Ah AGM bank (~$2,400) delivering 4.8 kWh usable lasts 400–600 cycles — 1.5–2 years of daily cycling. Over the same period one 24 V 400 Ah LiFePO4 bank (~$3,200–4,000) delivers 7.7 kWh usable and is still healthy at year 8–10. Replacing AGM twice before lithium reaches half-life is the part the price tag hides. If the system cycles only weekly (weekend cabin), the crossover stretches past a decade and AGM's lower upfront cost can genuinely win.</p>
-
-<h2>Where AGM still makes sense</h2>
-<p><strong>Unheated spaces below freezing:</strong> lithium BMS units block charging below 32°F unless the battery has a self-heating pad — a cold shed or seasonal cabin can kill a lithium bank's winter usefulness. <strong>Backup that rarely cycles:</strong> an outage bank that sits full gets its life from calendar age, not cycles, so AGM's cycle-life disadvantage barely applies. <strong>High surge loads on a budget:</strong> lead-acid shrugs off motor startup spikes that trip a small lithium BMS — though the fix is simply a bigger lithium model.</p>
-
-<h2>Sizing consequences</h2>
-<p>Same cabin, 2.4 kWh usable overnight: AGM needs 2×200 Ah at 24 V (~126 lb); LiFePO4 needs one 100–130 Ah battery (~30 lb) — and a slightly smaller array, since ~15–20% more of what the panels produce actually reaches the bank. Run both chemistries through the <a href="https://battery-bank-sizer.com/" rel="noopener">battery bank sizer</a> and the <a href="index.html#calc">solar size calculator</a> to see the array difference on your own load list.</p>
+<h2>Where the chemistries differ</h2>
+<p>The BB10012i manual says the BMS will not charge under 32°F (0°C). A bank that sits full and rarely cycles is not using the cycle rating the same way a daily-cycled bank does. Run both depth-of-discharge options in the <a href="https://battery-bank-sizer.com/" rel="noopener">battery bank sizer</a> and the <a href="index.html#calc">solar size calculator</a> on your own load list. The published table for this model is below.</p>
 
 <h2>FAQ</h2>
 <h3>Can I mix AGM and lithium in the same bank?</h3>
-<p>No. Different charge profiles (AGM absorbs at ~14.4 V, LiFePO4 at ~14.2 V with different current behavior) mean one chemistry always charges wrong. Replace whole banks at once, or keep them on separate controllers.</p>
+<p>No. The two chemistries use different charge profiles, so one of them charges wrong if they share a controller. Replace whole banks at once, or keep them on separate controllers. The BB10012i manual's absorption range for that model is 14.2–14.6 V.</p>
 <h3>Do I need a special charge controller or inverter for lithium?</h3>
-<p>Any MPPT controller with an adjustable or LiFePO4 profile works — set absorption ~14.2–14.6 V and float low or off. The one real gotcha is surge: a well pump or big tool startup can exceed a 100 Ah lithium battery's BMS limit, so parallel batteries or a higher-BMS model is standard for pump systems. A rested lead-acid voltage is a different check, on <a href="check-a-12v-battery-open-circuit-voltage.html">Trojan's 12 V open-circuit table</a>.</p>
+<p>Set the controller to the battery manual. For the BB10012i, absorption is 14.2–14.6 V, float is 13.4–13.8 V, and the maximum charge current is 50 A. A rested lead-acid voltage is a different check, on <a href="check-a-12v-battery-open-circuit-voltage.html">Trojan's 12 V open-circuit table</a>.</p>
 
 <h2>Published specs for one LiFePO4 model</h2>
 <p>Section added October 3, 2026. The comparison table higher on this page is a general chemistry summary. The figures in this section are from the Battle Born BB10012i / BB10012iH manual, document PMI_BB10012i, revision 015, dated 8/12/2026. That manual's weight for this model is 31 lb, and its cycle range is 3,000–5,000. Those are this model's published figures.</p>
@@ -138,7 +117,7 @@
 <p>Using the 80% input on a battery the manufacturer rates at 100% usable is what adds the fifth battery. Charge voltages, the 50 A limit, and the 32°F cutoff are on <a href="how-to-charge-lifepo4-with-solar.html">how to charge LiFePO4 batteries with solar</a>. The full count, including the form's 24 V default, is on <a href="how-many-solar-batteries-do-i-need.html">how many solar batteries do I need</a>.</p>
 <p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
 <h2>Sources</h2>
-<p>The list covers the BB10012i table and the calculator contrast in the section added October 3, 2026. The comparison table and the break-even dollars above that section are a general chemistry summary.</p>
+<p>The list covers the BB10012i table and the calculator contrast. Dollar figures and the old general comparison table are not on this page.</p>
 <ul>
 <li><a href="https://battlebornbatteries.com/cdn/shop/files/BB10012i_BB1002iH_Manual.pdf">Battle Born / Dragonfly Energy, BB10012i and BB10012iH manual, PMI_BB10012i Rev 015, 8/12/2026</a> — accessed Oct 3, 2026.</li>
 <li><a href="https://battlebornbatteries.com/blogs/academy/how-to-size-a-deep-cycle-battery-bank-the-battle-born-educational-series">Battle Born Batteries, How to Size a Deep Cycle Battery Bank</a> — accessed Oct 3, 2026.</li>

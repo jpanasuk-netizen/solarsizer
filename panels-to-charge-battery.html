@@ -80,10 +80,10 @@
 </div>
 
 <h2>Seasonal adjustment</h2>
-<p>Winter changes everything. In northern US winters, sun hours fall to 2–2.5, roughly half the annual average — meaning a 200 Ah 12 V bank needs double the panels, or you accept 2 days instead of 1. Cold actually <em>improves</em> panel output slightly, but short days and cloud dominate. Verify your local worst-month figure with NREL's PVWatts or Global Solar Atlas before buying.</p>
+<p>The table uses 4.5 sun hours, the default on the panels-per-battery tab. Type your worst-month hours into that field. <a href="https://pvwatts.nlr.gov/">PVWatts</a> prints a monthly figure for an address you enter.</p>
 
 <h2>Charge rate limits</h2>
-<p>Don't over-panel either: most LiFePO4 banks accept up to 0.5C charge (a 100 Ah battery up to 50 A charging current), while many lead-acid banks should stay near 0.15–0.2C. Match your charge controller to the array: watts ÷ battery volts ÷ 0.85, rounded up to the next standard rating — the calculator's charge controller tab does this for you. PWM versus MPPT, and the 700 W worked example, are on <a href="how-to-size-a-solar-charge-controller.html">how to size a solar charge controller</a>.</p>
+<p>Match the charge controller to the array: watts ÷ battery volts ÷ 0.85, rounded up to the next standard rating. The charge-current limit for one LiFePO4 model is on <a href="how-to-charge-lifepo4-with-solar.html">how to charge LiFePO4 batteries with solar</a>. PWM versus MPPT, and the 700 W worked example, are on <a href="how-to-size-a-solar-charge-controller.html">how to size a solar charge controller</a>.</p>
 
 <p>The series fuse, which is a different part from the charge controller, is on <a href="how-to-fuse-a-solar-panel-array.html">how to fuse a solar panel array</a>. Charge voltages for one LiFePO4 model are on <a href="how-to-charge-lifepo4-with-solar.html">how to charge LiFePO4 batteries with solar</a>. Matching a module's nameplate watts to the array figure is on <a href="how-to-buy-solar-panels.html">how to buy solar panels</a>.</p>
 <p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
@@ -91,7 +91,7 @@
 <ul>
 <li><a href="assets/app.js">SolarSizer calculator, assets/app.js</a> — <code>panelsForBattery</code> is (amp-hours × volts) ÷ sun hours ÷ 0.85. At 4.5 sun hours that is 1,200 ÷ 4.5 ÷ 0.85 ≈ 314 W (printed ~315 W), 2,400 ÷ 4.5 ÷ 0.85 ≈ 627 W (printed ~630 W), 4,800 ÷ 4.5 ÷ 0.85 ≈ 1,255 W (printed ~1,260 W), and 19,200 ÷ 4.5 ÷ 0.85 ≈ 5,020 W (printed ~5,000 W). <code>sizeController</code> is array watts ÷ bank volts ÷ 0.85, rounded up to 10, 20, 30, 40, 60, 80, or 100 A. Accessed Oct 3, 2026.</li>
 </ul>
-<p>The 2–2.5 winter sun-hour line, the note that cold raises panel output, and the 0.15–0.2C lead-acid line are this page's examples. The 0.5C / 50 A sentence is this page's generalization. The Battle Born BB10012i manual's 0.5C and 50 A limit are quoted for that model on <a href="how-to-charge-lifepo4-with-solar.html">how to charge LiFePO4 batteries with solar</a>.</p>
+<p>The watt column is <code>panelsForBattery</code> at 4.5 sun hours. The BB10012i charge-current limit is quoted on the LiFePO4 page linked above, not repeated here as a rule for every battery.</p>
 <p><a href="index.html">← Back to the solar size calculator</a></p>
 </main>
 

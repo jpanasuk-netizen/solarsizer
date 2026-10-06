@@ -42,22 +42,22 @@
     {
       "@type": "Question",
       "name": "What size solar system do I need for an off-grid cabin?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Add the watt-hours of everything you run per day, divide by your location's worst-month sun hours, then divide by 0.86 — NREL PVWatts' default 14% system losses (soiling, shading, mismatch, wiring, availability). A typical minimalist cabin using 3 kWh/day needs about 1,200–1,500 W of panels in most of the US, paired with a 400–600 Ah 12 V LiFePO4 bank (or the 24 V/48 V equivalent) to ride through cloudy days." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Add the watt-hours of everything you run per day, divide by your location's worst-month sun hours, then divide by 0.86 — NREL PVWatts' default 14% system losses (soiling, shading, mismatch, wiring, availability)." }
     },
     {
       "@type": "Question",
       "name": "How many solar panels does it take to charge a 200Ah battery?",
-      "acceptedAnswer": { "@type": "Answer", "text": "A 200 Ah 12 V battery stores 2,400 Wh. To recharge it in one day of sun you need roughly 400–600 W of panels: 2,400 Wh ÷ 4.5 average sun hours ÷ 0.85 charge efficiency ≈ 630 W, so a 2×300 W array covers it in a day and a 400 W array in about a day and a half of good sun." }
+      "acceptedAnswer": { "@type": "Answer", "text": "A 200 Ah 12 V battery stores 2,400 Wh. panelsForBattery does amp-hours × volts ÷ sun hours ÷ 0.85. At 4.5 sun hours that is 2,400 ÷ 4.5 ÷ 0.85 = 627.45 W, which the screen rounds to 627 W." }
     },
     {
       "@type": "Question",
       "name": "MPPT or PWM charge controller — which do I need?",
-      "acceptedAnswer": { "@type": "Answer", "text": "MPPT harvests 20–30% more power than PWM in cold or partly cloudy conditions and lets you use a higher-voltage array with thinner wire, but costs 2–3× more. For arrays above 200 W, or in winter-heavy climates, MPPT pays for itself. Size it: array watts ÷ battery voltage ÷ 0.85 efficiency, rounded up to the next standard rating (20 A, 30 A, 40 A, 60 A, 80 A)." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Victron's SmartSolar MPPT 100/30 and 100/50 datasheet says an ultra-fast MPPT controller improves energy harvest by up to 30% compared with PWM controllers, especially under a clouded sky when light intensity keeps changing. Size it on this page as array watts ÷ battery voltage ÷ 0.85, then round up to the next listed rating (10, 20, 30, 40, 60, 80, or 100 A)." }
     },
     {
       "@type": "Question",
       "name": "What size inverter do I need for off-grid solar?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Total the continuous watts of everything that could run at once, then add the surge of the biggest motor or compressor load (3–4× its running draw). Buy 25% above the continuous total, pure sine wave only. A fridge (150 W running, 600 W surge) plus lights and electronics usually lands at a 1,000–1,500 W inverter; add a microwave or well pump and you're at 2,000–3,000 W." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Total the continuous watts of everything that could run at once, then apply the surge factor in the inverter tab: 1× resistive, 3× motor, 4× compressor, or 2× mixed. The calculator multiplies that continuous total by 1.25. The refrigerator preset is 150 W; a compressor factor of 4 on that preset is 600 W of surge." }
     }
   ]
 }
@@ -108,8 +108,7 @@
 <aside class="tldr" id="quick-answer" aria-label="Quick answer" style="display:block;margin:1rem 0 1.25rem;padding:1rem 1.1rem;border:1px solid var(--bd,#30363d);border-radius:10px;background:var(--card,#161b22)">
   <h2 style="font-size:1.05rem;margin:0 0 .5rem;border:0;padding:0">Quick answer</h2>
   <p style="margin:0 0 .45rem">Size from <strong>daily watt-hours</strong>: array watts ≈ daily Wh ÷ worst-month sun hours ÷ 0.86 (<a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">NREL PVWatts' default 14% system losses</a>).</p>
-  <p style="margin:0 0 .45rem">A minimalist cabin at <strong>3 kWh/day</strong> typically needs about <strong>1,200–1,500 W</strong> of panels in most of the US, paired with a <strong>400–600 Ah 12 V LiFePO4</strong> bank (or 24 V/48 V equivalent) for cloudy days.</p>
-  <p style="margin:0">A <strong>200 Ah 12 V</strong> battery (~2,400 Wh) recharges in about a day with roughly <strong>400–600 W</strong> of panels in average sun. Enter your loads below for panel count, bank Ah, inverter, and charge-controller amps.</p>
+  <p style="margin:0">A <strong>200 Ah 12 V</strong> battery stores 2,400 Wh. At 4.5 sun hours, 2,400 ÷ 4.5 ÷ 0.85 = 627.45 W, which the panels-per-battery screen rounds to 627 W. Enter your loads below for panel count, bank Ah, inverter, and charge-controller amps.</p>
 </aside>
 
 <div id="calc" class="tabs" role="tablist" aria-label="Calculators">
@@ -189,7 +188,7 @@
 
 <!-- ============ 3. CHARGE CONTROLLER ============ -->
 <section id="tab-cc" class="panel" role="tabpanel">
-  <p>The charge controller sits between panels and battery. Size it by array watts ÷ battery voltage — and pick MPPT above ~200 W.</p>
+  <p>The charge controller sits between panels and battery. Size it by array watts ÷ battery voltage ÷ 0.85.</p>
   <div class="row2">
     <div class="field">
       <label for="ccWatts">Total solar array watts</label>
@@ -202,8 +201,8 @@
     <div class="field">
       <label for="ccType">Controller type</label>
       <select id="ccType">
-        <option value="mppt" selected>MPPT (20–30% more harvest)</option>
-        <option value="pwm">PWM (cheap, small arrays)</option>
+        <option value="mppt" selected>MPPT</option>
+        <option value="pwm">PWM</option>
       </select>
     </div>
   </div>
@@ -241,16 +240,16 @@
 
 <h2 id="faq">Frequently asked questions</h2>
 <details open><summary>What size solar system do I need for an off-grid cabin?</summary>
-<p>Add the watt-hours of everything you run per day, divide by your location's worst-month sun hours, then divide by 0.86 — NREL PVWatts' default 14% system losses (soiling, shading, mismatch, wiring, availability). A typical minimalist cabin using 3 kWh/day needs about 1,200–1,500 W of panels in most of the US, paired with a 400–600 Ah 12 V LiFePO4 bank (or the 24 V/48 V equivalent) to ride through cloudy days.</p>
+<p>Add the watt-hours of everything you run per day, divide by your location's worst-month sun hours, then divide by 0.86 — NREL PVWatts' default 14% system losses (soiling, shading, mismatch, wiring, availability).</p>
 </details>
 <details open><summary>How many solar panels does it take to charge a 200Ah battery?</summary>
-<p>A 200 Ah 12 V battery stores 2,400 Wh. To recharge it in one day of sun you need roughly 400–600 W of panels: 2,400 Wh ÷ 4.5 average sun hours ÷ 0.85 charge efficiency ≈ 630 W, so a 2×300 W array covers it in a day and a 400 W array in about a day and a half of good sun.</p>
+<p>A 200 Ah 12 V battery stores 2,400 Wh. panelsForBattery does amp-hours × volts ÷ sun hours ÷ 0.85. At 4.5 sun hours that is 2,400 ÷ 4.5 ÷ 0.85 = 627.45 W, which the screen rounds to 627 W.</p>
 </details>
 <details open><summary>MPPT or PWM charge controller — which do I need?</summary>
-<p>MPPT harvests 20–30% more power than PWM in cold or partly cloudy conditions and lets you use a higher-voltage array with thinner wire, but costs 2–3× more. For arrays above 200 W, or in winter-heavy climates, MPPT pays for itself. Size it: array watts ÷ battery voltage ÷ 0.85 efficiency, rounded up to the next standard rating (20 A, 30 A, 40 A, 60 A, 80 A).</p>
+<p><a href="https://www.victronenergy.com/upload/documents/Datasheet-SmartSolar-charge-controller-MPPT-100-30-%26-100-50-EN.pdf">Victron's SmartSolar MPPT 100/30 and 100/50 datasheet</a> says an ultra-fast MPPT controller improves energy harvest by up to 30% compared with PWM controllers, especially under a clouded sky when light intensity keeps changing. Size it on this page as array watts ÷ battery voltage ÷ 0.85, then round up to the next listed rating (10, 20, 30, 40, 60, 80, or 100 A).</p>
 </details>
 <details open><summary>What size inverter do I need for off-grid solar?</summary>
-<p>Total the continuous watts of everything that could run at once, then add the surge of the biggest motor or compressor load (3–4× its running draw). Buy 25% above the continuous total, pure sine wave only. A fridge (150 W running, 600 W surge) plus lights and electronics usually lands at a 1,000–1,500 W inverter; add a microwave or well pump and you're at 2,000–3,000 W.</p>
+<p>Total the continuous watts of everything that could run at once, then apply the surge factor in the inverter tab: 1× resistive, 3× motor, 4× compressor, or 2× mixed. The calculator multiplies that continuous total by 1.25. The refrigerator preset is 150 W; a compressor factor of 4 on that preset is 600 W of surge.</p>
 </details>
 <h2>How does off-grid solar sizing work?</h2>
 <p>Everything flows from one number: <strong>daily watt-hours</strong>. Panels must replace that number every sun-hour day — array watts = daily Wh ÷ sun hours ÷ 0.86, the derate from <a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">NREL PVWatts' default 14% system losses</a> (soiling, shading, mismatch, wiring, connections, light-induced degradation, nameplate, availability). It does not include inverter or battery round-trip losses. The battery bank must carry you through sunless days: bank Wh = daily Wh × days of autonomy ÷ max depth of discharge. LiFePO4's 80% usable depth is why it wins on-paper capacity math even before cycle life.</p>
@@ -273,18 +272,11 @@
 <p class="small">Draw figures are the preset rows in <a href="assets/app.js">assets/app.js</a>: watts × hours. Anything with heat in it (cooking, water heating, space heat) is what blows up solar budgets — propane or wood wins there in 2026 economics.</p>
 
 <h2>How many sun hours should you plan for (worst month)?</h2>
-<table>
-<tr><th>Climate</th><th class="num">Peak sun hrs/day</th></tr>
-<tr><td>US Southwest (AZ, NV, NM)</td><td class="num">5–6</td></tr>
-<tr><td>US Sun Belt average</td><td class="num">4–5</td></tr>
-<tr><td>Pacific Northwest winter</td><td class="num">1.5–2.5</td></tr>
-<tr><td>Northeast / Midwest winter</td><td class="num">2–3</td></tr>
-<tr><td>Northern Europe winter</td><td class="num">0.5–1.5</td></tr>
-</table>
+<p>Use the worst-month sun hours for your site. The system-size form opens at 4. <a href="https://pvwatts.nlr.gov/">PVWatts</a> prints a monthly figure for an address you enter.</p>
 
 <h2>Guides</h2>
-<div class="card"><h3><a href="off-grid-cabin-solar.html">What size solar system for an off-grid cabin?</a></h3><p>Direct answer: a minimalist cabin at <strong>3 kWh/day</strong> typically needs about <strong>1,200–1,500 W</strong> of panels plus a <strong>400–600 Ah 12 V LiFePO4</strong> bank in most of the US. Worked examples on the guide.</p></div>
-<div class="card"><h3><a href="panels-to-charge-battery.html">How many solar panels to charge a battery?</a></h3><p>Direct answer: a <strong>200 Ah 12 V</strong> bank (~2,400 Wh) needs roughly <strong>400–600 W</strong> of panels to recharge in one average sun day. Winter sun hours can change the answer by ~3× — math on the guide.</p></div>
+<div class="card"><h3><a href="off-grid-cabin-solar.html">What size solar system for an off-grid cabin?</a></h3><p>Array watts = daily watt-hours ÷ sun hours ÷ 0.86. The guide runs the refrigerator preset through that formula.</p></div>
+<div class="card"><h3><a href="panels-to-charge-battery.html">How many solar panels to charge a battery?</a></h3><p>Recharge watts = amp-hours × volts ÷ sun hours ÷ 0.85. The guide's table is that function at 4.5 sun hours.</p></div>
 <div class="card"><h3><a href="https://battery-bank-sizer.com/" rel="noopener">Battery bank sizer ↗</a></h3><p>Sizing the storage side in depth — LiFePO4 vs AGM bank builder with parallel-string planning. Generator backup? GeneratorSizer has the fuel-side math.</p></div>
 
 <h2 id="common-questions">Common questions</h2>
@@ -327,9 +319,9 @@
 <p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
 <h2>Sources</h2>
 <ul>
-<li><a href="assets/app.js">SolarSizer calculator, assets/app.js</a> — the load table is the preset rows (watts × hours): refrigerator 150 W × 8 h = 1,200 Wh, LED lights 80 W × 5 h = 400 Wh, laptop 100 W × 6 h = 600 Wh, water pump 60 W × 0.5 h = 30 Wh, CPAP 40 W × 8 h = 320 Wh, Starlink 60 W × 12 h = 720 Wh, TV 100 W × 4 h = 400 Wh, microwave 1,000 W × 0.25 h = 250 Wh, induction cooktop 1,500 W × 0.75 h = 1,125 Wh. <code>sizeSystem</code> uses daily watt-hours ÷ sun hours ÷ 0.86 (1 − the 14% default system losses in the <a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">NREL PVWatts Version 5 manual</a>, Table 6), rounds array watts up to the next 100 W, and sets bank watt-hours to daily watt-hours × days ÷ depth of discharge. The form opens at 4 sun hours, 2 days, 24 V, and 80% depth of discharge, with a 50% option. <code>sizeController</code> uses array watts ÷ bank volts ÷ 0.85 and the sizes 10, 20, 30, 40, 60, 80, and 100 A. <code>panelsForBattery</code> uses amp-hours × volts ÷ sun hours ÷ 0.85; 200 × 12 ÷ 4.5 ÷ 0.85 is about 627 W, which this page rounds to 630 W. <code>sizeInverter</code> multiplies continuous watts by 1.25 and uses a 3× motor factor and a 4× compressor factor. Accessed Oct 3, 2026.</li>
+<li><a href="assets/app.js">SolarSizer calculator, assets/app.js</a> — the load table is the preset rows (watts × hours): refrigerator 150 W × 8 h = 1,200 Wh, LED lights 80 W × 5 h = 400 Wh, laptop 100 W × 6 h = 600 Wh, water pump 60 W × 0.5 h = 30 Wh, CPAP 40 W × 8 h = 320 Wh, Starlink 60 W × 12 h = 720 Wh, TV 100 W × 4 h = 400 Wh, microwave 1,000 W × 0.25 h = 250 Wh, induction cooktop 1,500 W × 0.75 h = 1,125 Wh. <code>sizeSystem</code> uses daily watt-hours ÷ sun hours ÷ 0.86 (1 − the 14% default system losses in the <a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">NREL PVWatts Version 5 manual</a>, Table 6), rounds array watts up to the next 100 W, and sets bank watt-hours to daily watt-hours × days ÷ depth of discharge. The form opens at 4 sun hours, 2 days, 24 V, and 80% depth of discharge, with a 50% option. <code>sizeController</code> uses array watts ÷ bank volts ÷ 0.85 and the sizes 10, 20, 30, 40, 60, 80, and 100 A. <code>panelsForBattery</code> uses amp-hours × volts ÷ sun hours ÷ 0.85; 200 × 12 ÷ 4.5 ÷ 0.85 = 627.45 W, and <code>fmt</code> rounds that to 627 W. <code>sizeInverter</code> multiplies continuous watts by 1.25 and uses surge factors of 1 (resistive), 3 (motor), 4 (compressor), and 2 (mixed). Accessed Oct 6, 2026.</li>
 </ul>
-<p>The climate sun-hour table, the 3 kWh cabin range of 1,200–1,500 W, the 400–600 Ah bank range, the 400–600 W recharge bracket, and the 1,000–1,500 W and 2,000–3,000 W inverter landings are this page's examples. A 400 W array on the same 2,400 Wh and 0.85 divisor is 2,400 ÷ (400 × 4.5 × 0.85) ≈ 1.57 days, which is the "day and a half" line.</p>
+<p><code>panelsForBattery</code> uses amp-hours × volts ÷ sun hours ÷ 0.85. 200 × 12 ÷ 4.5 ÷ 0.85 = 627.45 W, which <code>fmt</code> rounds to 627 W. <code>sizeInverter</code> multiplies continuous watts by 1.25 and uses surge factors of 1, 3, 4, and 2. The MPPT “up to 30%” sentence is the <a href="https://www.victronenergy.com/upload/documents/Datasheet-SmartSolar-charge-controller-MPPT-100-30-%26-100-50-EN.pdf">SmartSolar MPPT 100/30 and 100/50 datasheet</a>. Accessed Oct 6, 2026.</p>
 </main>
 
 <section id="soft-rail" aria-label="Related guides and offers" style="margin-top:1.5rem">
