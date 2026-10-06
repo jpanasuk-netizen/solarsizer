@@ -9,6 +9,6 @@
     <rect x="332" y="28" width="276" height="120" rx="8" fill="#fff" stroke="#1c1f24"/>
     <text x="470" y="78" text-anchor="middle" font-size="32">0.8%</text>
     <text x="470" y="112" text-anchor="middle" font-size="16">mean per year</text>
-    <text x="320" y="196" text-anchor="middle" font-size="16">1,920 reported rates · 78% below 1% per year</text>
+    <text x="320" y="196" text-anchor="middle" font-size="16">1,920 reported rates | 78% below 1% per year</text>
   </g>
 </svg>
