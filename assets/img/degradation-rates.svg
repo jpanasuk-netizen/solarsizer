@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 240" width="640" height="240" role="img" aria-labelledby="dg-title dg-desc">
+  <title id="dg-title">Median and mean module degradation rates</title>
+  <desc id="dg-desc">Median 0.5 percent per year and mean 0.8 percent per year, from 1,920 reported rates. 78 percent of those rates are below 1 percent per year.</desc>
+  <rect width="640" height="240" fill="#f4f5f7"/>
+  <g font-family="system-ui,Segoe UI,sans-serif" fill="#1c1f24">
+    <rect x="32" y="28" width="276" height="120" rx="8" fill="#fff" stroke="#1c1f24"/>
+    <text x="170" y="78" text-anchor="middle" font-size="32">0.5%</text>
+    <text x="170" y="112" text-anchor="middle" font-size="16">median per year</text>
+    <rect x="332" y="28" width="276" height="120" rx="8" fill="#fff" stroke="#1c1f24"/>
+    <text x="470" y="78" text-anchor="middle" font-size="32">0.8%</text>
+    <text x="470" y="112" text-anchor="middle" font-size="16">mean per year</text>
+    <text x="320" y="196" text-anchor="middle" font-size="16">1,920 reported rates · 78% below 1% per year</text>
+  </g>
+</svg>

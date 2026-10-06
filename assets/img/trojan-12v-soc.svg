@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 240" width="640" height="240" role="img" aria-labelledby="tv-title tv-desc">
+  <title id="tv-title">Four 12 volt open-circuit readings from Trojan Table 1</title>
+  <desc id="tv-desc">100 percent is 12.73 volts, 80 percent is 12.50 volts, 50 percent is 12.10 volts, and 10 percent is 11.51 volts.</desc>
+  <rect width="640" height="240" fill="#f4f5f7"/>
+  <g font-family="system-ui,Segoe UI,sans-serif" fill="#1c1f24" font-size="20">
+    <rect x="48" y="24" width="544" height="44" rx="8" fill="#fff" stroke="#1c1f24"/>
+    <text x="72" y="52">100%</text><text x="520" y="52" text-anchor="end">12.73 V</text>
+    <rect x="48" y="76" width="544" height="44" rx="8" fill="#fff" stroke="#1c1f24"/>
+    <text x="72" y="104">80%</text><text x="520" y="104" text-anchor="end">12.50 V</text>
+    <rect x="48" y="128" width="544" height="44" rx="8" fill="#fff" stroke="#1c1f24"/>
+    <text x="72" y="156">50%</text><text x="520" y="156" text-anchor="end">12.10 V</text>
+    <rect x="48" y="180" width="544" height="44" rx="8" fill="#fff" stroke="#1c1f24"/>
+    <text x="72" y="208">10%</text><text x="520" y="208" text-anchor="end">11.51 V</text>
+  </g>
+</svg>

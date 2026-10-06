@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" role="img" aria-labelledby="pc-title pc-desc">
+  <title id="pc-title">Refrigerator preset through the panel-count function</title>
+  <desc id="pc-desc">1,200 watt-hours divided by 4.5 sun hours and by 0.86 is 310.1 watts, which rounds up to 400 watts.</desc>
+  <rect width="640" height="400" fill="#f4f5f7"/>
+  <g font-family="system-ui,Segoe UI,sans-serif" text-anchor="middle" fill="#1c1f24">
+    <rect x="130" y="16" width="380" height="48" rx="8" fill="#fff" stroke="#1c1f24"/>
+    <text x="320" y="46" font-size="18">1,200 Wh</text>
+    <text x="320" y="88" font-size="22" fill="#5c6570">“</text>
+    <rect x="110" y="100" width="420" height="48" rx="8" fill="#fff" stroke="#1c1f24"/>
+    <text x="320" y="130" font-size="18">÷ 4.5 sun hours</text>
+    <text x="320" y="172" font-size="22" fill="#5c6570">“</text>
+    <rect x="170" y="184" width="300" height="48" rx="8" fill="#fff" stroke="#1c1f24"/>
+    <text x="320" y="214" font-size="18">÷ 0.86</text>
+    <text x="320" y="256" font-size="22" fill="#5c6570">“</text>
+    <rect x="160" y="268" width="320" height="48" rx="8" fill="#fff" stroke="#1c1f24"/>
+    <text x="320" y="298" font-size="18">310.1 W</text>
+    <text x="320" y="340" font-size="22" fill="#5c6570">“</text>
+    <rect x="120" y="348" width="400" height="40" rx="8" fill="#1c1f24"/>
+    <text x="320" y="374" font-size="18" fill="#f4f5f7">400 W after rounding up</text>
+  </g>
+</svg>

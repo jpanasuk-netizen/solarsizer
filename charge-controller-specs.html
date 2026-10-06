@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MPPT and PWM Charge Controller Specs</title>
+<meta name="description" content="Max PV open-circuit voltage, charge current, and battery voltage copied from Victron and Morningstar datasheets. Compare them with this site's controller math.">
+<link rel="canonical" href="https://solar-sizer.com/charge-controller-specs.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="MPPT and PWM Charge Controller Specs">
+<meta property="og:description" content="Max PV open-circuit voltage, charge current, and battery voltage copied from Victron and Morningstar datasheets. Compare them with this site's controller math.">
+<meta property="og:url" content="https://solar-sizer.com/charge-controller-specs.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://solar-sizer.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MPPT and PWM Charge Controller Specs">
+<meta name="twitter:description" content="Max PV open-circuit voltage, charge current, and battery voltage copied from Victron and Morningstar datasheets. Compare them with this site's controller math.">
+<meta name="twitter:image" content="https://solar-sizer.com/assets/og-image.png">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "MPPT and PWM charge controller specs",
+  "description": "Maximum PV open-circuit voltage, charge current, and battery voltage copied from Victron Energy and Morningstar datasheets on October 6, 2026.",
+  "url": "https://solar-sizer.com/charge-controller-specs.html",
+  "creator": {"@type": "Organization", "name": "Solar Sizer", "url": "https://solar-sizer.com"},
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "distribution": {
+    "@type": "DataDownload",
+    "encodingFormat": "text/csv",
+    "contentUrl": "https://solar-sizer.com/assets/charge-controller-specs.csv"
+  },
+  "dateModified": "2026-10-06"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://solar-sizer.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Questions", "item": "https://solar-sizer.com/topics.html"},
+    {"@type": "ListItem", "position": 3, "name": "MPPT and PWM Charge Controller Specs", "item": "https://solar-sizer.com/charge-controller-specs.html"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">SolarSizer</a>
+  <nav aria-label="Site">
+    <a href="index.html#calc">Calculator</a>
+    <a href="how-to-size-a-solar-charge-controller.html">Controller sizing</a>
+    <a href="topics.html">Topics</a>
+  </nav>
+</header>
+<main>
+<h1>MPPT and PWM charge controller specs</h1>
+<p class="small">Built by <a href="/about.html">Jeremy Panasuk</a>. Published October 6, 2026.</p>
+<p class="sub">Each row is a model line from a manufacturer datasheet: maximum PV open-circuit voltage, the charge current that sheet prints, and the battery voltage. Cells quote the sheet. Nothing here is estimated.</p>
+<p>Use the table after the <a href="index.html#calc">charge controller tab</a> prints a current. The tab does array watts ÷ battery volts ÷ 0.85, then picks the next size in 10, 20, 30, 40, 60, 80, and 100 A. That list is this site's rounding. It is not a model name in the table.</p>
+<div class="answer-box"><strong>Worked example:</strong> 2,400 Wh at 4 sun hours is 2,400 ÷ 4 ÷ 0.86 = 697.67 W, which <code>sizeSystem</code> prints as 700 W. <code>sizeController</code> then does 700 ÷ 12 ÷ 0.85 = 68.6 A and lists 80 A. On this table the SmartSolar MPPT 100/50 row is 50 A, which is below 68.6 A. The SmartSolar MPPT 150/70 row is 70 A. The 150/70 voltage cell is 150 V absolute maximum in the coldest conditions and 145 V start-up and operating maximum. Current and open-circuit voltage are separate limits. The same walk-through is on <a href="how-to-size-a-solar-charge-controller.html">how to size a solar charge controller</a>.</div>
+<p>The figures were copied from the linked datasheets on October 6, 2026. Every row has a source link. <a href="assets/charge-controller-specs.csv">Download CSV</a> (same rows).</p>
+<p class="small">Click a column heading to sort. The table does not move until you click.</p>
+<div class="tbl-wrap">
+<table id="spec-table" class="sortable">
+<thead>
+<tr>
+<th>Manufacturer</th>
+<th>Model</th>
+<th>Type</th>
+<th>Max. PV open-circuit voltage</th>
+<th>Charge current</th>
+<th>Datasheet name for that current</th>
+<th>Battery voltage</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Victron Energy</td><td>SmartSolar MPPT 75/10</td><td>MPPT</td><td data-sort="75">75 V</td><td data-sort="10">10 A</td><td>Rated charge current</td><td>12/24 V</td><td><a href="https://www.victronenergy.com/upload/documents/Datasheet-SmartSolar-charge-controller-MPPT-75-10,-75-15,-100-15,-100-20_48V-EN.pdf">SmartSolar MPPT 75/10, 75/15, 100/15, 100/20-48V datasheet</a></td></tr>
+<tr><td>Victron Energy</td><td>SmartSolar MPPT 75/15</td><td>MPPT</td><td data-sort="75">75 V</td><td data-sort="15">15 A</td><td>Rated charge current</td><td>12/24 V</td><td><a href="https://www.victronenergy.com/upload/documents/Datasheet-SmartSolar-charge-controller-MPPT-75-10,-75-15,-100-15,-100-20_48V-EN.pdf">SmartSolar MPPT 75/10, 75/15, 100/15, 100/20-48V datasheet</a></td></tr>
+<tr><td>Victron Energy</td><td>SmartSolar MPPT 100/15</td><td>MPPT</td><td data-sort="100">100 V</td><td data-sort="15">15 A</td><td>Rated charge current</td><td>12/24 V</td><td><a href="https://www.victronenergy.com/upload/documents/Datasheet-SmartSolar-charge-controller-MPPT-75-10,-75-15,-100-15,-100-20_48V-EN.pdf">SmartSolar MPPT 75/10, 75/15, 100/15, 100/20-48V datasheet</a></td></tr>
+<tr><td>Victron Energy</td><td>SmartSolar MPPT 100/20-48V</td><td>MPPT</td><td data-sort="100">100 V</td><td data-sort="20">20 A</td><td>Rated charge current</td><td>12/24/48 V</td><td><a href="https://www.victronenergy.com/upload/documents/Datasheet-SmartSolar-charge-controller-MPPT-75-10,-75-15,-100-15,-100-20_48V-EN.pdf">SmartSolar MPPT 75/10, 75/15, 100/15, 100/20-48V datasheet</a></td></tr>
+<tr><td>Victron Energy</td><td>SmartSolar MPPT 100/30</td><td>MPPT</td><td data-sort="100">100 V</td><td data-sort="30">30 A</td><td>Rated charge current</td><td>12/24 V Auto Select</td><td><a href="https://www.victronenergy.com/upload/documents/Datasheet-SmartSolar-charge-controller-MPPT-100-30-%26-100-50-EN.pdf">SmartSolar MPPT 100/30 and 100/50 datasheet</a></td></tr>
+<tr><td>Victron Energy</td><td>SmartSolar MPPT 100/50</td><td>MPPT</td><td data-sort="100">100 V</td><td data-sort="50">50 A</td><td>Rated charge current</td><td>12/24 V Auto Select</td><td><a href="https://www.victronenergy.com/upload/documents/Datasheet-SmartSolar-charge-controller-MPPT-100-30-%26-100-50-EN.pdf">SmartSolar MPPT 100/30 and 100/50 datasheet</a></td></tr>
+<tr><td>Victron Energy</td><td>SmartSolar MPPT 150/35</td><td>MPPT</td><td data-sort="150">150 V absolute maximum coldest conditions; 145 V start-up and operating maximum</td><td data-sort="35">35 A</td><td>Rated charge current</td><td>12 / 24 / 48 V Auto Select (software tool needed to select 36 V)</td><td><a href="https://www.victronenergy.com/upload/documents/Datasheet-SmartSolar-charge-controller-MPPT-150-35-%26-150-45-EN.pdf">SmartSolar MPPT 150/35 and 150/45 datasheet</a></td></tr>
+<tr><td>Victron Energy</td><td>SmartSolar MPPT 150/45</td><td>MPPT</td><td data-sort="150">150 V absolute maximum coldest conditions; 145 V start-up and operating maximum</td><td data-sort="45">45 A</td><td>Rated charge current</td><td>12 / 24 / 48 V Auto Select (software tool needed to select 36 V)</td><td><a href="https://www.victronenergy.com/upload/documents/Datasheet-SmartSolar-charge-controller-MPPT-150-35-%26-150-45-EN.pdf">SmartSolar MPPT 150/35 and 150/45 datasheet</a></td></tr>
+<tr><td>Victron Energy</td><td>SmartSolar MPPT 150/60</td><td>MPPT</td><td data-sort="150">150 V absolute maximum coldest conditions; 145 V start-up and operating maximum</td><td data-sort="60">60 A</td><td>Rated charge current</td><td>12 / 24 / 48 V Auto Select (software tool needed to select 36 V)</td><td><a href="https://www.victronenergy.com/upload/documents/Datasheet-SmartSolar-charge-controller-MPPT-150-60-%26-150-70-EN.pdf">SmartSolar MPPT 150/60 and 150/70 datasheet</a></td></tr>
+<tr><td>Victron Energy</td><td>SmartSolar MPPT 150/70</td><td>MPPT</td><td data-sort="150">150 V absolute maximum coldest conditions; 145 V start-up and operating maximum</td><td data-sort="70">70 A</td><td>Rated charge current</td><td>12 / 24 / 48 V Auto Select (software tool needed to select 36 V)</td><td><a href="https://www.victronenergy.com/upload/documents/Datasheet-SmartSolar-charge-controller-MPPT-150-60-%26-150-70-EN.pdf">SmartSolar MPPT 150/60 and 150/70 datasheet</a></td></tr>
+<tr><td>Victron Energy</td><td>SmartSolar MPPT 250/60</td><td>MPPT</td><td data-sort="250">250 V absolute maximum coldest conditions; 245 V start-up and operating maximum</td><td data-sort="60">60 A</td><td>Rated charge current</td><td>12 / 24 / 48 V Auto Select (software tool needed to select 36 V)</td><td><a href="https://www.victronenergy.com/upload/documents/Datasheet-SmartSolar-charge-controller-MPPT-250-60-and-250-70-EN.pdf">SmartSolar MPPT 250/60 and 250/70 datasheet</a></td></tr>
+<tr><td>Victron Energy</td><td>SmartSolar MPPT 250/70</td><td>MPPT</td><td data-sort="250">250 V absolute maximum coldest conditions; 245 V start-up and operating maximum</td><td data-sort="70">70 A</td><td>Rated charge current</td><td>12 / 24 / 48 V Auto Select (software tool needed to select 36 V)</td><td><a href="https://www.victronenergy.com/upload/documents/Datasheet-SmartSolar-charge-controller-MPPT-250-60-and-250-70-EN.pdf">SmartSolar MPPT 250/60 and 250/70 datasheet</a></td></tr>
+<tr><td>Morningstar</td><td>SS-MPPT-15L</td><td>MPPT</td><td data-sort="60">60 volts (without damage to unit)</td><td data-sort="15">15 amps</td><td>Max. battery charging current</td><td>12 or 24 volts</td><td><a href="https://www.morningstarcorp.com/wp-content/uploads/datasheet-sunsaver-mppt-en.pdf">SunSaver MPPT datasheet</a></td></tr>
+<tr><td>Morningstar</td><td>PS-MPPT-25, PS-MPPT-25M</td><td>MPPT</td><td data-sort="120">120 Volts (without damage to unit)</td><td data-sort="25">25 Amps</td><td>Max. Battery Current</td><td>12V or 24V</td><td><a href="https://www.morningstarcorp.com/wp-content/uploads/datasheet-prostar-mppt-en.pdf">ProStar MPPT datasheet</a></td></tr>
+<tr><td>Morningstar</td><td>PS-MPPT-40, PS-MPPT-40M</td><td>MPPT</td><td data-sort="120">120 Volts (without damage to unit)</td><td data-sort="40">40 Amps</td><td>Max. Battery Current</td><td>12V or 24V</td><td><a href="https://www.morningstarcorp.com/wp-content/uploads/datasheet-prostar-mppt-en.pdf">ProStar MPPT datasheet</a></td></tr>
+<tr><td>Morningstar</td><td>TS-MPPT-30</td><td>MPPT</td><td data-sort="150">150 volts DC (without damage to unit)</td><td data-sort="30">30 amps</td><td>Maximum Battery Current</td><td>12, 24, or 48 volts DC</td><td><a href="https://www.morningstarcorp.com/wp-content/uploads/datasheet-tristar-mppt-en.pdf">TriStar MPPT datasheet</a></td></tr>
+<tr><td>Morningstar</td><td>TS-MPPT-45</td><td>MPPT</td><td data-sort="150">150 volts DC (without damage to unit)</td><td data-sort="45">45 amps</td><td>Maximum Battery Current</td><td>12, 24, or 48 volts DC</td><td><a href="https://www.morningstarcorp.com/wp-content/uploads/datasheet-tristar-mppt-en.pdf">TriStar MPPT datasheet</a></td></tr>
+<tr><td>Morningstar</td><td>TS-MPPT-60</td><td>MPPT</td><td data-sort="150">150 volts DC (without damage to unit)</td><td data-sort="60">60 amps</td><td>Maximum Battery Current</td><td>12, 24, or 48 volts DC</td><td><a href="https://www.morningstarcorp.com/wp-content/uploads/datasheet-tristar-mppt-en.pdf">TriStar MPPT datasheet</a></td></tr>
+<tr><td>Morningstar</td><td>TS-MPPT-60M</td><td>MPPT</td><td data-sort="150">150 volts DC (without damage to unit)</td><td data-sort="60">60 amps</td><td>Maximum Battery Current (same cell as TS-MPPT-60)</td><td>12, 24, or 48 volts DC</td><td><a href="https://www.morningstarcorp.com/wp-content/uploads/datasheet-tristar-mppt-en.pdf">TriStar MPPT datasheet</a></td></tr>
+<tr><td>Morningstar</td><td>PS-15, PS-15M</td><td>PWM</td><td data-sort="30">12V bat: 30Voc / 24V bat: 60Voc</td><td data-sort="15">15A</td><td>Maximum Battery Current (versions line: 15 amps)</td><td>12V or 24V</td><td><a href="https://www.morningstarcorp.com/wp-content/uploads/datasheet-prostar-en.pdf">ProStar datasheet</a></td></tr>
+<tr><td>Morningstar</td><td>PS-30, PS-30M</td><td>PWM</td><td data-sort="30">12V bat: 30Voc / 24V bat: 60Voc</td><td data-sort="30">30A</td><td>Maximum Battery Current (versions line: 30 amps)</td><td>12V or 24V</td><td><a href="https://www.morningstarcorp.com/wp-content/uploads/datasheet-prostar-en.pdf">ProStar datasheet</a></td></tr>
+<tr><td>Morningstar</td><td>SS-6/6L</td><td>PWM</td><td data-sort="30">30V</td><td data-sort="6.5">6.5A</td><td>Max. solar current</td><td>12V</td><td><a href="https://www.morningstarcorp.com/wp-content/uploads/datasheet-sunsaver-en.pdf">SunSaver datasheet</a></td></tr>
+<tr><td>Morningstar</td><td>SS-10/10L</td><td>PWM</td><td data-sort="30">30V or 60V</td><td data-sort="10">10A</td><td>Max. solar current</td><td>12V or 24V</td><td><a href="https://www.morningstarcorp.com/wp-content/uploads/datasheet-sunsaver-en.pdf">SunSaver datasheet</a></td></tr>
+<tr><td>Morningstar</td><td>SS-20L</td><td>PWM</td><td data-sort="30">30V or 60V</td><td data-sort="20">20A</td><td>Max. solar current</td><td>12V or 24V</td><td><a href="https://www.morningstarcorp.com/wp-content/uploads/datasheet-sunsaver-en.pdf">SunSaver datasheet</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="small">ProStar PWM rows use the line labeled Max. PV Open Circuit Voltage (12V bat: 30Voc / 24V bat: 60Voc). The same datasheet also lists Maximum Solar Input Voltage as 12V/24V bat: 60Voc. SunSaver rows use the ratings table's "Max. solar voltage" and "Max. solar current". The SunSaver sheet calls the charging method 4 stage series PWM. Victron rows that print two PV-voltage limits include both. TS-MPPT-60 and TS-MPPT-60M share one 60 amp cell on the TriStar sheet.</p>
+<h2>What this table leaves out</h2>
+<p>Nominal PV power, maximum PV short-circuit current, and charge voltages are on several of these sheets and are not columns here. Every row above has a published figure for open-circuit voltage, charge current, and battery voltage.</p>
+<p>The compilation on this page is published under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. The datasheets linked in the table stay the manufacturers' documents.</p>
+<p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.victronenergy.com/upload/documents/Datasheet-SmartSolar-charge-controller-MPPT-75-10,-75-15,-100-15,-100-20_48V-EN.pdf">Victron Energy, SmartSolar MPPT 75/10, 75/15, 100/15, 100/20-48V datasheet</a>. Accessed Oct 6, 2026.</li>
+<li><a href="https://www.victronenergy.com/upload/documents/Datasheet-SmartSolar-charge-controller-MPPT-100-30-%26-100-50-EN.pdf">Victron Energy, SmartSolar MPPT 100/30 and 100/50 datasheet</a>. Accessed Oct 6, 2026.</li>
+<li><a href="https://www.victronenergy.com/upload/documents/Datasheet-SmartSolar-charge-controller-MPPT-150-35-%26-150-45-EN.pdf">Victron Energy, SmartSolar MPPT 150/35 and 150/45 datasheet</a>. Accessed Oct 6, 2026.</li>
+<li><a href="https://www.victronenergy.com/upload/documents/Datasheet-SmartSolar-charge-controller-MPPT-150-60-%26-150-70-EN.pdf">Victron Energy, SmartSolar MPPT 150/60 and 150/70 datasheet</a>. Accessed Oct 6, 2026.</li>
+<li><a href="https://www.victronenergy.com/upload/documents/Datasheet-SmartSolar-charge-controller-MPPT-250-60-and-250-70-EN.pdf">Victron Energy, SmartSolar MPPT 250/60 and 250/70 datasheet</a>. Accessed Oct 6, 2026.</li>
+<li><a href="https://www.morningstarcorp.com/wp-content/uploads/datasheet-sunsaver-mppt-en.pdf">Morningstar, SunSaver MPPT datasheet</a>. Accessed Oct 6, 2026.</li>
+<li><a href="https://www.morningstarcorp.com/wp-content/uploads/datasheet-prostar-mppt-en.pdf">Morningstar, ProStar MPPT datasheet</a>. Accessed Oct 6, 2026.</li>
+<li><a href="https://www.morningstarcorp.com/wp-content/uploads/datasheet-tristar-mppt-en.pdf">Morningstar, TriStar MPPT datasheet</a>. Accessed Oct 6, 2026.</li>
+<li><a href="https://www.morningstarcorp.com/wp-content/uploads/datasheet-prostar-en.pdf">Morningstar, ProStar datasheet</a>. Accessed Oct 6, 2026.</li>
+<li><a href="https://www.morningstarcorp.com/wp-content/uploads/datasheet-sunsaver-en.pdf">Morningstar, SunSaver datasheet</a>. Accessed Oct 6, 2026.</li>
+<li><a href="assets/app.js">SolarSizer calculator, assets/app.js</a> — <code>sizeSystem</code> and <code>sizeController</code> for the 700 W and 68.6 A example. Accessed Oct 6, 2026.</li>
+<li><a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">NREL PVWatts Version 5 Manual</a> — the 0.86 factor in that example. Accessed Oct 6, 2026.</li>
+</ul>
+<p><a href="index.html">← Back to the solar size calculator</a></p>
+</main>
+<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var table = document.getElementById("spec-table");
+  if (!table) return;
+  var headers = table.tHead.rows[0].cells;
+  Array.prototype.forEach.call(headers, function (th, idx) {
+    th.addEventListener("click", function () {
+      var tbody = table.tBodies[0];
+      var dir = th.getAttribute("aria-sort") === "ascending" ? "descending" : "ascending";
+      Array.prototype.forEach.call(headers, function (h) { h.removeAttribute("aria-sort"); });
+      th.setAttribute("aria-sort", dir);
+      var rec = Array.prototype.slice.call(tbody.rows);
+      rec.sort(function (a, b) {
+        var ac = a.cells[idx], bc = b.cells[idx];
+        var av = ac.getAttribute("data-sort") || ac.textContent.trim();
+        var bv = bc.getAttribute("data-sort") || bc.textContent.trim();
+        var an = parseFloat(av), bn = parseFloat(bv);
+        var c = (ac.hasAttribute("data-sort") && !isNaN(an) && !isNaN(bn)) ? an - bn : av.localeCompare(bv);
+        return dir === "ascending" ? c : -c;
+      });
+      rec.forEach(function (row) { tbody.appendChild(row); });
+    });
+  });
+});
+</script>
+</body>
+</html>

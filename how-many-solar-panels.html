@@ -68,6 +68,10 @@
 <p><strong>Number of panels = daily Wh need ÷ sun hours ÷ 0.86 (system derate) ÷ panel watts</strong></p>
 <p>The 0.86 is 1 − 0.14: the default 14% total system loss in <a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">NREL's PVWatts Version 5 manual</a> (Table 6). In plain terms, it is the energy a typical array loses to dirt on the glass (2%), distant shading (3%), panel-to-panel mismatch (2%), wiring (2%), connections (0.5%), first-sun light-induced degradation (1.5%), panels testing slightly under their label (1%), and downtime (3%). It does not include inverter losses, which PVWatts models separately, or battery charge and discharge losses — see the battery section below. The <a href="index.html#calc">calculator</a>'s <code>sizeSystem</code> uses the same 0.86 and rounds array watts up to the next 100 W.</p>
 
+<figure>
+<img src="assets/img/panel-count-steps.svg" width="640" height="400" alt="Refrigerator preset of 1,200 watt-hours divided by 4.5 sun hours and by 0.86 equals 310.1 watts, which the calculator rounds up to 400 watts." loading="lazy">
+<figcaption>The calculator's refrigerator preset is 150 W × 8 h = 1,200 Wh. At 4.5 sun hours, 1,200 ÷ 4.5 ÷ 0.86 = 310.1 W, and <code>sizeSystem</code> rounds that up to 400 W. The 0.86 is Table 6 of the <a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">NREL PVWatts Version 5 manual</a>.</figcaption>
+</figure>
 <h2>Worked examples at 4.5 sun hours, 400 W panels</h2>
 <div class="tbl-wrap">
 <table>

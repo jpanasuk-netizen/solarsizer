@@ -253,6 +253,10 @@
 </details>
 <h2>How does off-grid solar sizing work?</h2>
 <p>Everything flows from one number: <strong>daily watt-hours</strong>. Panels must replace that number every sun-hour day — array watts = daily Wh ÷ sun hours ÷ 0.86, the derate from <a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">NREL PVWatts' default 14% system losses</a> (soiling, shading, mismatch, wiring, connections, light-induced degradation, nameplate, availability). It does not include inverter or battery round-trip losses. The battery bank must carry you through sunless days: bank Wh = daily Wh × days of autonomy ÷ max depth of discharge. LiFePO4's 80% usable depth is why it wins on-paper capacity math even before cycle life.</p>
+<figure>
+<img src="assets/img/sizing-flow.svg" width="640" height="420" alt="Flow from daily watt-hours, divided by sun hours, divided by 0.86, then rounded up to the next 100 watts, producing array watts." loading="lazy">
+<figcaption>Array watts = daily watt-hours ÷ sun hours ÷ 0.86, then <code>sizeSystem</code> rounds up to the next 100 W. The 0.86 is Table 6 of the <a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">NREL PVWatts Version 5 manual</a> (14% default system losses). Bank watt-hours, not drawn, are daily watt-hours × days ÷ depth of discharge in the same function.</figcaption>
+</figure>
 
 <h2>How many watt-hours a day do common loads use?</h2>
 <div class="tbl-wrap">
@@ -277,6 +281,7 @@
 <h2>Guides</h2>
 <div class="card"><h3><a href="off-grid-cabin-solar.html">What size solar system for an off-grid cabin?</a></h3><p>Array watts = daily watt-hours ÷ sun hours ÷ 0.86. The guide runs the refrigerator preset through that formula.</p></div>
 <div class="card"><h3><a href="panels-to-charge-battery.html">How many solar panels to charge a battery?</a></h3><p>Recharge watts = amp-hours × volts ÷ sun hours ÷ 0.85. The guide's table is that function at 4.5 sun hours.</p></div>
+<div class="card"><h3><a href="charge-controller-specs.html">MPPT and PWM charge controller specs</a></h3><p>Maximum PV open-circuit voltage, charge current, and battery voltage, copied from Victron and Morningstar datasheets.</p></div>
 <div class="card"><h3><a href="https://battery-bank-sizer.com/" rel="noopener">Battery bank sizer ↗</a></h3><p>Sizing the storage side in depth — LiFePO4 vs AGM bank builder with parallel-string planning. Generator backup? GeneratorSizer has the fuel-side math.</p></div>
 
 <h2 id="common-questions">Common questions</h2>
@@ -347,7 +352,7 @@
   </div>
 </section>
 
-<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links · <a href="https://www.tiktok.com/@3jsa7" rel="noopener" target="_blank" data-tiktok-cta="1">TikTok @3jsa7</a></footer>
+<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · <a href="/embed-calculator.html">Embed this calculator</a> · pages may contain affiliate links · <a href="https://www.tiktok.com/@3jsa7" rel="noopener" target="_blank" data-tiktok-cta="1">TikTok @3jsa7</a></footer>
 
 <div id="amzSticky" hidden aria-hidden="true">
   <a id="amzStickyLink" class="btn-amz btn-amz-primary" href="https://www.amazon.com/s?k=home+tools&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">Shop on Amazon</a>

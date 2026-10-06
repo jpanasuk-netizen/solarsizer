@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solar System Size Calculator</title>
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://solar-sizer.com/">
+<style>
+:root{color-scheme:light dark;--bg:#f4f5f7;--fg:#1c1f24;--card:#fff;--bd:#d5d8de;--acc:#9a3412;--mut:#5c6570;--ok:#1f7a3a;--okbg:#eef6ef}
+@media (prefers-color-scheme:dark){:root{--bg:#16181d;--fg:#e7e9ee;--card:#22262e;--bd:#3a404a;--acc:#f0a090;--mut:#a7b0bc;--ok:#7dcea0;--okbg:#1a2a22}}
+*{margin:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:14px/1.35 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:.45rem .65rem .6rem;max-width:760px;margin:0 auto}
+a{color:var(--acc)}
+.credit{font-size:.82rem;margin:0 0 .35rem}
+.tabs{display:flex;flex-wrap:wrap;gap:.3rem;margin:0 0 .35rem}
+.tabs button{background:var(--card);color:var(--fg);border:1px solid var(--bd);border-radius:8px;padding:.35rem .55rem;font:inherit;font-size:.82rem;cursor:pointer}
+.tabs button[aria-selected="true"]{border-color:var(--acc);color:var(--acc);font-weight:600}
+.panel{display:none}
+.panel.active{display:block}
+fieldset{border:1px solid var(--bd);border-radius:8px;padding:.35rem .5rem .4rem;margin:0 0 .4rem}
+legend{font-size:.82rem;font-weight:600;padding:0 .25rem}
+.field{margin:.2rem 0}
+.field label{display:block;font-weight:600;font-size:.8rem;margin-bottom:.15rem}
+input,select{background:var(--card);color:var(--fg);border:1px solid var(--bd);border-radius:6px;padding:.35rem .45rem;font:inherit;width:100%;max-width:none}
+.row2{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:.35rem .5rem}
+@media(max-width:640px){.row2{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.row2{grid-template-columns:1fr}}
+#loadRows{min-height:6.8rem}
+.load-row{display:grid;grid-template-columns:minmax(0,1fr) 64px 64px 48px 32px;gap:.25rem;align-items:center;margin:.12rem 0;font-size:.8rem}
+.load-head{color:var(--mut);font-size:.7rem;text-transform:uppercase;letter-spacing:.03em}
+.load-row .del{background:none;border:1px solid var(--bd);border-radius:6px;color:var(--mut);cursor:pointer;height:1.8rem}
+button.go{background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.45rem .8rem;font:inherit;font-weight:600;cursor:pointer;margin-top:.35rem}
+.ans{background:var(--okbg);border:1px solid var(--ok);border-radius:8px;padding:.7rem;margin:.6rem 0}
+.ans .big{font-size:1.35rem;font-weight:700;line-height:1.2}
+.ans .unit{font-size:.85rem;color:var(--mut);font-weight:400}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:.4rem;margin-top:.45rem}
+@media(max-width:520px){.grid2{grid-template-columns:1fr}}
+.stat{background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:.4rem .5rem}
+.stat b{display:block;font-size:1rem}
+.stat span{color:var(--mut);font-size:.75rem}
+.note{color:var(--mut);font-size:.78rem;margin-top:.4rem}
+p.lead{font-size:.82rem;color:var(--mut);margin:0 0 .45rem}
+</style>
+</head>
+<body>
+<p class="credit">Calculator by <a href="https://solar-sizer.com/" target="_blank" rel="noopener">Solar Sizer</a></p>
+<div class="tabs" role="tablist" aria-label="Calculators">
+  <button role="tab" aria-selected="true" onclick="showTab('tab-sys', this)">System size</button>
+  <button role="tab" aria-selected="false" onclick="showTab('tab-inv', this)">Inverter</button>
+  <button role="tab" aria-selected="false" onclick="showTab('tab-cc', this)">Controller</button>
+  <button role="tab" aria-selected="false" onclick="showTab('tab-pv', this)">Panels per battery</button>
+</div>
+
+<section id="tab-sys" class="panel active" role="tabpanel">
+  <fieldset>
+    <legend>Daily loads</legend>
+    <div class="field">
+      <label for="presetSelect">Add a load</label>
+      <div style="display:flex;gap:.4rem">
+        <select id="presetSelect">
+          <option value="">— pick a load —</option>
+          <option value="0">Refrigerator (Energy Star) (150 W)</option>
+          <option value="1">LED lights, cabin (80 W)</option>
+          <option value="2">Laptop + phone charging (100 W)</option>
+          <option value="3">Starlink / internet (60 W)</option>
+          <option value="4">TV (100 W)</option>
+          <option value="5">CPAP machine (40 W)</option>
+          <option value="6">12 V water pump (60 W)</option>
+          <option value="7">Ceiling fan (60 W)</option>
+          <option value="8">Microwave (1,000 W)</option>
+          <option value="9">Induction cooktop (1 burner) (1,500 W)</option>
+          <option value="10">Washing machine (500 W)</option>
+          <option value="11">Well pump — 1/2 HP (1,000 W)</option>
+          <option value="12">Chest freezer (200 W)</option>
+          <option value="13">Security camera + router (15 W)</option>
+          <option value="custom">Custom…</option>
+        </select>
+        <button data-add type="button" class="go">Add</button>
+      </div>
+    </div>
+    <div id="loadRows"><div class="load-row load-head"><span>Load</span><span class="num">Watts</span><span class="num">Hrs/day</span><span class="num">Qty</span><span></span></div><div class="load-row"><input type="text" value="Refrigerator (Energy Star)" data-i="0" data-f="name" aria-label="Load name"><input type="number" min="0" value="150" data-i="0" data-f="w" aria-label="Watts"><input type="number" min="0" step="0.25" value="8" data-i="0" data-f="hrs" aria-label="Hours per day"><input type="number" min="1" value="1" data-i="0" data-f="qty" aria-label="Quantity"><button class="del" data-del="0" type="button" aria-label="Remove Refrigerator (Energy Star)">✕</button></div><div class="load-row"><input type="text" value="LED lights, cabin" data-i="1" data-f="name" aria-label="Load name"><input type="number" min="0" value="80" data-i="1" data-f="w" aria-label="Watts"><input type="number" min="0" step="0.25" value="5" data-i="1" data-f="hrs" aria-label="Hours per day"><input type="number" min="1" value="1" data-i="1" data-f="qty" aria-label="Quantity"><button class="del" data-del="1" type="button" aria-label="Remove LED lights, cabin">✕</button></div><div class="load-row"><input type="text" value="Laptop + phone charging" data-i="2" data-f="name" aria-label="Load name"><input type="number" min="0" value="100" data-i="2" data-f="w" aria-label="Watts"><input type="number" min="0" step="0.25" value="6" data-i="2" data-f="hrs" aria-label="Hours per day"><input type="number" min="1" value="1" data-i="2" data-f="qty" aria-label="Quantity"><button class="del" data-del="2" type="button" aria-label="Remove Laptop + phone charging">✕</button></div></div>
+  </fieldset>
+  <div class="row2">
+    <div class="field">
+      <label for="sunHrs">Worst-month sun hours</label>
+      <input type="number" id="sunHrs" value="4" min="1" max="8" step="0.5">
+    </div>
+    <div class="field">
+      <label for="sysV">Battery bank voltage</label>
+      <select id="sysV"><option>12</option><option selected>24</option><option>48</option></select>
+    </div>
+    <div class="field">
+      <label for="daysAuto">Autonomy (days)</label>
+      <input type="number" id="daysAuto" value="2" min="1" max="5">
+    </div>
+    <div class="field">
+      <label for="maxDod">Max depth of discharge</label>
+      <select id="maxDod"><option value="0.8">80% (LiFePO4)</option><option value="0.5">50% (AGM / lead-acid)</option></select>
+    </div>
+  </div>
+  <button class="go" type="button" onclick="sizeSystem()">Size my solar system</button>
+  <div id="sysResult" class="ans" hidden></div>
+</section>
+
+<section id="tab-inv" class="panel" role="tabpanel">
+  <p class="lead">Continuous watts of what runs at once, then the surge factor in this tab.</p>
+  <div class="field">
+    <label for="invCont">Total continuous AC load (watts)</label>
+    <input type="number" id="invCont" min="0">
+  </div>
+  <div class="row2">
+    <div class="field">
+      <label for="invKind">Heaviest load type</label>
+      <select id="invKind">
+        <option value="resistive">Resistive (1× surge)</option>
+        <option value="motor">Motor (3× surge)</option>
+        <option value="compressor">Compressor (4× surge)</option>
+        <option value="mixed" selected>Mixed household (2× surge)</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="invV">Battery bank voltage</label>
+      <select id="invV"><option>12</option><option selected>24</option><option>48</option></select>
+    </div>
+  </div>
+  <button class="go" type="button" onclick="sizeInverter()">Size my inverter</button>
+  <div id="invResult" class="ans" hidden></div>
+</section>
+
+<section id="tab-cc" class="panel" role="tabpanel">
+  <p class="lead">Array watts ÷ battery voltage ÷ 0.85, then the next listed rating.</p>
+  <div class="row2">
+    <div class="field">
+      <label for="ccWatts">Total solar array watts</label>
+      <input type="number" id="ccWatts" min="1">
+    </div>
+    <div class="field">
+      <label for="ccV">Battery bank voltage</label>
+      <select id="ccV"><option>12</option><option selected>24</option><option>48</option></select>
+    </div>
+    <div class="field">
+      <label for="ccType">Controller type</label>
+      <select id="ccType">
+        <option value="mppt" selected>MPPT</option>
+        <option value="pwm">PWM</option>
+      </select>
+    </div>
+  </div>
+  <button class="go" type="button" onclick="sizeController()">Size my controller</button>
+  <div id="ccResult" class="ans" hidden></div>
+</section>
+
+<section id="tab-pv" class="panel" role="tabpanel">
+  <p class="lead">Amp-hours × volts ÷ sun hours ÷ 0.85.</p>
+  <div class="row2">
+    <div class="field">
+      <label for="pvAh">Battery capacity (Ah)</label>
+      <input type="number" id="pvAh" min="1">
+    </div>
+    <div class="field">
+      <label for="pvV">Battery voltage</label>
+      <select id="pvV"><option>12</option><option selected>24</option><option>48</option></select>
+    </div>
+    <div class="field">
+      <label for="pvSun">Sun hours per day</label>
+      <input type="number" id="pvSun" value="4.5" min="1" max="8" step="0.5">
+    </div>
+    <div class="field">
+      <label for="pvPanel">Panel wattage</label>
+      <select id="pvPanel"><option>100</option><option>200</option><option selected>300</option><option>400</option><option>450</option></select>
+    </div>
+  </div>
+  <button class="go" type="button" onclick="panelsForBattery()">How many panels?</button>
+  <div id="pvResult" class="ans" hidden></div>
+</section>
+<script src="/assets/app.js" defer></script>
+</body>
+</html>
