@@ -20,6 +20,7 @@
 <meta name="twitter:title" content="MPPT and PWM Charge Controller Specs">
 <meta name="twitter:description" content="Max PV open-circuit voltage, charge current, and battery voltage copied from Victron and Morningstar datasheets. Compare them with this site's controller math.">
 <meta name="twitter:image" content="https://solar-sizer.com/assets/og-image.png">
+<meta property="article:modified_time" content="2026-10-06">
 <link rel="stylesheet" href="assets/styles.css">
 <script type="application/ld+json">
 {
@@ -62,6 +63,7 @@
 <main>
 <h1>MPPT and PWM charge controller specs</h1>
 <p class="small">Built by <a href="/about.html">Jeremy Panasuk</a>. Published October 6, 2026.</p>
+<p class="small">Last reviewed: Oct 6, 2026 · Next review planned: January 2027</p>
 <p class="sub">Each row is a model line from a manufacturer datasheet: maximum PV open-circuit voltage, the charge current that sheet prints, and the battery voltage. Cells quote the sheet. Nothing here is estimated.</p>
 <p>Use the table after the <a href="index.html#calc">charge controller tab</a> prints a current. The tab does array watts ÷ battery volts ÷ 0.85, then picks the next size in 10, 20, 30, 40, 60, 80, and 100 A. That list is this site's rounding. It is not a model name in the table.</p>
 <div class="answer-box"><strong>Worked example:</strong> 2,400 Wh at 4 sun hours is 2,400 ÷ 4 ÷ 0.86 = 697.67 W, which <code>sizeSystem</code> prints as 700 W. <code>sizeController</code> then does 700 ÷ 12 ÷ 0.85 = 68.6 A and lists 80 A. On this table the SmartSolar MPPT 100/50 row is 50 A, which is below 68.6 A. The SmartSolar MPPT 150/70 row is 70 A. The 150/70 voltage cell is 150 V absolute maximum in the coldest conditions and 145 V start-up and operating maximum. Current and open-circuit voltage are separate limits. The same walk-through is on <a href="how-to-size-a-solar-charge-controller.html">how to size a solar charge controller</a>.</div>
@@ -129,9 +131,11 @@
 <li><a href="assets/app.js">SolarSizer calculator, assets/app.js</a> — <code>sizeSystem</code> and <code>sizeController</code> for the 700 W and 68.6 A example. Accessed Oct 6, 2026.</li>
 <li><a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">NREL PVWatts Version 5 Manual</a> — the 0.86 factor in that example. Accessed Oct 6, 2026.</li>
 </ul>
+<h2>Changelog</h2>
+<p>Oct 6, 2026: first published, 24 rows from 10 source documents.</p>
 <p><a href="index.html">← Back to the solar size calculator</a></p>
 </main>
-<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
+<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/methodology.html">Methodology</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   var table = document.getElementById("spec-table");

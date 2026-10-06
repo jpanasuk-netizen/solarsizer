@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SolarSizer Methodology &amp; Editorial Standards</title>
+<meta name="description" content="How the SolarSizer calculators turn stated inputs into planning estimates, where the cited numbers come from, and how affiliate links are disclosed.">
+<link rel="canonical" href="https://solar-sizer.com/methodology.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="SolarSizer Methodology &amp; Editorial Standards">
+<meta property="og:description" content="How the SolarSizer calculators turn stated inputs into planning estimates, where the cited numbers come from, and how affiliate links are disclosed.">
+<meta property="og:url" content="https://solar-sizer.com/methodology.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://solar-sizer.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SolarSizer Methodology &amp; Editorial Standards">
+<meta name="twitter:description" content="How the SolarSizer calculators turn stated inputs into planning estimates, where the cited numbers come from, and how affiliate links are disclosed.">
+<meta name="twitter:image" content="https://solar-sizer.com/assets/og-image.png">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "SolarSizer Methodology & Editorial Standards",
+  "url": "https://solar-sizer.com/methodology.html",
+  "dateModified": "2026-10-06",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Solar Sizer",
+    "url": "https://solar-sizer.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Solar Sizer", "item": "https://solar-sizer.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Methodology & editorial standards", "item": "https://solar-sizer.com/methodology.html"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">SolarSizer</a>
+  <nav aria-label="Site">
+    <a href="index.html#calc">Calculator</a>
+    <a href="topics.html">Topics</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+<main>
+<h1>SolarSizer Methodology &amp; Editorial Standards</h1>
+<p class="small">Last updated: October 6, 2026</p>
+<p class="sub">The calculators on this site are planning tools. Each figure below is either a formula in <a href="assets/app.js">assets/app.js</a> or a number already printed on a linked page.</p>
+
+<h2>How the calculator works</h2>
+<p><code>sizeSystem</code> sets array watts to daily watt-hours ÷ sun hours ÷ 0.86, then rounds up to the next 100 W. 0.86 is 1 − 0.14, the 14% default system losses in Table 6 of the <a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">NREL PVWatts Version 5 manual</a>. Bank watt-hours are daily watt-hours × days of autonomy ÷ the depth of discharge selected on the form. The form opens at 4 sun hours, 2 days, 24 V, and 80% (LiFePO4), with a 50% (AGM / lead-acid) option. The same function also prints an array for winter sun of 2.5 hours, using that same ÷ 0.86 and the same 100 W round-up.</p>
+<p><code>sizeController</code> sets amps = array watts ÷ bank volts ÷ 0.85, prints that current to one decimal, then picks the next size in 10, 20, 30, 40, 60, 80, and 100 A. The comment in that function calls 0.85 a charge-inefficiency margin. On <a href="how-to-size-a-solar-charge-controller.html">how to size a solar charge controller</a>, that 0.85 is not Canadian Solar's × 1.25 on module short-circuit current, and the page does not relabel the result as a code current.</p>
+<p><code>sizeInverter</code> multiplies continuous watts by 1.25 and uses surge factors of 1 (resistive), 3 (motor), 4 (compressor), and 2 (mixed). In the same function the surge recommendation is that surge need × 1.1, rounded up to the next 100 W, and DC amps are continuous watts ÷ 0.92 ÷ bank volts. The result line calls the 0.92 term about 8% inverter loss.</p>
+<p><code>panelsForBattery</code> uses amp-hours × volts ÷ sun hours ÷ 0.85. That form opens at 4.5 sun hours.</p>
+<p>These are planning tools, not professional advice. Calculator outputs are planning estimates from the formulas above; they are not measurements.</p>
+
+<h2>Where the numbers come from</h2>
+<p>Guide pages link the publication next to the figure. The publications already cited on this site include <a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">NREL PVWatts</a>, <a href="https://www.victronenergy.com/upload/documents/Datasheet-SmartSolar-charge-controller-MPPT-100-30-%26-100-50-EN.pdf">Victron Energy datasheets</a>, <a href="https://www.morningstarcorp.com/wp-content/uploads/datasheet-sunsaver-mppt-en.pdf">Morningstar datasheets</a>, <a href="https://www.trojanbattery.com/resources/battery-maintenance">Trojan Battery</a>, <a href="https://battlebornbatteries.com/blogs/academy/how-to-size-a-deep-cycle-battery-bank-the-battle-born-educational-series">Battle Born Batteries</a>, <a href="https://www.energy.gov/eere/solar/solar-photovoltaic-system-design-basics">the U.S. Department of Energy</a>, <a href="https://www.canadiansolar.com/wp-content/uploads/2020/08/Installation_Manual_of_Standard_Solar_Modules_en.pdf">Canadian Solar</a>, and <a href="https://docs.nlr.gov/docs/fy12osti/51664.pdf">Jordan and Kurtz</a>.</p>
+<p>The <a href="charge-controller-specs.html">MPPT and PWM charge controller spec table</a> copies cells from the linked datasheets. Every row links its source document. The figures were copied on October 6, 2026. Nothing on that page is estimated. A missing value on a spec table is written as "not listed". The compilation is published under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. The datasheets linked in the table stay the manufacturers' documents.</p>
+
+<h2>How pages are written</h2>
+<p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+<p>Page text is drafted with AI agents (Cursor and local models) from the cited sources.</p>
+<p>Built and owned by Jeremy Panasuk, New Auburn, WI.</p>
+
+<h2>Affiliate policy</h2>
+<p class="small affil-disclosure">As an Amazon Associate I earn from qualifying purchases. The Amazon links below are affiliate links; they don't change the math.</p>
+<p>Amazon Associates links on this site use the tag generatorsi0d-20. The disclosure sits before the first affiliate link. The links never change calculator output. There are no paid placements.</p>
+<p><a href="https://www.amazon.com/s?k=off+grid+solar+kit&amp;tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">Off-grid solar kits on Amazon</a></p>
+
+<h2>Corrections</h2>
+<p>Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a> with the page URL.</p>
+
+<h2>Safety scope</h2>
+<p>Jeremy is a data/software person, not a licensed electrician or solar installer. A licensed electrician sizes the conductors and the overcurrent devices. Trojan's warning on terminals, quoted on <a href="check-a-12v-battery-open-circuit-voltage.html">the 12 V open-circuit page</a>: do not overtighten terminals.</p>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="assets/app.js">SolarSizer calculator, assets/app.js</a> — <code>sizeSystem</code>, <code>sizeController</code>, <code>sizeInverter</code>, and <code>panelsForBattery</code>. Accessed Oct 6, 2026.</li>
+<li><a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">NREL PVWatts Version 5 Manual</a> — Table 6, 14% default system losses. Accessed Oct 6, 2026.</li>
+<li><a href="charge-controller-specs.html">MPPT and PWM charge controller specs</a> — datasheet cells and the CC BY 4.0 compilation note. Accessed Oct 6, 2026.</li>
+<li><a href="about.html">About &amp; how this site is built</a> — owner, drafting, and planning-tool wording. Accessed Oct 6, 2026.</li>
+</ul>
+</main>
+<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/methodology.html">Methodology</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
+</body>
+</html>
