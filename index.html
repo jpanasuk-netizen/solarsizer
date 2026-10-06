@@ -254,7 +254,7 @@
 <h2>How does off-grid solar sizing work?</h2>
 <p>Everything flows from one number: <strong>daily watt-hours</strong>. Panels must replace that number every sun-hour day — array watts = daily Wh ÷ sun hours ÷ 0.86, the derate from <a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">NREL PVWatts' default 14% system losses</a> (soiling, shading, mismatch, wiring, connections, light-induced degradation, nameplate, availability). It does not include inverter or battery round-trip losses. The battery bank must carry you through sunless days: bank Wh = daily Wh × days of autonomy ÷ max depth of discharge. LiFePO4's 80% usable depth is why it wins on-paper capacity math even before cycle life.</p>
 <figure>
-<img src="assets/img/sizing-flow.svg" width="640" height="420" alt="Flow from daily watt-hours, divided by sun hours, divided by 0.86, then rounded up to the next 100 watts, producing array watts." loading="lazy">
+<img src="assets/img/array-sizing-flow.svg" width="640" height="420" alt="Flow from daily watt-hours, divided by sun hours, divided by 0.86, then rounded up to the next 100 watts, producing array watts." loading="lazy">
 <figcaption>Array watts = daily watt-hours ÷ sun hours ÷ 0.86, then <code>sizeSystem</code> rounds up to the next 100 W. The 0.86 is Table 6 of the <a href="https://pvwatts.nlr.gov/downloads/pvwattsv5.pdf">NREL PVWatts Version 5 manual</a> (14% default system losses). Bank watt-hours, not drawn, are daily watt-hours × days ÷ depth of discharge in the same function.</figcaption>
 </figure>
 
