@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Many Batteries for 400 Watt Solar? Daily Ah by City</title>
+<meta name="description" content="How many batteries for 400 watt solar? A 400 W array refills about 186 Ah of 12 V battery a day in Phoenix, 126 Ah in Chicago and 109 Ah in Seattle.">
+<link rel="canonical" href="https://solar-sizer.com/how-many-batteries-for-400-watt-solar.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="How Many Batteries for 400 Watt Solar? Daily Ah by City">
+<meta property="og:description" content="How many batteries for 400 watt solar? A 400 W array refills about 186 Ah of 12 V battery a day in Phoenix, 126 Ah in Chicago and 109 Ah in Seattle.">
+<meta property="og:url" content="https://solar-sizer.com/how-many-batteries-for-400-watt-solar.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://solar-sizer.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Many Batteries for 400 Watt Solar? Daily Ah by City">
+<meta name="twitter:description" content="How many batteries for 400 watt solar? A 400 W array refills about 186 Ah of 12 V battery a day in Phoenix, 126 Ah in Chicago and 109 Ah in Seattle.">
+<meta name="twitter:image" content="https://solar-sizer.com/assets/og-image.png">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How many batteries for 400 watt solar?",
+  "description": "How many batteries for 400 watt solar? A 400 W array refills about 186 Ah of 12 V battery a day in Phoenix, 126 Ah in Chicago and 109 Ah in Seattle.",
+  "url": "https://solar-sizer.com/how-many-batteries-for-400-watt-solar.html",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://solar-sizer.com/how-many-batteries-for-400-watt-solar.html"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "SolarSizer"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SolarSizer"
+  },
+  "datePublished": "2026-11-17",
+  "dateModified": "2026-11-17"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://solar-sizer.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "How many batteries for 400 watt solar?",
+      "item": "https://solar-sizer.com/how-many-batteries-for-400-watt-solar.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">SolarSizer</a>
+  <nav aria-label="Site">
+    <a href="index.html#calc">Calculator</a>
+    <a href="how-many-solar-panels.html">Panel count</a>
+    <a href="what-size-solar-system.html">System size</a>
+    <a href="off-grid-cabin-solar.html">Cabin solar</a>
+    <a href="topics.html">Topics</a>
+  </nav>
+</header>
+<main>
+<h1>How many batteries for 400 watt solar?</h1>
+<p class="sub">Start from the panels and work back to the battery. Pick an array size and a US city; the checker returns the daily harvest and the 12 V amp-hours it refills.</p>
+<div class="answer-box"><strong>Quick answer:</strong> A 400 W array harvests about 2,234 Wh a day in Phoenix, 1,516 Wh in Chicago and 1,302 Wh in Seattle at <a href="peak-sun-hours-by-city.html">NREL PVWatts</a> peak sun hours, after this site's 85% charge efficiency. That refills roughly 186 Ah, 126 Ah or 109 Ah of 12 V battery, so one or two 100 Ah batteries.</div>
+<p class="small">Derived on this page: watt-hours = 400 × peak sun hours × 0.85, and amp-hours = watt-hours ÷ 12, rounded. Peak sun hours (Phoenix 6.57, Chicago 4.46, Seattle 3.83 kWh/m²/day) are from the NREL PVWatts v8 API, re-run November 17, 2026 with the same settings as the <a href="peak-sun-hours-by-city.html">city table</a>. The 0.85 is the charge-efficiency step on <a href="panels-to-charge-battery.html">panels to charge a battery</a>.</p>
+
+<h2>Array-to-battery checker</h2>
+<p>This is the panels calculator run backwards. <a href="how-many-solar-panels.html">How many solar panels</a> starts from a load and returns watts of panels. Here the panels are fixed and the answer is how much 12 V battery one average day refills.</p>
+<div class="card">
+<div class="field">
+<label for="abW">Array size (watts)</label>
+<input id="abW" type="number" value="400" min="1" step="1">
+</div>
+<div class="field">
+<label for="abCity">US city</label>
+<select id="abCity">
+<option value="6.57" selected>Phoenix, AZ</option>
+<option value="6.47">Las Vegas, NV</option>
+<option value="6.09">Los Angeles, CA</option>
+<option value="5.74">Denver, CO</option>
+<option value="6.48">Albuquerque, NM</option>
+<option value="5.41">Dallas, TX</option>
+<option value="5.15">Houston, TX</option>
+<option value="5.57">Miami, FL</option>
+<option value="5.09">Atlanta, GA</option>
+<option value="4.77">Nashville, TN</option>
+<option value="5.05">Kansas City, MO</option>
+<option value="4.46">Chicago, IL</option>
+<option value="4.66">Minneapolis, MN</option>
+<option value="4.55">Milwaukee, WI</option>
+<option value="4.42">Detroit, MI</option>
+<option value="4.45">New York, NY</option>
+<option value="4.71">Boston, MA</option>
+<option value="3.83">Seattle, WA</option>
+<option value="3.98">Portland, OR</option>
+<option value="3.03">Anchorage, AK</option>
+</select>
+</div>
+<div class="field">
+<label><input id="abCount" type="checkbox" checked> Count 100 Ah batteries at 12 V</label>
+</div>
+<p id="abOut" aria-live="polite"></p>
+</div>
+<script>
+(function () {
+  var w = document.getElementById("abW"), city = document.getElementById("abCity"), cnt = document.getElementById("abCount"), out = document.getElementById("abOut");
+  function fmt(n) { return Math.round(n).toLocaleString("en-US"); }
+  function render() {
+    var watts = parseFloat(w.value), sun = parseFloat(city.value);
+    if (!(watts > 0)) { out.textContent = "Enter the array size in watts."; return; }
+    var wh = watts * sun * 0.85, ah = wh / 12;
+    var name = city.options[city.selectedIndex].text;
+    var t = name + ": " + fmt(watts) + " W × " + sun + " peak sun hours × 0.85 = about " + fmt(wh) + " Wh a day. " +
+      "At 12 V that is about " + fmt(ah) + " Ah (" + fmt(wh) + " ÷ 12).";
+    if (cnt.checked) {
+      var b = ah / 100;
+      t += " That is " + b.toFixed(2) + " × a 100 Ah battery's nameplate; " + Math.ceil(b) + (Math.ceil(b) === 1 ? " battery" : " batteries") + " to hold a full day's harvest.";
+    }
+    out.textContent = t;
+  }
+  [w, city, cnt].forEach(function (el) { el.addEventListener("input", render); el.addEventListener("change", render); });
+  render();
+})();
+</script>
+
+<h2>400 W in all 20 cities</h2>
+<p>Daily harvest is 400 × the city's peak sun hours × 0.85. Amp-hours divide that by 12 V. The last column is the same amp-hours as a share of one 100 Ah battery.</p>
+<div class="tbl-wrap"><table>
+<tr><th>City</th><th class="num">Peak sun hours (kWh/m²/day)</th><th class="num">Wh a day (derived)</th><th class="num">12 V Ah (derived)</th><th class="num">100 Ah batteries (derived)</th></tr>
+<tr><td>Phoenix, AZ</td><td class="num">6.57</td><td class="num">2,234</td><td class="num">186</td><td class="num">1.86</td></tr>
+<tr><td>Las Vegas, NV</td><td class="num">6.47</td><td class="num">2,200</td><td class="num">183</td><td class="num">1.83</td></tr>
+<tr><td>Los Angeles, CA</td><td class="num">6.09</td><td class="num">2,071</td><td class="num">173</td><td class="num">1.73</td></tr>
+<tr><td>Denver, CO</td><td class="num">5.74</td><td class="num">1,952</td><td class="num">163</td><td class="num">1.63</td></tr>
+<tr><td>Albuquerque, NM</td><td class="num">6.48</td><td class="num">2,203</td><td class="num">184</td><td class="num">1.84</td></tr>
+<tr><td>Dallas, TX</td><td class="num">5.41</td><td class="num">1,839</td><td class="num">153</td><td class="num">1.53</td></tr>
+<tr><td>Houston, TX</td><td class="num">5.15</td><td class="num">1,751</td><td class="num">146</td><td class="num">1.46</td></tr>
+<tr><td>Miami, FL</td><td class="num">5.57</td><td class="num">1,894</td><td class="num">158</td><td class="num">1.58</td></tr>
+<tr><td>Atlanta, GA</td><td class="num">5.09</td><td class="num">1,731</td><td class="num">144</td><td class="num">1.44</td></tr>
+<tr><td>Nashville, TN</td><td class="num">4.77</td><td class="num">1,622</td><td class="num">135</td><td class="num">1.35</td></tr>
+<tr><td>Kansas City, MO</td><td class="num">5.05</td><td class="num">1,717</td><td class="num">143</td><td class="num">1.43</td></tr>
+<tr><td>Chicago, IL</td><td class="num">4.46</td><td class="num">1,516</td><td class="num">126</td><td class="num">1.26</td></tr>
+<tr><td>Minneapolis, MN</td><td class="num">4.66</td><td class="num">1,584</td><td class="num">132</td><td class="num">1.32</td></tr>
+<tr><td>Milwaukee, WI</td><td class="num">4.55</td><td class="num">1,547</td><td class="num">129</td><td class="num">1.29</td></tr>
+<tr><td>Detroit, MI</td><td class="num">4.42</td><td class="num">1,503</td><td class="num">125</td><td class="num">1.25</td></tr>
+<tr><td>New York, NY</td><td class="num">4.45</td><td class="num">1,513</td><td class="num">126</td><td class="num">1.26</td></tr>
+<tr><td>Boston, MA</td><td class="num">4.71</td><td class="num">1,601</td><td class="num">133</td><td class="num">1.33</td></tr>
+<tr><td>Seattle, WA</td><td class="num">3.83</td><td class="num">1,302</td><td class="num">109</td><td class="num">1.09</td></tr>
+<tr><td>Portland, OR</td><td class="num">3.98</td><td class="num">1,353</td><td class="num">113</td><td class="num">1.13</td></tr>
+<tr><td>Anchorage, AK</td><td class="num">3.03</td><td class="num">1,030</td><td class="num">86</td><td class="num">0.86</td></tr>
+</table></div>
+<p class="small">Peak sun hours: NREL PVWatts v8, fixed open rack, tilt = latitude, azimuth 180, 14% system losses, as compiled on the <a href="peak-sun-hours-by-city.html">peak sun hours data page</a>. Everything right of that column is derived on this page and rounded.</p>
+
+<h2>Reading the result</h2>
+<p>In 19 of the 20 cities, one day's harvest refills more than one 100 Ah battery's nameplate and less than two; Phoenix comes closest to two. Anchorage, at 3.03 peak sun hours, refills about 86 Ah, under one. A bank smaller than one day's harvest fills before the sun goes down, and the rest of the harvest is lost unless a load uses it. A bank larger than the harvest still works, but one average day will not refill it from empty.</p>
+<p>The amp-hours here are nameplate amp-hours. This page does not apply a depth-of-discharge factor; how chemistry changes usable capacity is covered on <a href="how-many-solar-batteries-do-i-need.html">how many solar batteries do I need</a>. The controller that sits between the 400 W array and the battery is sized on <a href="how-to-size-a-solar-charge-controller.html">how to size a solar charge controller</a>.</p>
+<p>Peak sun hours are annual averages. A winter month has fewer hours than the average, so the same 400 W refills less. Shading, tilt, and direction change it too. Run your own address in <a href="https://pvwatts.nrel.gov/">PVWatts</a> before buying.</p>
+
+<h2>Sources</h2>
+<p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+<ul>
+<li>NREL, PVWatts v8 API (<a href="https://developer.nlr.gov/api/pvwatts/v8.json">https://developer.nlr.gov/api/pvwatts/v8.json</a>), 1 kW system, tilt = latitude, azimuth 180, 14% losses. Re-run November 17, 2026: Phoenix 6.57, Chicago 4.46, Seattle 3.83 kWh/m²/day. The other 17 cities are from the <a href="peak-sun-hours-by-city.html">peak sun hours data page</a>.</li>
+<li>SolarSizer, <a href="panels-to-charge-battery.html">How many solar panels to charge a battery</a> — Wh ÷ sun hours ÷ ~0.85 charge efficiency. Read November 17, 2026.</li>
+</ul>
+</main>
+<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/methodology.html">Methodology</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
+<nav class="seo-nav" aria-label="Related calculators" style="margin-top:2rem;padding:1rem;border-top:1px solid #ccc;font-size:.9rem">
+<strong>More free calculators:</strong><br>
+  <a href="/about.html">About SolarSizer</a>
+  <a href="/agm-vs-lithium-battery.html">AGM vs Lithium (LiFePO4) Battery for Off-Grid (2026): Cost, Cycles, Weight</a>
+  <a href="/contact.html">Contact SolarSizer</a>
+  <a href="/how-many-solar-panels-for-a-cabin.html">How Many Solar Panels for a Cabin? (2026) By Cabin Size and Usage</a>
+  <a href="/how-many-solar-panels.html">How Many Solar Panels Do I Need? Wattage Math by Load & Sun Hours (2026)</a>
+  <a href="/index.html">Solar System Size Calculator [Free] | SolarSizer</a>
+  <a href="/magnet.html">Free Off-Grid Cabin Load Sheet</a>
+  <a href="/off-grid-cabin-solar.html">What Size Solar System for an Off-Grid Cabin? (2026 Sizing Guide)</a>
+  <a href="/panels-to-charge-battery.html">How Many Solar Panels to Charge a Battery? 100Ah–400Ah Recharge Math (2026)</a>
+  <a href="/privacy.html">Privacy Policy</a>
+  <a href="/solar-vs-generator-for-off-grid.html">Solar vs Generator for Off-Grid Living (2026): 10-Year Cost Comparison</a>
+  <a href="/topics.html">Topic map</a>
+  <a href="/what-size-solar-system.html">What Size Solar System Do I Need? Off-Grid & Grid-Tie Sizing (2026)</a>
+  <a href="/what-size-solar-system-for-1-kwh-per-day.html">What Size Solar System Do I Need for 1 kWh per Day?</a>
+  <a href="/what-size-solar-system-for-2-kwh-per-day.html">What Size Solar System Do I Need for 2 kWh per Day?</a>
+  <a href="/what-size-solar-system-for-5-kwh-per-day.html">What Size Solar System Do I Need for 5 kWh per Day?</a>
+  <a href="/what-size-solar-system-for-30-kwh-per-day.html">What Size Solar System Do I Need for 30 kWh per Day?</a>
+  <a href="/what-size-solar-system-for-500-kwh-per-month.html">What Size Solar System Do I Need for 500 kWh per Month?</a>
+  <a href="/what-size-solar-system-for-1000-kwh-per-month.html">What Size Solar System Do I Need for 1,000 kWh per Month?</a>
+  <a href="/what-size-solar-system-for-1500-kwh-per-month.html">What Size Solar System Do I Need for 1,500 kWh per Month?</a>
+  <a href="/what-size-solar-system-for-2000-kwh-per-month.html">What Size Solar System Do I Need for 2,000 kWh per Month?</a>
+  <a href="/what-size-solar-system-for-average-home.html">What Size Solar System Do I Need for an Average Home?</a>
+  <a href="/what-size-solar-system-for-refrigerator.html">What Size Solar System Do I Need for a Refrigerator?</a>
+  <a href="/what-size-solar-system-for-cpap.html">What Size Solar System Do I Need for a CPAP?</a>
+  <a href="/what-size-solar-system-for-electric-car.html">What Size Solar System Do I Need to Charge an Electric Car?</a>
+</nav>
+</body>
+</html>
